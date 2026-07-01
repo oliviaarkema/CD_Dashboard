@@ -16,21 +16,21 @@
 
 <style>
   :root{
-    --green:#074d1a;
+    --kelly:#3dae2b;         /* brand bright green (logo) */
+    --green:#074d1a;         /* brand dark green (primary) */
+    --green-mid:#0b6722;
     --green-dark:#0a1f0d;
-    --gold:#c49a3c;
-    --gold-light:#f3d27a;
-    --cream:#f8f3eb;
-    --cream-2:#fdfaf5;
-    --border:#e8e0d0;
-    --ink:#1c1c1c;
-    --muted:#6b6459;
+    --ink:#1c1c1c;           /* near-black */
+    --bg:#eef2ee;            /* light neutral gray-green (page) */
+    --panel:#ffffff;         /* white (cards/panels) */
+    --border:#dbe2db;
+    --muted:#5f6b60;
     --shadow:0 2px 10px rgba(10,31,13,.08);
   }
   *{box-sizing:border-box}
   body{
     margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);background:var(--cream);line-height:1.5;
+    color:var(--ink);background:var(--bg);line-height:1.5;
   }
   a{color:var(--green)}
 
@@ -42,7 +42,7 @@
   }
   header img{height:56px;width:auto;background:#fff;border-radius:10px;padding:4px}
   header .titles h1{margin:0;font-size:1.35rem;letter-spacing:.3px}
-  header .titles p{margin:2px 0 0;font-size:.85rem;color:var(--gold-light)}
+  header .titles p{margin:2px 0 0;font-size:.85rem;color:rgba(255,255,255,.78)}
   header .asof{margin-left:auto;text-align:right;font-size:.8rem;color:#dfe9df}
   header .asof b{color:#fff}
 
@@ -51,7 +51,7 @@
   /* Stat cards */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
   .stat{
-    background:var(--cream-2);border:1px solid var(--border);border-radius:14px;
+    background:var(--panel);border:1px solid var(--border);border-radius:14px;
     padding:16px 18px;box-shadow:var(--shadow);
   }
   .stat .num{font-size:1.9rem;font-weight:700;color:var(--green);line-height:1}
@@ -59,7 +59,7 @@
 
   /* Panels */
   .panel{
-    background:var(--cream-2);border:1px solid var(--border);border-radius:16px;
+    background:var(--panel);border:1px solid var(--border);border-radius:16px;
     box-shadow:var(--shadow);margin-bottom:24px;overflow:hidden;
   }
   .panel-head{
@@ -87,7 +87,7 @@
     border:1px solid var(--border);background:#fff;color:var(--green);border-radius:8px;
     padding:6px 12px;font-size:.82rem;cursor:pointer;
   }
-  .ghost:hover{background:var(--cream)}
+  .ghost:hover{background:var(--bg)}
   .ghost:disabled{opacity:.45;cursor:default}
   .legend{
     background:rgba(255,255,255,.92);padding:8px 10px;border-radius:8px;font-size:.75rem;
@@ -95,7 +95,7 @@
   }
   .legend b{display:block;margin-bottom:4px;color:var(--green-dark)}
   .legend .bar{height:10px;width:120px;border-radius:5px;
-    background:linear-gradient(90deg,#2b83ba,#abdda4,#fdae61,#d7191c);margin:3px 0}
+    background:linear-gradient(90deg,#cdeac2,#7cc85f,#3dae2b,#074d1a);margin:3px 0}
   .legend .dot{display:inline-block;border-radius:50%;background:rgba(7,77,26,.55);
     border:1px solid var(--green);vertical-align:middle;margin-right:6px}
 
@@ -106,25 +106,25 @@
   table.rank th,table.rank td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
   table.rank th{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
   table.rank td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--green)}
-  table.rank td.rk{color:var(--gold);font-weight:700;width:26px}
+  table.rank td.rk{color:var(--kelly);font-weight:700;width:26px}
   table.rank tr:hover td{background:#fff}
 
   /* Placeholder cards */
   .future{display:flex;flex-wrap:wrap;gap:16px}
   .future .card{flex:1 1 260px;max-width:360px;
-    border:1px dashed var(--gold);border-radius:14px;background:repeating-linear-gradient(
-      45deg,rgba(196,154,60,.04),rgba(196,154,60,.04) 10px,transparent 10px,transparent 20px);
+    border:1px dashed var(--kelly);border-radius:14px;background:repeating-linear-gradient(
+      45deg,rgba(61,174,43,.05),rgba(61,174,43,.05) 10px,transparent 10px,transparent 20px);
     padding:18px;min-height:120px;display:flex;flex-direction:column;
   }
   .future .card h3{margin:0 0 6px;font-size:.98rem;color:var(--green-dark)}
   .future .card p{margin:0;font-size:.82rem;color:var(--muted);flex:1}
   .future .card .tag{
     align-self:flex-start;margin-top:12px;font-size:.68rem;text-transform:uppercase;letter-spacing:.6px;
-    background:var(--gold-light);color:#5a4410;padding:3px 9px;border-radius:999px;font-weight:700;
+    background:var(--kelly);color:#fff;padding:3px 9px;border-radius:999px;font-weight:700;
   }
 
   footer{max-width:1200px;margin:0 auto;padding:0 20px 50px;color:var(--muted);font-size:.8rem}
-  code{background:#efe7d7;padding:1px 6px;border-radius:5px;font-size:.85em}
+  code{background:#e4ebe4;padding:1px 6px;border-radius:5px;font-size:.85em}
   .err{color:#b00020;font-size:.85rem}
 
   @media(max-width:820px){
@@ -221,10 +221,11 @@ async function load(){
     return;
   }
 
-  // As-of + footer note
-  document.getElementById("asof").textContent = summary.generated;
+  // As-of + footer note (dated to the sales CSV's last upload).
+  const updated = summary.data_updated || summary.generated;
+  document.getElementById("asof").textContent = updated;
   document.getElementById("genNote").textContent =
-    `Last generated ${summary.generated} from ${summary.source_csv}.` +
+    `Last updated ${updated} from ${summary.source_csv}.` +
     (summary.unmapped_customers ? ` ${summary.unmapped_customers} customer(s) lacked a mappable ZIP and are counted in totals but not plotted.` : "");
 
   // Stat cards
@@ -293,7 +294,7 @@ function buildMap(customers, summary){
     heat = L.heatLayer(
       active.map(c => [c.lat, c.lng, Math.sqrt(valueOf(c)) / Math.sqrt(maxV)]),
       {radius:22, blur:18, minOpacity:.25,
-       gradient:{0.2:"#2b83ba",0.4:"#abdda4",0.6:"#fdae61",0.85:"#d7191c"}}
+       gradient:{0.2:"#cdeac2",0.45:"#7cc85f",0.7:"#3dae2b",0.9:"#074d1a"}}
     );
 
     dots = L.layerGroup();

@@ -19,9 +19,10 @@ import argparse
 import csv
 import json
 import math
+import os
 import sys
 from collections import defaultdict
-from datetime import date
+from datetime import date, datetime
 
 try:
     import pgeocode
@@ -146,8 +147,13 @@ def main():
 
     customers.sort(key=lambda c: c["cases"], reverse=True)
 
+    # "Last updated" = when the sales CSV was last saved/uploaded (its file
+    # modification time), which is what changes each quarter.
+    csv_updated = datetime.fromtimestamp(os.path.getmtime(args.csv)).date().isoformat()
+
     summary = {
         "generated": date.today().isoformat(),
+        "data_updated": csv_updated,
         "source_csv": args.csv,
         # PRODUCT_COLS order — the map's per-customer "p" arrays align to this.
         "product_order": PRODUCT_COLS,
