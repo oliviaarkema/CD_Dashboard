@@ -1,0 +1,151 @@
+{
+  "generated": "2026-07-01",
+  "source_csv": "country_dairy_sales.csv",
+  "product_order": [
+    "Milk-CD Half Pints",
+    "Milk-5Gal",
+    "Milk Gals-Country Dairy",
+    "Milk Gals-Cedar Cr",
+    "Milk Hgls-Country Dairy",
+    "Milk Pints-Country Dairy",
+    "Milk Qts-Country Dairy",
+    "Mix-Country Dairy",
+    "WF Gallons",
+    "WF Hgls"
+  ],
+  "total_customers": 834,
+  "mapped_customers": 831,
+  "unmapped_customers": 3,
+  "total_cases": 15997,
+  "top_customers": [
+    {
+      "name": "United Natural Foods - Ra",
+      "city": "Sturtevant",
+      "state": "WI",
+      "cases": 2928
+    },
+    {
+      "name": "United Natural Foods - AT",
+      "city": "Atlanta",
+      "state": "GA",
+      "cases": 1008
+    },
+    {
+      "name": "United Natural Foods - Io",
+      "city": "Iowa City",
+      "state": "IA",
+      "cases": 744
+    },
+    {
+      "name": "Moo To You Dairy Services",
+      "city": "Brighton",
+      "state": "MI",
+      "cases": 262
+    },
+    {
+      "name": "K & S Vending Services",
+      "city": "Mattawan",
+      "state": "MI",
+      "cases": 152
+    },
+    {
+      "name": "AD Bos Vending",
+      "city": "Holland",
+      "state": "MI",
+      "cases": 147
+    },
+    {
+      "name": "Hansen's",
+      "city": "Hart",
+      "state": "MI",
+      "cases": 100
+    },
+    {
+      "name": "Montague Foods",
+      "city": "Montague",
+      "state": "MI",
+      "cases": 89
+    },
+    {
+      "name": "Springport Elem/High Scho",
+      "city": "Springport",
+      "state": "MI",
+      "cases": 74
+    },
+    {
+      "name": "Lakeview Middle School",
+      "city": "Battle Creek",
+      "state": "MI",
+      "cases": 71
+    }
+  ],
+  "products_by_cases": [
+    {
+      "product": "Milk-CD Half Pints",
+      "cases": 3825
+    },
+    {
+      "product": "WF Hgls",
+      "cases": 2424
+    },
+    {
+      "product": "Milk Pints-Country Dairy",
+      "cases": 2362
+    },
+    {
+      "product": "Milk Gals-Country Dairy",
+      "cases": 2354
+    },
+    {
+      "product": "WF Gallons",
+      "cases": 2256
+    },
+    {
+      "product": "Milk Qts-Country Dairy",
+      "cases": 1174
+    },
+    {
+      "product": "Milk Hgls-Country Dairy",
+      "cases": 1079
+    },
+    {
+      "product": "Mix-Country Dairy",
+      "cases": 502
+    },
+    {
+      "product": "Milk-5Gal",
+      "cases": 21
+    },
+    {
+      "product": "Milk Gals-Cedar Cr",
+      "cases": 0
+    }
+  ],
+  "states": [
+    {
+      "state": "MI",
+      "customers": 824,
+      "cases": 11217
+    },
+    {
+      "state": "WI",
+      "customers": 1,
+      "cases": 2928
+    },
+    {
+      "state": "GA",
+      "customers": 1,
+      "cases": 1008
+    },
+    {
+      "state": "IA",
+      "customers": 1,
+      "cases": 744
+    },
+    {
+      "state": "IN",
+      "customers": 7,
+      "cases": 100
+    }
+  ]
+}

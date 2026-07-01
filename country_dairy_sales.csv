@@ -1,0 +1,835 @@
+CUST #,DESCRIPTION,ADDR1,CITY,ST,ZIP CODE,ROUTE,Milk-CD Half Pints,Milk-5Gal,Milk Gals-Country Dairy,Milk Gals-Cedar Cr,Milk Hgls-Country Dairy,Milk Pints-Country Dairy,Milk Qts-Country Dairy,Mix-Country Dairy,WF Gallons,WF Hgls,TOTAL CASES
+6051,1051 RBM - Marathon,1051 North Ave,Battle Creek,MI,49017,110,0,0,4,0,1,4,3,0,0,0,12
+5056,56 Exit Truck Stop,60902 M-51,Paw Paw,MI,,113,0,0,2,0,1,3,1,0,0,0,7
+2572,7-Eleven #36939B,8976 Tittabasassee Rd,Saginaw,MI,48603-1428,482,0,0,0,0,3,3,4,0,0,0,10
+10049,A & K Dawn Donuts,132 Perry Road,Grand Blanc,MI,48439-1818,241,0,0,0,0,0,6,0,0,0,0,6
+20006,AD Bos Vending,308 Garden Avenue,Holland,MI,49424-2206,115,0,0,0,0,0,147,0,0,0,0,147
+11336,Admiral Bay City #5795,314 S. Euclid Ave.,Bay City,MI,48706-1428,482,0,0,1,0,0,1,2,0,0,0,4
+11262,Admiral Edmore #5870,1102 E. Main St.,Edmore,MI,48829,765,0,0,1,0,1,2,1,0,0,0,5
+71057,Affogato's (KEY #50 ),11233 68TH Ave. Suite A,Allendale,MI,49401-9769,119,0,0,0,0,0,0,0,2,0,0,2
+11581,AGO #01 Sparta,560 E. Division,Sparta,MI,49345-1320,103,0,0,4,0,0,2,2,0,0,0,8
+11585,AGO #03 D 36th St Citgo,150 36TH St SW,Wyoming,MI,49548-1320,107,0,0,1,0,1,2,1,0,0,0,5
+11587,AGO #04 Belding AGO,1131 West State,Belding,MI,48809-1320,115,,0,1,0,1,2,1,0,0,0,5
+11589,AGO #05 Cedar Springs Cit,4010 17 Mile Rd,Cedar Springs,MI,49319-1320,106,0,0,3,0,1,2,2,0,0,0,8
+82515,AGO #07 Paw Paw Citgo,109 Ampy Rd,Paw Paw,MI,49079-1320,113,0,0,2,0,1,1,1,0,0,0,5
+70031,AGO #08 D Port Sheldon Ci,2805 Port Sheldon,Hudsonville,MI,49426-1320,102,0,0,3,0,2,2,1,0,0,0,8
+82500,AGO #09 D Hudsonville Cit,4640 32nd Ave.,Hudsonville,MI,49426-1320,102,0,0,2,0,2,2,1,0,0,0,7
+82512,AGO #12 Southtown Citgo,2501 Niles Ave,St Joseph,MI,49085-1320,117,0,0,2,0,1,2,1,0,0,0,6
+11577,AGO #13 D Ballpark Citgo,4558 West River Dr,Comstock Park,MI,49321-1320,106,0,0,3,0,1,2,1,0,0,0,7
+82533,AGO #14 D Kentwood BP,6045 Kalamazoo SE,Kentwood,MI,49508-1320,107,0,0,2,0,3,2,0,0,0,0,7
+11575,AGO #15 D Fruitridge Citg,3050 Fruitridge NW,Walker,MI,49503-1320,106,0,0,4,0,4,8,6,0,0,0,22
+11603,AGO #17 D Cascade Citgo,6820 Cascade Rd SE,Grand Rapids,MI,49546-1320,115,0,0,4,0,2,1,0,0,0,0,7
+11605,AGO #18 D 84th St Citgo,284 84th St. SW,Byron Center,MI,49315-1320,104,0,0,3,0,1,2,1,0,0,0,7
+82513,AGO #19 Portage Citgo,7938 Oakland Ave.,Portage,MI,49024-1320,101,0,0,2,0,2,2,2,0,0,0,8
+82514,AGO #20 Stadium Citgo,4710 Stadium Dr.,Kalamazoo,MI,49008-1320,101,0,0,4,0,1,3,1,0,0,0,9
+82503,AGO #21 Greenville Citgo,1325 W Washington,Greenville,MI,48838-1320,765,0,0,2,0,1,0,1,0,0,0,4
+82506,AGO #22 D M46 Citgo,20222 Edgar Rd,Howard City,MI,49329-1320,765,0,0,2,0,2,4,3,0,0,0,11
+11629,AGO #23 I/C Stanton,707 E. Main St.,Stanton,MI,48888-1320,765,0,0,1,0,1,6,4,0,0,0,12
+82504,AGO #24 Carson City AGO,102 E Main St,Carson City,MI,48811-1320,243,0,0,4,0,2,4,2,0,0,0,12
+191543,AGO #25 Sheridan AGO,7990 S Sheridan Rd,Sheridan,MI,48884-1320,765,0,0,8,0,4,9,5,0,0,0,26
+82505,AGO #26 D Howard City,130 N Ensley,Howard City,MI,49329-1320,765,0,0,4,0,1,3,2,0,0,0,10
+11580,AGO #30 Bella Vista Citgo,6051 Belding Rd,Rockford,MI,49341-1320,115,0,0,1,0,1,1,1,0,0,0,4
+82509,AGO #31 Sunrise Citgo,7100 E. Fulton,Ada,MI,49301-1320,115,0,0,4,0,2,5,6,0,0,0,17
+82516,AGO #32 D 44th Street BP,4405 S. Division,Wyoming,MI,49509-1320,107,0,0,3,0,2,2,2,0,0,0,9
+11582,AGO #33 Cottage Market Ci,12795 Old 14 Mile Rd,Greenville,MI,48838-1320,765,0,0,3,0,1,4,1,0,0,0,9
+82517,AGO #34 D Eastown Citgo,1560 Lake Dr. SE,Grand Rapids,MI,49506-2704,115,0,0,2,0,1,1,1,0,0,0,5
+82518,AGO #35 Rockford Citgo,470 E. Division,Rockford,MI,49341-2704,106,0,0,2,0,2,2,1,0,0,0,7
+82522,AGO #37 Sprinkle Road Cit,7025 Sprinkle Rd.,Portage,MI,49002-2704,101,,0,2,0,3,6,8,0,0,0,19
+82521,AGO #38 D Avenue Citgo,5500 West D Ave.,Kalamazoo,MI,49009-2704,101,0,0,3,0,0,1,1,0,0,0,5
+82519,AGO #39 9th Street Citgo,5233 S 9th Street,Kalamazoo,MI,49009-2704,101,0,0,2,0,1,2,3,0,0,0,8
+11597,AGO #41 D Coopersville Ci,1169 W Randall,Coopersville,MI,49404-2704,119,0,0,4,0,2,4,3,0,0,0,13
+11594,AGO #42 D Grandville BP,3935 28th St SW,Grandville,MI,49418-2704,102,0,0,1,0,1,4,3,0,0,0,9
+82536,AGO #43 Gowen,12091 18 Mile,Gowen,MI,49326-2704,765,0,0,4,0,2,3,3,0,0,0,12
+82537,AGO #44 Topp Stop AGO,8768 Belding Road,Rockford,MI,49341-2704,115,0,0,6,0,3,6,3,0,0,0,18
+11600,AGO #45 D-M-91 Citgo,1220 N Lafayette,Greenville,MI,48838-2704,765,0,0,4,0,2,3,2,0,0,0,11
+11610,AGO #47 D 76th Street Cit,250 76th Street SW,Kentwood,MI,49508-2704,104,0,0,2,0,3,3,2,0,0,0,10
+11613,AGO #48 D Lansing Citgo,4019 S Martin L King Blvd,Lansing,MI,48910-2704,242,0,0,1,0,0,2,0,0,0,0,3
+11611,AGO #49 D East 44th St Ci,1920 44th Street SE,Kentwood,MI,49508-2704,107,0,0,2,0,2,2,1,0,0,0,7
+11616,AGO #50 D Wilson Leonard,1162 Wilson Ave,Grand Rapids,MI,49534,114,0,0,7,0,1,4,3,0,0,0,15
+82546,AGO #52 East Lansing,100 E Saginaw St,East Lansing,MI,48823,244,0,0,1,0,1,2,1,0,0,0,5
+82553,AGO #53 Russel Rd,232 E Bard Rd,Muskegon,MI,49445,662,0,0,4,0,2,4,1,0,0,0,11
+82554,AGO #54 Whitehall,1845 White Lake Dr,Whitehall,MI,49461,662,0,0,4,0,1,3,1,0,0,0,9
+82555,AGO #55 Fruitvale,4160 Fruitvale Rd,Montague,MI,49437,661,0,0,8,0,3,4,3,0,0,0,18
+82556,AGO #56 Ravenna,3445 S Maple Island Rd,Ravenna,MI,49451,663,0,0,8,0,1,3,1,0,0,0,13
+82557,AGO #57 New Era,4061 S Oceana Dr,New Era,MI,49446,661,0,0,3,0,0,2,1,0,0,0,6
+10066,Ajooni Inc,2015 S M-33,West Branch,MI,48661,484,0,0,3,0,1,3,2,0,0,0,9
+10562,All American North Cntry,1596 E 88th Street,Newaygo,MI,49337-2902,764,0,0,0,0,1,0,0,0,0,0,1
+10561,All American North Cntry,11764 N Division,Sparta,MI,49345-2902,103,0,0,2,0,1,0,0,0,0,0,3
+10560,All American North Cntry,17645 Tyrone Ave,Kent City,MI,49330-2902,103,0,0,3,0,1,1,0,0,0,0,5
+10159,Almont Pastry Shop,102 N Main St,Almont Township,MI,48003,1005,0,0,0,0,0,3,0,0,0,0,3
+10079,Alpena Ella White Element,201 N Ripley Blvd,Alpena,MI,49707,372,8,0,0,0,0,0,0,0,0,0,8
+10076,Alpena High School,3303 S Third,Alpena,MI,49707-1818,372,26,0,0,0,0,0,0,0,0,0,26
+10080,Alpena Hinks Elementary,7667 US-23,Alpena,MI,49707,372,14,0,0,0,0,0,0,0,0,0,14
+10077,Alpena Thunder Bay Jr Hig,3500 S Third,Alpena,MI,49707-1818,372,23,0,0,0,0,0,0,0,0,0,23
+10021,Alpine Chocolat Haus - Ki,505 S Wisconsin Ave,Gaylord,MI,49735,371,0,0,0,0,0,0,0,20,0,0,20
+21554,Anew Borculo Fuel,6398 96th Avenue,Zeeland,MI,49464-2704,663,0,0,0,0,1,5,2,0,0,0,8
+11871,Anna's House Northland,5488 Northland Dr NE,Grand Rapids,MI,49525,106,,0,8,0,0,0,0,0,0,0,8
+11818,Antrim County Commission,308 East Cayga St,Bellaire,MI,49615,371,0,0,0,0,13,0,0,0,0,0,13
+11844,Apple Corner Store,2381 E Apple Ave,Muskegon,MI,49442,660,0,0,5,0,8,3,2,0,0,0,18
+11819,Ashton General Store,10989 210th Ave,Reed City,MI,49677,766,0,0,0,0,0,0,1,0,0,0,1
+21672,B & B Grocery,337 E St Joseph Street,Watervliet,MI,49098,117,0,0,7,0,1,0,0,0,0,0,8
+21500,Bangor High School,801 W Arlington,Bangor,MI,49013-7911,113,0,0,8,0,0,0,0,0,0,0,8
+21516,Bangor John Glen High,3201 Kiesel,Bay City,MI,48706-6610,482,13,0,0,0,0,0,0,0,0,0,13
+22710,Barton City General Store,1866 W Trask Lake Rd,Barton City,MI,48705-6610,372,0,0,3,0,1,1,1,0,0,0,6
+22735,Bartos,13321 Stark Rd,Livonia,MI,48150-9738,1006,0,0,0,0,1,1,2,0,0,0,4
+22737,Bartos,13321 Stark Rd,Livonia,MI,48150-9738,1001,0,0,1,0,1,2,0,0,0,0,4
+22736,Bartos,13321 Stark Rd,Livonia,MI,48150-9738,1003,0,0,0,0,2,2,1,0,0,0,5
+42640,Bartos 2,13321 Stark Rd,Livonia,MI,48150-9738,1002,0,0,0,0,1,6,4,0,0,0,11
+22734,Bartos 3,13321 Stark Rd,Livonia,MI,48150-9738,1009,0,0,0,0,0,4,3,0,0,0,7
+22733,Bartos Distributing,13321 Stark Rd,Livonia,MI,48150-9738,1004,0,0,1,0,4,14,15,0,0,0,34
+22264,Bay City Trinity Lutheran,2515 Broadway,Bay City,MI,48708,482,0,0,2,0,0,0,0,0,0,0,2
+22492,Beal City Village Store,2988 W Beal City Road,Mt Pleasant,MI,48858-1818,481,0,0,4,0,1,1,2,0,0,0,8
+20023,Bear Lake Market,11740 Chippewa Hwy,Bear Lake,MI,49614-2206,766,0,0,0,0,1,1,1,0,0,0,3
+20033,Beards Country Store,11289 Silver Lake Rd,Byron,MI,48418-2902,243,0,0,3,0,1,0,0,0,0,0,4
+20027,Beechtree Party Store-Sun,540 S. Beech Street,Grand Haven,MI,49417-2902,660,0,0,1,0,2,2,1,0,0,0,6
+21275,Bent Tree Markets,58878 M-51 South,Dowagiac,MI,49047-2704,107,0,0,0,0,2,4,2,0,0,0,8
+20085,Besons Corner Store,1491 Huron Road,Linwood,MI,48634-6610,484,0,0,7,0,1,1,0,0,0,0,9
+20166,Big Rapids Brookside Elem,210 Escott,Big Rapids,MI,49307-5394,764,27,0,0,0,0,0,0,0,0,0,27
+20165,Big Rapids Eastwood Child,410 N Third,Big Rapids,MI,49307-5394,764,25,0,0,0,0,0,0,0,0,0,25
+20161,Big Rapids High School,21175 15 Mile Rd,Big Rapids,MI,49307-5394,764,13,0,0,0,0,0,0,0,0,0,13
+20170,Big Rapids Hillcrest ECC,501 W Bridge St,Big Rapids,MI,49307,764,4,0,0,0,0,0,0,0,0,0,4
+20171,Big Rapids Mecosta- Osceo,15700 190th Ave,Big Rapids,MI,49307-5394,764,8,0,0,0,0,0,0,0,0,0,8
+20162,Big Rapids Middle School,500 N Warren,Big Rapids,MI,49307-5394,764,37,0,0,0,0,0,0,0,0,0,37
+20163,Big Rapids Riverview Elem,509 Willow,Big Rapids,MI,49307-5394,764,22,0,0,0,0,0,0,0,0,0,22
+20214,Big Top Ice Cream Shop,1008 E Center,Ithaca,MI,48847-1320,240,0,0,0,0,0,0,0,16,0,0,16
+20226,Birch Run High School,12450 Church Street,Birch Run,MI,48415-6610,480,14,0,0,0,0,1,0,0,0,0,15
+20227,Birch Run Marshall Green,8225 Main Street,Birch Run,MI,48415-6610,480,32,0,0,0,0,0,0,0,0,0,32
+21363,Bird Farm Meats Inc.,7237 104th Street,Howard City,MI,49329-2206,765,0,0,5,0,1,1,2,0,0,0,9
+21406,Blarney Castle #430 Fife,620 Boyd St.,Fife Lake,MI,49633,371,0,0,2,0,2,0,0,0,0,0,4
+21412,Blarney Castle #650 Louie,6977 M-68,Alanson,MI,49706,372,0,0,25,0,6,2,4,0,0,0,37
+21413,Blarney Castle #651 Louie,1231 M-75 S,Boyne City,MI,49712,372,0,0,3,0,1,1,2,0,0,0,7
+21415,Blarney Castle #653 Louie,5170 N State St,Oscoda,MI,48750,484,0,0,0,0,0,1,1,0,0,0,2
+21416,Blarney Castle #654 Louie,2394 E Mitchell,Petoskey,MI,49770,372,0,0,1,0,4,0,1,0,0,0,6
+21417,Blarney Castle #655 Louie,1025 N St. Helen St,St Helen,MI,48656,371,0,0,1,0,3,1,0,0,0,0,5
+21528,Bob's CountryStore,2103 Horton Rd,Jackson,MI,49203-1818,245,0,0,0,0,0,1,0,0,0,0,1
+21563,Bombshell Treat bar,2688 Coolidge Hwy,Berkley,MI,48220-3080,553,0,0,0,0,0,0,0,2,0,0,2
+21553,Borculo Express,6210 96th Ave,Zeeland,MI,49464-2902,663,0,0,1,0,0,0,0,0,0,0,1
+21552,Borland Gas and Grocery,4981 Northland Dr.,Morley,MI,49336-2902,764,0,0,2,0,0,2,2,0,0,0,6
+22426,Bowerman's Downtown 8th,4 E 8TH ST,Holland,MI,49423-4308,115,0,0,11,0,0,3,0,0,0,0,14
+20352,Boyne Marathon,470 N Lake Street,Boyne City,MI,49712-2206,372,0,0,5,0,2,2,3,0,0,0,12
+20143,Brandywine Middle/High S,1700 Bell Rd.,Niles,MI,49120-5394,107,0,0,0,0,0,4,0,0,0,0,4
+10022,Breslin Center - UDIM,534 Birch Road,East Lansing,MI,48824,244,0,0,0,0,0,28,0,0,0,0,28
+20205,Bridge Street Market IC,613 Bridge St. NW,Grand Rapids,MI,49504-2206,114,0,0,9,0,0,0,0,0,0,0,9
+20201,Brinks Ice Cream Exprs(KE,137 E. Main,Caledonia,MI,49316-4308,104,0,0,0,0,0,0,0,12,0,0,12
+22295,Broadmoor Convenience Sto,6773 Broadmoor Ave.,Caledonia,MI,49316-2902,104,0,0,1,0,1,6,1,0,0,0,9
+20103,Buchanan High School,401 W. Chicago St,Buchanan,MI,49107-7911,117,42,0,0,0,0,3,0,0,0,0,45
+20105,Buchanan Middle School,610 W Fourth St,Buchanan,MI,49107-7911,117,40,0,0,0,0,0,0,0,0,0,40
+20101,Buchanan Moccasin School,410 Moccasin Ave,Buchanan,MI,49107-7911,117,32,0,0,0,0,0,0,0,0,0,32
+20102,Buchanan Ottawa School,109 Ottawa St,Buchanan,MI,49107-7911,117,31,0,0,0,0,0,0,0,0,0,31
+22761,Buk's Party Store,106 N Main St,Ovid,MI,48866-1818,240,0,0,0,0,1,2,1,0,0,0,4
+20720,Burton Meat Farm,435 Burton SW,Grand Rapids,MI,49507-2902,114,0,0,4,0,1,0,0,0,0,0,5
+20714,Busy Bee market,10747 M-32 East,Johannesburg,MI,48791-6610,372,0,0,1,0,2,1,0,0,0,0,4
+30126,Cannonsburg Grist Mill,8000 Cannonsburg Road,Cannonsburg,MI,49317-2902,115,0,0,3,0,1,1,0,0,0,0,5
+32493,Carp Lake General Store,6420 E Gill Rd,Carp Lake,MI,49718-1818,372,0,0,1,0,2,0,1,0,0,0,4
+30501,Carson City - Crystal Hig,213 E Sherman St,Carson City,MI,48811,243,0,0,0,0,0,1,0,0,0,0,1
+31720,Cedar Lake Grocery,3448 N US 23,Greenbush,MI,48738-6610,484,0,0,4,0,1,0,0,0,0,0,5
+31734,Cedar Springs Beach Elem,204 E. Muskegon Street,Cedar Springs,MI,49319-0009,106,43,0,0,0,0,0,0,0,0,0,43
+31736,Cedar Springs ECC,204 E. Muskegon,Cedar Springs,MI,49319-0009,106,17,0,0,0,0,0,0,0,0,0,17
+31732,Cedar Springs Middle Sch,4873 16 Mile,Cedar Springs,MI,49319-0009,106,32,0,0,0,0,0,0,0,0,0,32
+31733,Cedar Springs Cedar View,204 E. Muskegon Street,Cedar Springs,MI,49319-0009,106,38,0,0,0,0,0,0,0,0,0,38
+31735,Cedar Springs CedarTrails,204 E. Muskegon Street,Cedar Springs,MI,49319-0009,106,35,0,0,0,0,0,0,0,0,0,35
+31731,Cedar Springs High School,204 E. Muskegon Street,Cedar Springs,MI,49319-0009,106,43,0,0,0,0,0,0,0,0,0,43
+31664,Central Montcalm Athle(KE,1480 Sheridan SW,Stanton,MI,48888-0009,765,0,0,0,0,0,6,0,0,0,0,6
+31661,Central Montcalm High (KE,1480 Sheridan SW,Stanton,MI,48888-0009,765,22,0,0,0,0,0,0,0,0,0,22
+31662,Central Montcalm Midd (KE,1480 Sheridan SW,Stanton,MI,48888-0009,765,20,0,0,0,1,0,0,0,0,0,21
+31665,Central Montcalm Sheridan,289 St Clair,Sheridan,MI,48884-0009,765,31,0,0,0,0,0,0,0,0,0,31
+31663,Central Montcalm Up Elem,1488 Sheridan SW,Stanton,MI,48888-0009,765,25,0,0,0,0,0,0,0,0,0,25
+30161,Chappel Dam Grocery,4001 Pratt Lake Road,Gladwin,MI,48624-1428,484,0,0,1,0,0,0,1,0,0,0,2
+30080,Cheema Pump & Pantry,2110 Evanston,Muskegon,MI,49442-2902,660,0,0,2,0,1,1,0,0,0,0,4
+32528,Cherry Hill Supermarket,424 N. State St.,Shelby,MI,49455-9738,662,0,0,14,0,6,4,3,0,0,0,27
+30676,Chillz Fort Wayne,5930A West Jefferson Blvd,Fort Wayne,IN,46962,890,0,0,2,0,0,0,0,0,0,0,2
+30970,Choco Mania Cafe,44621 Mound Rd,Sterling Heights,MI,48314,554,0,0,0,0,0,0,0,6,0,0,6
+30977,Choco Mania Cafe-Birmingh,280 E Merrill St,Birmingham,MI,48009,554,0,0,0,0,0,0,0,6,0,0,6
+32509,Cindy's Donuts And Ice Cr,4020 28th Street SE,Kentwood,MI,49512-4308,107,,0,0,0,0,5,0,0,0,0,5
+30733,Clem's Market,1196 Shetter Rd,Muskegon,MI,49444-2902,660,0,0,3,0,0,0,0,0,0,0,3
+30819,Colby's Cafe & Brew LLC,3311 E Colby St Ste A,Whitehall,MI,49461-2902,661,0,0,8,0,0,0,0,0,0,0,8
+30817,Coley Central Vending,1205 North Fancher Ave,Mt Pleasant,MI,48858-1818,481,0,0,0,0,0,24,0,0,0,0,24
+30285,Cone Palace,55 W 300 S,Kokomo,IN,46902,890,0,0,0,0,0,0,0,68,0,0,68
+190152,Conlee Oil - #8,12018 Liberty St.,Clio,MI,48420-1428,480,0,0,1,0,1,2,1,0,0,0,5
+30252,Conlee Oil - Birch Run,9180 Birch Run Rd.,Birch Run,MI,48415-1428,480,0,0,2,0,2,4,4,0,0,0,12
+30251,Conlee Oil - Clio,4514 W Viena R.,Clio,MI,48420-1428,480,0,0,3,0,4,5,6,0,0,0,18
+30256,Conlee Oil - Downtown Cli,815 S. Mill St.,Clio,MI,48420-1428,480,0,0,2,0,1,1,1,0,0,0,5
+30255,Conlee Oil - Montrose,110 State Rd.,Montrose,MI,48457-1428,480,0,0,1,0,0,1,0,0,0,0,2
+30254,Conlee Oil - Otisville,213 North State Rd.,Otisville,MI,48463-1428,480,0,0,2,0,2,2,1,0,0,0,7
+30395,Converse Big Dipper,104 S Jefferson St,Converse,IN,46919,890,0,0,0,0,0,0,0,3,0,0,3
+32564,Coopersville Creamery,303 Main Street,Coopersville,MI,49404,119,0,0,0,0,0,0,0,5,0,0,5
+31020,Coopersville Hgh Athl (KE,C/O ED Kaman,Coopersville,MI,49404-0009,119,0,0,5,0,0,0,0,0,0,0,5
+31161,Country Corner Market,2020 N. Mission Rd,Mt Pleasant,MI,48858-1818,481,0,0,2,0,1,2,0,0,0,0,5
+30181,Country Market,2236 Imlay City Rd,Lapeer,MI,48446-2902,1005,0,0,2,0,1,1,1,0,0,0,5
+31055,County Fair Store,415 W Main St,Hale,MI,48739,484,0,0,4,0,1,0,0,0,0,0,5
+30680,Creative Dining AO South,619 S Campus Dr,Lansing,MI,48917-1818,242,0,0,0,0,0,1,0,0,0,0,1
+30677,Creative Dining Serv-Auto,6101 Ana Capri Blvd,Lansing,MI,48917-1818,242,0,0,0,0,0,2,0,0,0,0,2
+30679,Creative Dining Serv-Jack,1 Corporate Way (JACKSON,Lansing,MI,48951-1818,242,0,0,0,0,0,4,0,0,0,0,4
+31157,Crossroads Market,800 S. Chipman,Owosso,MI,48867-2206,483,0,0,0,0,1,2,2,0,0,0,5
+31726,C-Store Portage,1800 W Milham Ave,Portage,MI,49024,101,0,0,4,0,1,1,1,0,0,0,7
+31390,Currie's BP,620 Maple,Big Rapids,MI,49307-2902,764,0,0,0,0,1,1,0,0,0,0,2
+40085,CV Kwik Mart LLC,3038 N Kings Highway,Luther,MI,49656-2902,766,0,0,2,0,1,1,1,0,0,0,5
+42674,D Ave Fuel Plaza,5118 West D Ave,Kalamazoo,MI,49001-2902,113,0,0,1,0,1,4,4,0,0,0,10
+40127,D&W 1591 Knapp Milk,2022 Apple Orchard Ave. NE,Grand Rapids,MI,49525-2206,106,,0,5,0,1,0,0,0,0,0,6
+42009,Daily Deals,1755 E Sherman Blvd,Muskegon,MI,49444,660,0,0,0,0,1,0,0,0,0,0,1
+42003,Daily Deals,740 Lamoreaux Dr,Comstock Park,MI,49321,103,0,0,0,0,2,0,0,0,0,0,2
+42006,Daily Deals,300 S Greenville W Dr,Greenville,MI,48838,765,0,0,0,0,2,0,0,0,0,0,2
+42007,Daily Deals,4965 Lake Michigan Dr,Allendale,MI,49401,119,0,0,0,0,4,0,0,0,0,0,4
+40228,Dairy Dayz (KEY # 45 ),6473 Blue Star Hwy,Saugatuck,MI,49451-4308,117,0,0,0,0,0,0,0,10,0,0,10
+40207,Dairy Hill,601 E. Ash,Mason,MI,48854-4308,242,0,0,0,0,0,0,0,10,0,0,10
+41600,Dairy Ranch (KEY #38 ),1717 142nd Ave,Dorr,MI,49323-4308,101,0,0,0,0,2,0,0,25,0,0,27
+41468,Dansville Gas and More,978 Jackson St,Dansville,MI,48819-2902,242,0,0,1,0,1,2,0,0,0,0,4
+40242,Dave's Party Store,408 Wood St,Hart,MI,49420-2902,662,0,0,6,0,1,2,1,0,0,0,10
+41837,Detroit Cookie Co. - Fern,23421 Woodward Ave.,Ferndale,MI,48220,552,0,0,0,0,0,2,0,0,0,0,2
+41833,Detroit Country Middle sc,22400 Hillview Land,Beverly Hills,MI,48005-7911,553,0,3,0,0,0,0,0,0,0,0,3
+41839,Detroit Country Village C,3003 Maple,Bloomfield Hills,MI,48301-7911,553,0,0,0,0,3,0,0,0,0,0,3
+200668,Dewitt Party Store,129 S Bridge Street,DeWitt,MI,48820-1818,243,0,0,3,0,2,2,0,0,0,0,7
+40086,"Diesel Man, Inc",4647 W Columbia Ave,Battle Creek,MI,49015,110,0,0,3,0,1,1,0,0,0,0,5
+41109,DJ's Bakery,3031 Packard St,Ann Arbor,MI,48108-4308,557,0,0,0,0,0,9,0,0,0,0,9
+42209,Doordash Grr-1 Wyoming,3685 Hagan Dr SE,Wyoming,MI,49548-2206,107,0,0,17,0,16,0,0,0,0,0,33
+42211,Doordash Kzo-1 Kalamazoo,1157 Bank St,Kalamazoo,MI,49901-2206,101,0,0,1,0,9,0,0,0,0,0,10
+42240,Dore Oil-Nester Creek #17,4971 E M55,Prescott,MI,48756-6610,484,0,0,4,0,2,4,4,0,0,0,14
+42233,Dore's Stores - Alger,2003 M-33,Alger,MI,48610-1428,484,0,0,0,0,1,1,3,0,0,0,5
+42230,Dore's Stores - Bay City,6183 West Side Saginaw Rd,Bay City,MI,48706-1428,482,,0,0,0,0,1,0,0,0,0,1
+42232,Dore's Stores - Bay City,510 N Tuscola,Bay City,MI,48708-1428,482,0,0,0,0,0,1,0,0,0,0,1
+42228,Dore's Stores - Kawkawlin,825 E Beaver Road,Kawkawlin,MI,48631-1428,484,0,0,1,0,1,1,1,0,0,0,4
+42229,Dore's Stores - Linwood,874 E Linwood Road,Linwood,MI,48634-1428,484,0,0,0,0,1,2,1,0,0,0,4
+42236,Dore's Stores - Omer,19 E US-23,Omer,MI,48749-1428,484,0,0,1,0,1,1,1,0,0,0,4
+42231,Dore's Stores - Standish,5353 M-61,Standish,MI,48658-1428,484,0,0,1,0,0,4,2,0,0,0,7
+42239,Dore's Stores - Tawas Cit,1250 US-23,Tawas City,MI,48763-1428,484,0,0,0,0,1,0,1,0,0,0,2
+42237,Dore's Stores - Whittemor,3013 S M-65,Whittemore,MI,48770-1428,484,0,0,3,0,0,2,1,0,0,0,6
+121948,Doris Klaussen Dev Center,408 Jameson St,Battle Creek,MI,49015-6522,110,19,0,0,0,0,0,0,0,0,0,19
+42440,Dumont Lake Party Store,2498 30th St,Allegan,MI,49010-2902,103,0,0,3,0,1,1,2,0,0,0,7
+42431,Dunes View Kwik Shop,6397 Blue Star Hwy,Saugatuck,MI,49453-2704,119,0,0,3,0,2,3,3,0,0,0,11
+42686,Dussel's Farm Market,21765 M-60,Cassopolis,MI,49031-2902,107,0,0,5,0,1,1,0,0,0,0,7
+51086,East Jackson Elementary,4340 Walz Rd,Jackson,MI,49201,245,60,0,0,0,0,0,0,0,0,0,60
+51087,East Jackson High School,1566 N Sutton Rd,Jackson,MI,49202,245,22,0,0,0,0,0,0,0,0,0,22
+50061,Eau Claire High School,7450 Hochberger,Eau Claire,MI,49111-0009,107,12,0,0,0,0,8,0,0,0,0,20
+50062,Eau Claire Lybrook Elem,6238 West Main,Eau Claire,MI,49111-0009,107,22,0,0,0,0,0,0,0,0,0,22
+50439,Economy Service,4700 Hudson Rd,Osseo,MI,49266-2206,245,0,0,5,0,0,3,2,0,0,0,10
+52219,Elsie Market,109 E. Main St.,Elsie,MI,48831-1818,240,0,0,0,0,1,1,1,0,0,0,3
+50001,Employee's,5850 Balsam Dr.,Hudsonville,MI,49426-0066,42,0,0,1,0,0,0,0,0,0,0,1
+232835,Exit 76 # 182 Westphalia,305 S Westphalia St,Westphalia,MI,48894,243,0,0,3,0,1,1,0,0,0,0,5
+232529,Exit 76 #146 The Lakes Ex,1196 E. Sternberg,Muskegon,MI,49444-2704,660,0,0,1,0,0,2,1,0,0,0,4
+232838,Exit 76 #166 Apple Island,7211 E Apple Ave,Muskegon,MI,49422,660,0,0,5,0,3,7,5,0,0,0,20
+232836,Exit 76 #181 Grand Ledge,10945 W Grand River Hwy,Grand Ledge,MI,48837,243,0,0,2,0,1,3,2,0,0,0,8
+10129,Exit 76 Allendale Quick,6209 Lake Michigan Dr,Allendale,MI,49401-8305,119,0,0,6,0,2,3,2,0,0,0,13
+50740,Exit 76 Alpine,1764 Alpine,Grand Rapids,MI,49504-2704,106,0,0,6,0,5,5,8,0,0,0,24
+232829,Exit 76 Burton Mobil #142,335 Burton St. SW,Grand Rapids,MI,49507-2704,114,,0,4,0,1,1,1,0,0,0,7
+232526,Exit 76 Ctryside*D Mobil,4842 Port Sheldon,Hudsonville,MI,49426-2704,663,0,0,8,0,3,7,2,0,0,0,20
+232534,Exit 76 Fallasburg Mobil,432 Lincoln Lake Ave SE,Lowell,MI,49331-2704,115,0,0,10,0,2,4,3,0,0,0,19
+50745,Exit 76 Kountry Korner,2977 W Remus Rd,Mt Pleasant,MI,48858-1818,481,0,0,4,0,1,5,4,0,0,0,14
+130570,Exit 76 Meadowbrook Mobil,4919 Town Center Dr SE,Grand Rapids,MI,49512-2704,107,0,0,0,0,1,4,4,0,0,0,9
+232831,Exit 76 Middleville,505 Town Center Drive,Middleville,MI,49333-2704,104,0,0,8,0,5,6,8,0,0,0,27
+232533,Exit 76 Noonday Market,1150 129th,Wayland,MI,49348-2704,113,0,0,5,0,1,4,5,0,0,0,15
+232834,Exit 76 Otsego #162,552 Lincoln Rd,Otsego,MI,49078-2704,113,0,0,4,0,2,5,2,0,0,0,13
+232833,Exit 76 Owosso #156,917 E Main St,Owosso,MI,48867-2704,483,0,0,4,0,4,8,10,0,0,0,26
+232832,Exit 76 Post Drive,1604 Post Dr NE,Belmont,MI,49306-2704,106,0,0,6,0,3,4,3,0,0,0,16
+190909,Exit 76 Shaver Rd #164,9950 Shaver Rd,Portage,MI,49024-2704,101,0,0,2,0,1,2,0,0,0,0,5
+220075,Exit 76 Valley VW *D Mobi,4200 32nd Ave,Hudsonville,MI,49426-2704,663,0,0,3,0,1,2,3,0,0,0,9
+50741,Exit 76 York Creek,4258 Alpine Ave,Comstock Park,MI,49321-2704,106,0,0,4,0,4,2,2,0,0,0,12
+50715,Exit 76-76th & 131 Dairy,460 - 76th St SW,Byron Center,MI,49315-8305,104,0,0,3,0,2,4,7,0,0,0,16
+50733,Exit 76-8th Ave,4461 8th Ave,Grandville,MI,49418-8305,104,0,0,5,0,1,2,2,0,0,0,10
+220087,Exit 76-Boyne City Marath,201 S Lake St,Boyne City,MI,49712,372,0,0,0,0,3,2,3,0,0,0,8
+50749,Exit 76-Byron Corner Mara,8391 Byron Center Ave SW,Byron Center,MI,49315-8305,104,0,0,2,0,0,1,1,0,0,0,4
+50732,Exit 76-Cadillac,2560 E Division,Cadillac,MI,49601-8305,766,0,0,5,0,2,4,3,0,0,0,14
+50725,Exit 76-Carriage Marathon,3010 E. Lake Lansing Rd,East Lansing,MI,48823-1818,244,0,0,2,0,1,0,1,0,0,0,4
+220078,Exit 76-Chalet Marathon,1041 W Main,Gaylord,MI,49735,371,0,0,2,0,0,7,0,0,0,0,9
+220077,Exit 76-Clare Marathon,10197 S Clare Ave,Clare,MI,48617,481,0,0,0,0,1,4,2,0,0,0,7
+50728,Exit 76-Clyde Park,4404 Clyde Park,Wyoming,MI,49509-8305,107,0,0,12,0,5,9,5,0,0,0,31
+52246,Exit 76-Coopersville,329 S 48th Ave,Coopersville,MI,49404-8305,119,0,0,11,0,8,10,11,0,0,0,40
+31762,Exit 76-Cottonwood,8407 Cottonwood,Jenison,MI,49428-8305,106,0,0,4,0,2,2,2,0,0,0,10
+50744,Exit 76-Dorr Truck Stop,1311 142nd Ave,Dorr,MI,49348-8305,113,0,0,3,0,0,5,5,0,0,0,13
+59003,Exit 76-East Lansing,1198 S. Harrison,East Lansing,MI,48823-1818,244,,0,1,0,1,1,1,0,0,0,4
+220088,Exit 76-Gaylord Marathon,605 S Otsego Ave,Gaylord,MI,49735,371,0,0,1,0,1,2,0,0,0,0,4
+31763,Exit 76-Georgetown #149,2271 Port Sheldon St,Jenison,MI,49428-8305,102,0,0,1,0,1,6,4,0,0,0,12
+50742,Exit 76-Gezon,5568 Byron Center Ave,Grand Rapids,MI,49509-8305,107,0,0,2,0,2,3,1,0,0,0,8
+220083,Exit 76-Grayling Marathon,601 N James St,Grayling,MI,49738,371,0,0,1,0,0,1,1,0,0,0,3
+81756,Exit 76-Hamilton Mobil Ma,3604 Lincoln Rd,Hamilton,MI,49419-8305,103,0,0,1,0,1,0,1,0,0,0,3
+52233,Exit 76-Hart #143,4220 W Polk Rd,Hart,MI,49420-8305,662,0,0,4,0,2,4,2,0,0,0,12
+220080,Exit 76-Hilltop Marathon,900 Marlette Rd,Waters,MI,49797,371,0,0,2,0,3,2,0,0,0,0,7
+130370,Exit 76-Howard City Mobil,580 West Shaw,Howard City,MI,49329-8305,765,0,0,1,0,1,1,0,0,0,0,3
+103214,Exit 76-Jenison Mobil,1991 Baldwin,Jenison,MI,49428-8305,114,0,0,3,0,0,1,0,0,0,0,4
+220084,Exit 76-Kalkaska Marathon,207 N Cedar St,Kalkaska,MI,49646,371,0,0,2,0,0,2,4,0,0,0,8
+50712,Exit 76-Laingsburg,201 W Grand River Rd,Laingsburg,MI,48848-1818,243,0,0,4,0,1,3,2,0,0,0,10
+120416,Exit 76-Lake Belle Vista,6485 Belding Rd,Rockford,MI,49341-8305,115,0,0,4,0,2,3,0,0,0,0,9
+220086,Exit 76-Lewiston Marathon,5021 County Rd 612,Lewiston,MI,49770,372,0,0,2,0,1,0,1,0,0,0,4
+50719,Exit 76-Lowell,4475 Alden NashAve,Lowell,MI,49331-8305,104,0,0,4,0,1,6,7,0,0,0,18
+130369,Exit 76-M 46 Truck Stop,19504 W. Edgar Rd,Howard City,MI,49329-8305,765,0,0,5,0,3,3,6,0,0,0,17
+50747,Exit 76-Mall View #150,293 84th Street,Byron Center,MI,49315-8305,104,0,0,2,0,1,2,0,0,0,0,5
+130533,Exit 76-Northern Springs,3620 14 Mile Rd,Rockford,MI,49341-8305,106,0,0,5,0,3,1,3,0,0,0,12
+150106,Exit 76-Oasis Mobil,9673 Adams St,Holland,MI,49423-8305,103,0,0,5,0,2,4,2,0,0,0,13
+59004,Exit 76-Olive Township,6363 136th St,Holland,MI,49424-8305,663,0,0,4,0,1,3,2,0,0,0,10
+160004,Exit 76-Park Township,1140 Ottawa Beach Rd,Holland,MI,49423-8305,115,0,0,6,0,3,1,1,0,0,0,11
+220085,Exit 76-Petoskey Marathon,411 W Mitchell St,Petoskey,MI,49646,372,0,0,3,0,1,2,2,0,0,0,8
+50724,Exit 76-Pierson,21774 W. Cannonsville,Pierson,MI,49339-8305,765,0,0,4,0,2,2,1,0,0,0,9
+50739,Exit 76-Pit Stop,2257 Chicago Dr,Wyoming,MI,49509-8305,108,0,0,1,0,1,2,1,0,0,0,5
+161392,Exit 76-Plainfield Mart I,2171 Plainfield,Grand Rapids,MI,49505-8305,106,0,0,3,0,2,2,2,0,0,0,9
+180971,Exit 76-Remembrance Quick,3434 Remembrance Rd,Grand Rapids,MI,49504-8305,114,0,0,5,0,3,2,2,0,0,0,12
+180976,Exit 76-Rockford Mobil Ma,8501 Algoma Rd,Rockford,MI,49341-8305,106,0,0,4,0,2,4,3,0,0,0,13
+50743,Exit 76-South Express #15,119 100th Street,Byron Center,MI,49315-8305,104,,0,8,0,3,10,5,0,0,0,26
+190913,Exit 76-Stanton Mobil,319 W Main,Stanton,MI,48888-8305,765,0,0,2,0,1,4,1,0,0,0,8
+220081,Exit 76-Stony Hill Marath,1298 m-32 E,Gaylord,MI,49735,371,0,0,4,0,0,2,0,0,0,0,6
+190914,Exit 76-Sunnybrook,4380 Kenowa SW,Grandville,MI,49418-8305,102,0,0,2,0,2,3,1,0,0,0,8
+50748,Exit 76-Tulip City Truck,4360 Lincoln Rd,Holland,MI,49423-8305,103,0,0,1,0,1,2,4,0,0,0,8
+52234,Exit 76-Twin Lake#144,5536 Holton Rd,Twin Lake,MI,49457-8305,662,0,0,7,0,2,3,5,0,0,0,17
+230625,Exit 76-Walker Quik Mart,1229 Walker NW,Grand Rapids,MI,49504-8305,114,0,0,8,0,3,3,4,0,0,0,18
+230628,Exit 76-Walker View Dairy,3360 Walker Ave,Grand Rapids,MI,49544-8305,106,0,0,3,0,2,7,6,0,0,0,18
+230651,Exit 76-Westshore Milk,12575 Riley St,Holland,MI,49424-8305,115,0,0,4,0,3,5,6,0,0,0,18
+50730,Exit 76-Wilson I/C,6066 Wilson Ave,Wyoming,MI,49519-8305,107,0,0,4,0,2,4,3,0,0,0,13
+232523,Exit 76-Windmill Mobil,1122 Lincoln,Holland,MI,49423-8305,115,0,0,4,0,3,5,2,0,0,0,14
+30413,Exit76-Cedar Rock,11800 Northland Drive,Rockford,MI,49341-8305,106,0,0,9,0,2,9,4,0,0,0,24
+232527,Express Mart - Ludington,5587 W US 10,Ludington,MI,49431-2902,661,0,0,2,0,1,1,1,0,0,0,5
+11403,Express Stop #4638,8830 Main St,Birch Run,MI,48415-2902,480,0,0,1,0,0,2,0,0,0,0,3
+11404,Express Stop #4639,56 North Tuscola,Bay City,MI,48708-2902,482,0,0,1,0,0,1,1,0,0,0,3
+11406,Express Stop #4641,105 West Saginaw,Merrill,MI,48744-2902,483,0,0,1,0,1,2,3,0,0,0,7
+11409,Express Stop #4644,520 Pinconning Rd,Pinconning,MI,48650-2902,484,0,0,2,0,0,2,1,0,0,0,5
+11412,Express Stop #4647,3670 East Washington Ave,Saginaw,MI,48601-2902,482,0,0,2,0,1,2,0,0,0,0,5
+11413,Express Stop #4648,4480 State St,Saginaw,MI,48603-2902,482,0,0,1,0,1,1,2,0,0,0,5
+11426,Express Stop #4659,9050 M-52,Manchester,MI,48158-2902,245,0,0,2,0,1,2,0,0,0,0,5
+11428,Express Stop #4661,110 South Jackson St,Hanover,MI,49241-2902,245,0,0,1,0,1,2,4,0,0,0,8
+11431,Express Stop #4664,4749 Knowles Rd,North Adams,MI,49262-2902,245,0,0,1,0,0,1,2,0,0,0,4
+11435,Express Stop #4668,4610 South M-52,Stockbridge,MI,49285-2902,242,0,0,1,0,1,2,1,0,0,0,5
+11437,Express Stop #4671,6553 Main St,Cass City,MI,48726-2902,480,0,0,1,0,0,3,0,0,0,0,4
+11441,Express Stop #4675,366 E North Territorial Rd,Whitmore Lake,MI,48189-2902,557,0,0,1,0,1,2,0,0,0,0,4
+11442,Express Stop #4676,1601 W Morrell St,Jackson,MI,49203-2902,245,,0,1,0,0,3,0,0,0,0,4
+11448,Express Stop #4682,4200 West Dickman Rd,Battle Creek,MI,49037-2902,110,0,0,1,0,0,2,2,0,0,0,5
+11451,Express Stop #4685,170 Capital Ave SW,Battle Creek,MI,49015-2902,110,0,0,2,0,0,2,1,0,0,0,5
+11452,Express Stop #4686,5195 Beckley Rd,Battle Creek,MI,49015-2902,110,0,0,0,0,2,1,0,0,0,0,3
+11453,Express Stop #4687,26778 M-43 Hwy,Paw Paw,MI,49079-2902,101,0,0,1,0,1,2,0,0,0,0,4
+11454,Express Stop #4688,737 Capital Ave SW,Battle Creek,MI,49015-2902,110,0,0,1,0,1,3,0,0,0,0,5
+60030,Fabianos Westside Grocery,751 W. Grand River,Portland,MI,48875-1320,243,0,0,0,0,1,2,2,0,0,0,5
+60044,Fairview Food Mart IC,1508 N. Abbe Road,Fairview,MI,48621-6610,372,0,0,0,0,1,0,2,0,0,0,3
+60043,Fairview Food Mart MILK,1508 N. Abbe Road,Fairview,MI,48621-6610,372,0,0,27,0,6,0,1,0,0,0,34
+60732,Family Fare CD-137 Allend,6380 Lake Michigan Dr,Allendale,MI,49401-2206,119,0,0,9,0,4,0,0,0,0,0,13
+60777,Family Fare CD-239 George,6480 - 28th Ave,Hudsonville,MI,49426-2206,102,0,0,6,0,3,0,0,0,0,0,9
+50876,Fastlane - Akron #170,6472 M 25,Akron,MI,48701-2902,482,0,0,3,0,0,2,1,0,0,0,6
+50812,Fastlane - Brighton #15,602 Grand River Ave,Brighton,MI,48116-3080,242,0,0,2,0,1,3,3,0,0,0,9
+50874,Fastlane - Chesaning #111,15815 South Oakley,Chesaning,MI,48616-2902,483,0,0,3,0,3,4,0,0,0,0,10
+50878,Fastlane - Jackson #173,6206 Rives Junction,Jackson,MI,49201,245,0,0,2,0,1,2,1,0,0,0,6
+50870,Fastlane- Litchfield #16,159 Marshall St,Litchfield,MI,49252-3080,245,0,0,2,0,0,4,2,0,0,0,8
+50871,Fastlane - Mason #144,551 West Columbia St,Mason,MI,48854-2902,242,0,0,0,0,1,2,1,0,0,0,4
+50872,Fastlane - Mt. Morris #13,8010 North Dort Hwy,Mt Morris,MI,48458-2902,480,0,0,3,0,0,1,2,0,0,0,6
+50879,Fastlane - Parma,2428 N Dearing Rd,Parma,MI,49269,245,0,0,2,0,2,3,2,0,0,0,9
+50873,Fastlane - Saginaw #113,3540 State St,Saginaw,MI,48602-2902,482,0,0,1,0,1,1,0,0,0,0,3
+60391,Fate's Mecosta Mini Mart,198 E Main Street,Mecosta,MI,49332,764,,0,9,0,1,2,2,0,0,0,14
+60390,Fate's Mini Mart,100 W Wheatland,Remus,MI,49340,764,0,0,3,0,1,4,1,0,0,0,9
+60500,Fennville High Sch (KEY #,5 North Memorial Dr,Fennville,MI,49408-0009,119,21,0,0,0,0,0,0,0,0,0,21
+60501,Fennville Middle (KEY #14,1 North Memorial Dr,Fennville,MI,49408-0009,119,14,0,0,0,0,0,0,0,0,0,14
+60000,Fick's Market Sunoco,2490 N. Elba Rd,Lapeer,MI,48446-2902,1005,0,0,0,0,2,2,1,0,0,0,5
+60011,Fireside Coffee Co.,3239 Elms Road,Swartz Creek,MI,48473,241,0,0,3,0,0,0,0,0,0,0,3
+61373,Fleck's Fresh Mart #180,415 S Main Street,Standish,MI,48658-6610,484,0,0,0,0,1,2,1,0,0,0,4
+132120,Flem Marathon Bloomingdal,111 E Kalamazoo,Bloomingdale,MI,49026-2902,113,0,0,3,0,0,2,1,0,0,0,6
+132121,Flem Marathon S Haven,1076 Phoenix Street,South Haven,MI,49090-2902,119,0,0,1,0,2,2,1,0,0,0,6
+132126,Flem Marathon Stevens,4108 Red Arrow Hwy,Stevensville,MI,49127-2902,117,0,0,1,0,0,1,1,0,0,0,3
+192120,Flem Shell Allegan,458 Water Street,Allegan,MI,49010-2902,103,0,0,1,0,1,1,1,0,0,0,4
+192121,Flem Shell Bangor,109 Monroe Street,Bangor,MI,49013-2902,113,0,0,4,0,1,4,4,0,0,0,13
+192126,Flem Shell Fennville,2398 68th Street,Fennville,MI,49408-2902,119,0,0,2,0,1,1,2,0,0,0,6
+192123,Flem Shell Fennville,202 West Main Street,Fennville,MI,49408-2902,119,0,0,8,0,2,4,4,0,0,0,18
+192124,Flem Shell Gobles,101 North State Street,Gobles,MI,49055-2902,113,0,0,2,0,2,4,2,0,0,0,10
+192128,Flem Shell Mattawan,54312 N. Main Street,Mattawan,MI,49071-2902,101,0,0,0,0,1,3,3,0,0,0,7
+132124,Flem Shell Milburg,4781 Territorial Road,Benton Harbor,MI,49022-2902,107,0,0,3,0,1,2,2,0,0,0,8
+132127,Flem Shell Riv Coloma,3468 Coloma Road,Coloma,MI,49022-2902,107,0,0,4,0,3,2,4,0,0,0,13
+192129,Flem Shell S Haven,1551 Phoenix Street,South Haven,MI,49090-2902,119,0,0,4,0,2,2,2,0,0,0,10
+192122,Flem Shell Saugatuck,6380 Blue Star Hwy,Saugatuck,MI,49453-2902,119,0,0,2,0,2,4,2,0,0,0,10
+192130,Flem Shell South Haven,469 Broadway Street,South Haven,MI,49090-2902,119,0,0,3,0,1,2,2,0,0,0,8
+132125,Flem Shell St Joe,2600 Niles Road,St Joseph,MI,49085-2902,117,0,0,3,0,1,2,2,0,0,0,8
+192127,Flem Shell Tr St S Haven,13781 M 140,South Haven,MI,49090-2902,119,0,0,3,0,1,4,1,0,0,0,9
+60105,Flushing Central Elem,525 Coutant St,Flushing,MI,48433-6610,483,40,0,0,0,0,0,0,0,0,0,40
+60106,Flushing ECC,409 Chamberlain St,Flushing,MI,48433-6610,483,46,0,0,0,0,0,0,0,0,0,46
+60107,Flushing Elms Elem,6125 N. Elms Rd,Flushing,MI,48433-6610,483,30,0,0,0,0,0,0,0,0,0,30
+60103,Flushing High,5039 Deland Rd,Flushing,MI,48433-6610,483,44,0,0,0,0,0,0,0,0,0,44
+60104,Flushing Middle,8100 W. Carpenter Rd,Flushing,MI,48433-6610,483,25,0,0,0,0,0,0,0,0,0,25
+60108,Flushing Seymour Elem,3088 N. Seymour Rd,Flushing,MI,48433-6610,483,20,0,0,0,0,0,0,0,0,0,20
+60109,Flushing Springview Elem,1233 Springview,Flushing,MI,48433-6610,483,31,0,0,0,0,0,0,0,0,0,31
+60970,Forest Hills Dairy,4668 Cascade Rd SE,Grand Rapids,MI,49546-2206,115,0,0,26,0,4,0,4,0,0,0,34
+192016,Fountain Market,4931 N. Cleveland St.,Fountain,MI,49410-2902,661,0,0,9,0,1,2,4,0,0,0,16
+60018,Fox Lake General Store,220 Kenwood,Twin Lake,MI,49457-2902,662,0,0,2,0,0,0,0,0,0,0,2
+60291,Frankfort Milky Way Inc.,750 Washington Ave,Frankfort,IN,46041,890,0,0,0,0,0,0,0,5,0,0,5
+20970,Frank's Market,1118 Washington St.,Grand Haven,MI,49417-2902,660,0,0,2,0,1,1,0,0,0,0,4
+60314,Freel's Market,1139 W Lake Street,Tawas,MI,48763-6610,484,0,0,0,0,1,1,1,0,0,0,3
+60290,Fremont Christian School,208 Hillcrest Drive,Fremont,MI,49412-0009,764,4,0,0,0,0,0,0,0,0,0,4
+60285,Fremont Daisy Brook Eleme,502 N Division Ave,Fremont,MI,49412-6522,764,20,0,0,0,0,0,0,0,0,0,20
+60282,Fremont High School,5421 S Warner Ave,Fremont,MI,49412-6522,764,41,0,0,0,0,0,0,0,0,0,41
+60283,Fremont Middle School,500 Woodrow St,Fremont,MI,49412-6522,764,27,0,0,0,0,0,0,0,0,0,27
+60286,Fremont Pathfinder Elemen,109 W 44th St,Fremont,MI,49412-6522,764,27,0,0,0,0,0,0,0,0,0,27
+61940,Frosty Boy GR (KEY #78 ),1757 Plainfield Ave,Grand Rapids,MI,49505-0011,106,0,0,0,0,0,0,0,26,0,0,26
+62590,Frye's Gas & Grocery LLC,208 Pine Street,McBain,MI,49657-2902,766,0,0,5,0,0,2,0,0,0,0,7
+70426,Gene's Family Market - Gr,33 E. State Rd.,Grant,MI,49337-2206,103,0,0,9,0,2,2,2,0,0,0,15
+70429,Gene's Family Market - Ne,7303 S. Croton Hardy Dr.,Newaygo,MI,49327-2206,103,0,0,2,0,3,0,2,0,0,0,7
+71458,Good Time Donut,214 E 8th St.,Holland,MI,49423,42,0,0,0,0,0,4,0,0,0,0,4
+71595,Gordonville Company Inc.,1563 S Meridian Rd,Midland,MI,48640-6610,481,0,0,5,0,1,2,4,0,0,0,12
+191025,Grand Rapids ChristianEve,1630 Griggs SE,Grand Rapids,MI,49506-6522,108,0,0,1,0,0,0,0,0,0,0,1
+71123,Grant Elementary (KEY #96,160 E State Street,Grant,MI,49327,103,20,0,0,0,0,0,0,0,0,0,20
+71121,Grant High School (KEY #9,331 E State Street,Grant,MI,49327,103,13,0,0,0,0,0,0,0,0,0,13
+71501,Grant Liquor LLC,12633 Mason Dr,Grant,MI,49327,103,0,0,3,0,1,1,1,0,0,0,6
+71124,Grant Middle School (KEY,96 E 120th Street,Grant,MI,49327,103,11,0,0,0,0,0,0,0,0,0,11
+71125,Grant Primary Center,103 S Elder,Grant,MI,49327,103,14,0,0,0,0,0,0,0,0,0,14
+70335,Great Lakes Ice Cream Co.,901 E. Ashman,Midland,MI,48642-6610,481,0,0,1,0,0,0,0,25,0,0,26
+82635,Hamilton Food Center #352,3416 M-40,Hamilton,MI,49419,103,0,0,0,0,0,0,6,0,0,0,6
+82670,Hansen's,3750 W. Polk Rd.,Hart,MI,49420-8305,662,0,0,57,0,29,5,9,0,0,0,100
+180593,Hansens Quick Stop - 15,8998 E. M 21,Ovid,MI,48866-1818,240,0,0,2,0,2,4,2,0,0,0,10
+180591,Hansens Quick Stop -16,709 W. State St.,Saint Johns,MI,48879-1818,243,0,0,3,0,0,4,4,0,0,0,11
+82669,"Hanson's Party Store, Inc",19585 30th Ave,Barryton,MI,49305-2902,764,0,0,0,0,2,4,5,0,0,0,11
+80037,Haslett HM Murphy Kids Co,1875 Lake Lansing Rd,Haslett,MI,48840-9613,244,0,0,0,0,1,0,0,0,0,0,1
+80042,Haslett Ralya Elem KidsCo,5645 School,Haslett,MI,48840-9613,244,0,0,0,0,1,0,0,0,0,0,1
+80045,Haslett Wilkshire Kids Co,5750 Academic Hwy,Haslett,MI,48840-9613,244,,0,0,0,1,0,0,0,0,0,1
+82784,Heidi's Market,5522 North State,Davison,MI,48423-2902,1005,0,0,0,0,1,1,1,0,0,0,3
+81104,Herald's Dairy Delight,220 E Main st,Carson City,MI,48811-0011,243,0,0,0,0,0,0,0,15,0,0,15
+81146,Hersey Party Store,640 N. Main St.,Hersey,MI,49639-2902,764,0,0,4,0,3,1,1,0,0,0,9
+160136,Hesperia Sunoco,309 S. Divison,Hesperia,MI,49421-2902,662,0,0,3,0,1,1,1,0,0,0,6
+82054,Hill Top Food & Fuel Mobi,1612 142nd Ave,Dorr,MI,49323-2902,113,0,0,0,0,0,1,1,0,0,0,2
+80090,Hilltop Party Store,12402-A Highland Rd,Hartland,MI,48353-3080,557,0,0,2,0,1,0,0,0,0,0,3
+80089,Hilltop Soda Shoppe,7117 South St,Benzonia,MI,49616-1818,766,0,0,3,0,0,0,0,8,0,0,11
+80120,Holland Christian High Sc,950 Ottawa Ave,Holland,MI,49423-9613,116,0,0,0,0,0,5,0,0,0,0,5
+82268,Holton Stop 'n' Shop,8545 Holton Rd.,Holton,MI,49425-2902,662,0,0,2,0,0,1,1,0,0,0,4
+80306,Home Town General Store,7906 N Welling Rd,Eureka,MI,48833,240,0,0,0,0,1,2,0,0,0,0,3
+132851,Hometown Creamery,292 Western Ave Suite 101,Muskegon,MI,49440-0011,660,0,0,0,0,0,0,0,3,0,0,3
+191175,Horrock's,4455 Breton Rd. SE,Kentwood,MI,49508-2206,107,0,0,0,0,2,2,3,0,0,0,7
+81020,Hubbardston Market,131 Washington Street,Hubbardston,MI,48845-2206,243,0,0,0,0,0,0,1,0,0,0,1
+81027,Hudson Gas & Food - Madis,2763 Madison SE,Grand Rapids,MI,49546-2902,102,0,0,3,0,1,1,1,0,0,0,6
+82748,Hudsonville ECC,5535 School Ave,Hudsonville,MI,49426-0009,105,0,0,1,0,0,0,0,0,0,0,1
+82739,Hudsonville 5/6Bldg@Georg,8175 36th Ave,Hudsonville,MI,49426,105,28,0,0,0,0,0,0,0,0,0,28
+82726,Hudsonville Alward Elem,3811 Port Sheldon,Hudsonville,MI,49426-9613,105,27,0,0,0,0,0,0,0,0,0,27
+82725,Hudsonville Baldwin Middl,3835 Baldwin,Hudsonville,MI,49426-9613,105,23,0,0,0,0,0,0,0,0,0,23
+82727,Hudsonville Bauer Elem,8136 48th Ave,Hudsonville,MI,49426-9613,105,16,0,0,0,0,0,0,0,0,0,16
+81036,Hudsonville Chris-Element,3435 Oak Street,Hudsonville,MI,49426-9613,105,14,0,0,0,0,0,0,0,0,0,14
+82728,Hudsonville Forest Grove,1645 32nd Ave,Hudsonville,MI,49426-9613,105,13,0,0,0,0,0,0,0,0,0,13
+82723,Hudsonville Freshman Camp,3370 Allen Street,Hudsonville,MI,49426-9613,105,30,0,0,0,0,0,0,0,0,0,30
+81031,Hudsonville Gas & Food Da,4554 32nd Ave.,Hudsonville,MI,49426-2902,102,,0,1,0,0,1,1,0,0,0,3
+82729,Hudsonville Georgetown El,3909 Baldwin,Hudsonville,MI,49426-9613,105,27,0,0,0,0,0,0,0,0,0,27
+82738,Hudsonville HS Athletics,3370 Allen Street,Hudsonville,MI,49426-1320,105,0,0,0,0,0,8,0,0,0,0,8
+82732,Hudsonville Jamestown Low,2522 Greenly,Hudsonville,MI,49426-9613,105,19,0,0,0,0,0,0,0,0,0,19
+82730,Hudsonville Jamestown Upp,3291 Lincoln Ct,Hudsonville,MI,49426-9613,105,15,0,0,0,0,0,0,0,0,0,15
+82731,Hudsonville Park Elementa,5525 Park Ave,Hudsonville,MI,49426-9613,105,20,0,0,0,0,0,0,0,0,0,20
+82724,Hudsonville Riley Middle,2745 Riley Street,Hudsonville,MI,49426-9613,105,19,0,0,0,0,0,0,0,0,0,19
+82722,Hudsonville Senior High,5037 32nd Ave,Hudsonville,MI,49426-9613,105,43,0,0,0,0,0,0,0,0,0,43
+82733,Hudsonville South Element,4900 40th Ave,Hudsonville,MI,49426-9613,105,19,0,0,0,0,0,0,0,0,0,19
+90340,"Ice Cream Garage, Inc.(KE",4010 Lake Michigan Drive,Walker,MI,49534-4525,106,0,0,0,0,0,0,0,1,0,0,1
+90729,Idle Spur Market,5010 Lum Rd,Lum,MI,48412-4525,1005,0,0,1,0,0,0,0,0,0,0,1
+90799,Independent Dairy - Monro,126 N. Telegraph,Monroe,MI,48162-3080,1002,0,0,3,0,2,0,0,0,0,0,5
+90867,Insomnia Cookies 11 LLC,1229 South University Ave,Ann Arbor,MI,48104-4525,557,0,0,0,0,0,4,0,0,0,0,4
+90871,Insomnia Cookies 27 LLC,2905 Howard Street,Kalamazoo,MI,49006-4525,101,0,0,0,0,0,3,0,0,0,0,3
+90875,Insomnia Cookies 278 LLC,1218 Walton Blvd,Rochester Hills,MI,48307-1428,554,0,0,0,0,0,3,0,0,0,0,3
+90873,Insomnia Cookies 30 LLC,733 West Cross Street,Ypsilanti,MI,48197-4525,557,0,0,0,0,0,3,0,0,0,0,3
+90872,Insomnia Cookies 39 LLC,1620 S Mission Street,Mt Pleasant,MI,48858-4525,481,0,0,0,0,0,4,0,0,0,0,4
+90260,Iorio's - Kentwood,4455 Breton Rd SE,Kentwood,MI,49508-4525,107,0,0,0,0,0,0,0,6,0,0,6
+90262,Iorio's - Manchester,455 W Main Street,Manchester,MI,49508-4525,245,0,0,0,0,0,0,0,24,0,0,24
+90259,Iorio's Horrocks - Lansin,7420 W Saginaw Hwy,Lansing,MI,48917-4525,243,0,0,0,0,0,0,0,8,0,0,8
+100703,Jacks Corner Store,6330 Holton Rd,Twin Lake,MI,49457-8305,661,0,0,8,0,4,3,4,0,0,0,19
+100700,Jacks Corner Store Dairy,4190 Grand Haven Rd,Muskegon,MI,49441-8305,660,0,0,2,0,1,2,3,0,0,0,8
+100715,Jacksonville Party Store,987 M-55,West Branch,MI,48661-6610,484,0,0,1,0,1,1,0,0,0,0,3
+101863,Jenison Bauerwood Element,1443 Bauer,Jenison,MI,49428-9613,104,25,0,0,0,0,0,0,0,0,0,25
+101864,Jenison Bursley Elementar,1195 Port Sheldon,Jenison,MI,49428-9613,104,27,0,0,0,0,0,0,0,0,0,27
+101868,Jenison ECC,2950 Baldwin Street,Jenison,MI,49428-9613,104,14,0,0,0,0,0,0,0,0,0,14
+101871,Jenison El Puente,2950 Baldwin St,Jenison,MI,49428-9613,104,22,0,0,0,0,0,0,0,0,0,22
+101861,Jenison High/Central Kit,2140 Bauer Road,Jenison,MI,49428-9613,104,52,0,0,0,0,0,0,0,0,0,52
+101873,Jenison Innovation Academ,800 Connie Street,Jenison,MI,49428-9613,104,3,0,0,0,0,0,0,0,0,0,3
+101862,Jenison Jr High,8295 20th Avenue,Jenison,MI,49428-9613,104,34,0,0,0,0,0,0,0,0,0,34
+101865,Jenison Pinewood Elementa,2405 Chippewa,Jenison,MI,49428-9613,104,14,0,0,0,0,0,0,0,0,0,14
+101866,Jenison Rosewood Elementa,2370 Tyler Street,Jenison,MI,49428-9613,104,26,0,0,0,0,0,0,0,0,0,26
+101867,Jenison Sandy Hill Elemen,1990 Baldwin,Jenison,MI,49428-9613,104,21,0,0,0,0,0,0,0,0,0,21
+101843,Jerry's Dairy Freezer,101 E Jackson,Parker City,IN,47368,890,0,0,0,0,0,0,0,10,0,0,10
+100881,Joe's Market,8406 Judevine Rd,Palo,MI,48870-2902,104,0,0,3,0,2,3,2,0,0,0,10
+100896,John's Market (Mega Corp),6044 Main St.,Twin Lake,MI,49457-2902,662,0,0,1,0,1,0,0,0,0,0,2
+112029,K & S Vending Services,50792 CR 652,Mattawan,MI,49071,101,0,0,0,0,0,152,0,0,0,0,152
+103050,Kelloggs Bridge Grocery,9439 E North Down River Rd,Grayling,MI,49738-6610,371,0,0,2,0,1,0,1,0,0,0,4
+103051,Kelly's Party Store,515 N. Huron Rd,Au Gres,MI,48703-1695,484,,0,1,0,0,0,1,0,0,0,2
+110447,Keys - Covenant House Cen,2959 Martin Luther King Blvd,Detroit,MI,48208-7911,1009,0,0,0,0,0,7,0,0,0,0,7
+120111,Keys - Loyola High School,15325 Pinehurst,Detroit,MI,48238-9613,1005,0,0,0,0,0,5,0,0,0,0,5
+110795,Kingma's Market Dairy,2225 Plainfield NE,Grand Rapids,MI,49505-2528,106,0,0,35,0,11,0,3,0,0,0,49
+112782,Kwik Mart,330 E. Maint St.,Walkerville,MI,49459-2528,662,0,0,4,0,1,0,0,0,0,0,5
+119811,La Londes Market,4007 Jefferson Ave,Midland,MI,48624-1695,481,0,0,10,0,3,1,3,0,0,0,17
+120385,La Tapatia,1546 Clyde Park,Wyoming,MI,49509-2528,102,0,0,0,0,2,0,0,0,0,0,2
+119812,Laingsburg Sunoco,9978 Round Lake Rd,Laingsburg,MI,48848-1818,243,0,0,2,0,1,0,3,0,0,0,6
+119830,Lake Fenton Devils Den St,4070 Lahring Rd,Fenton,MI,48451,241,0,0,2,0,0,0,0,0,0,0,2
+121319,Lake General Store,9300 School St,Lake,MI,48632-1695,764,0,0,6,0,3,1,2,0,0,0,12
+120081,Lakeshore High School,5771 Cleveland,Stevensville,MI,49127-9613,117,37,0,0,0,0,0,0,0,0,0,37
+120083,Lakeshore Hollywood Elem,143 E John Beers Rd,Stevensville,MI,49127-9613,117,8,0,0,0,0,0,0,0,0,0,8
+120071,Lakeshore Little People,821 Ottawa Avenue,Holland,MI,49423-9613,116,0,0,0,0,1,0,0,0,0,0,1
+120082,Lakeshore Middle School,1459 W John Beers Rd,Stevensville,MI,49127-9613,117,35,0,0,0,0,0,0,0,0,0,35
+120084,Lakeshore Roosevelt Eleme,5550 Dennis,Stevensville,MI,49127-9613,117,29,0,0,0,0,0,0,0,0,0,29
+120085,Lakeshore Stewart Element,2750 Orchard,Stevensville,MI,49127-9613,117,26,0,0,0,0,0,0,0,0,0,26
+121941,Lakeview High School,15060 S. Helmer Rd,Battle Creek,MI,49015-9613,110,68,0,0,0,0,0,0,0,0,0,68
+121942,Lakeview Middle School,300 S. 28th Street,Battle Creek,MI,49015-9613,110,71,0,0,0,0,0,0,0,0,0,71
+121946,Lakeview Minges Brook Ele,435 Lincoln Hill Dr,Battle Creek,MI,49015-9613,110,31,0,0,0,0,0,0,0,0,0,31
+121944,Lakeview Prairieview Elem,1675 Iroquois Ave,Battle Creek,MI,49015-9613,110,24,0,0,0,0,0,0,0,0,0,24
+121945,Lakeview Riverside Elem,650 Riverside Dr,Battle Creek,MI,49015-9613,110,29,0,0,0,0,0,0,0,0,0,29
+121947,Lakeview St Joseph Cathol,63 24th Street North,Battle Creek,MI,49015-9613,110,5,0,0,0,0,0,0,0,0,0,5
+121949,Lakeview St. Mark's Dayca,114 East Minges Road,Battle Creek,MI,49015-9613,110,0,0,0,0,0,3,0,0,0,0,3
+121943,Lakeview Westlake Elem,1184 South 24th Street,Battle Creek,MI,49015-9613,110,23,0,0,0,0,0,0,0,0,0,23
+120816,Lakewood Quick stop,184 East Kentwood,Twin Lake,MI,49457-2528,662,0,0,5,0,1,2,1,0,0,0,9
+120381,Larkin Food Center,4350 N Eastman Rd,Midland,MI,48642-6610,481,0,0,0,0,0,2,0,0,0,0,2
+121316,Laurels of Carson City,620 N Second St,Carson City,MI,48811-2206,243,0,0,6,0,0,0,0,0,0,0,6
+121315,Laurels of Hudsonville,3650 Van Buren St,Hudsonville,MI,49426,663,0,0,6,0,0,0,0,0,0,0,6
+123106,Lawton High School,68443 29th St,Lawton,MI,49065-0009,113,0,0,0,0,0,1,0,0,0,0,1
+121013,Leonard & Walker Amoco Mi,1639 W. Leonard,Grand Rapids,MI,49504-2528,114,0,0,2,0,1,1,1,0,0,0,5
+122038,Leslie High School,4141 Hull Rd,Leslie,MI,49251-9613,245,0,0,0,0,0,2,0,0,0,0,2
+120397,Little Plaza Supermarket,2424 S. Division,Grand Rapids,MI,49507-2528,102,0,0,0,0,5,0,0,0,0,0,5
+120100,Lower Hamlin Grocery,3611 N Jebavy Rd.,Ludington,MI,49431-8514,661,,0,0,0,1,0,0,0,0,0,1
+119998,Lucky's Downtown I/C,24 S. Division,Grand Rapids,MI,49503-8514,114,0,0,0,0,0,2,0,0,0,0,2
+120157,Ludington Elementary,5771 W Bryant Rd,Ludington,MI,49431-8305,661,66,0,0,0,0,0,0,0,0,0,66
+120151,Ludington High School,508 N Washington Ave,Ludington,MI,49431-9613,661,18,0,0,0,0,0,0,0,0,0,18
+120152,Ludington OJ De Jonge Mid,706 E Tinkam Ave,Ludington,MI,49431-8305,661,9,0,0,0,0,0,0,0,0,0,9
+123119,Luke's Market,8856 Unionville Rd.,Sebewaing,MI,48759-9725,482,0,0,16,0,0,0,3,0,0,0,19
+121208,Lyon Street Cafe,617 Lyon Street NE,Grand Rapids,MI,49503-8514,114,0,0,17,0,0,0,0,0,0,0,17
+90348,M&A Mobil,3700 Chicago Dr.,Hudsonville,MI,49426-8514,663,0,0,0,0,1,1,0,0,0,0,2
+130008,M-45 Market Express,4773 Lake Michigan Dr,Allendale,MI,49401-8514,119,0,0,10,0,3,4,3,0,0,0,20
+132388,"M-50 Party Store, Inc.",4050 E. Clinton Trail,Charlotte,MI,48813-8514,245,0,0,5,0,2,1,0,0,0,0,8
+130004,M-55 Market,17275 Caberfae Hwy,Wellston,MI,49689-8514,766,0,0,2,0,1,0,1,0,0,0,4
+130770,Mac's Farm Market,6738 N Academy Road,Edmore,MI,48829,765,0,0,2,0,1,0,0,0,0,0,3
+131850,Magoo & Co. (Sunoco),32140 M-40,Paw Paw,MI,49071-8514,113,0,0,4,0,0,1,1,0,0,0,6
+131874,Main Street C Store LLC,3440 Main St.,Deckerville,MI,48427-1695,480,0,0,3,0,1,2,4,0,0,0,10
+130782,Mangat Kwik Stop LLC,792 S. Angola Rd.,Coldwater,MI,49036-8514,891,0,0,1,0,1,1,1,0,0,0,4
+130793,Mantke's Mini Mart,60893 M-51,Dowagiac,MI,49047-8514,107,0,0,3,0,1,0,0,0,0,0,4
+130714,Maple Island Marathon,831 Maple Island,Muskegon,MI,49442,660,0,0,0,0,1,1,1,0,0,0,3
+131894,Maple Valley Market,106 W. Second St.,Trufant,MI,49347-8514,765,0,0,3,0,2,0,1,0,0,0,6
+130349,"Marge's Donut Den, Inc.",1751 28th St SW,Wyoming,MI,49519,108,0,0,0,0,0,4,0,0,0,0,4
+180608,Martha's Quick Stop #24,8464 Mt Morris Rd,Flushing,MI,48433,483,0,0,2,0,2,4,5,0,0,0,13
+130454,Martha's Vineyard,200 Union NE,Grand Rapids,MI,49503-8514,114,0,0,8,0,5,1,1,0,0,0,15
+130500,Mary's Kountry Korner,2005 N Melita Rd,Sterling,MI,48659-6610,484,0,0,6,0,2,2,0,0,0,0,10
+130030,Mazz's Endzone Party Stor,224 N. Clinton,St Johns,MI,48879-1818,243,0,0,0,0,0,1,1,0,0,0,2
+131691,McBain Elementary School,1 BROADCAST WAY,CADILLAC,MI,49601,766,34,0,0,0,0,0,0,0,0,0,34
+131690,McBain Middle/High School,107 E Maple St,CADILLAC,MI,49601,766,9,0,0,0,0,0,0,0,0,0,9
+131695,McBain Nursing Center LLC,220 S Hughston St,McBain,MI,49657,766,0,0,5,0,0,0,0,0,0,0,5
+131989,McGregor's Country Store,3980 Henderson Lake Rd,Prescott,MI,48756-6610,484,0,0,2,0,1,1,2,0,0,0,6
+130575,Merindorf Meat - Mason,2289 West Barnes Road,Mason,MI,48854-8514,242,0,0,5,0,2,1,0,0,0,0,8
+130613,Merrill Gas LLC (Marathon,12025 South Merrill Rd,Brant,MI,48614-1695,483,0,0,9,0,2,1,2,0,0,0,14
+130618,Merrill Middle/High Schoo,555 W. Alice St.,Merrill,MI,48637,483,,0,0,0,0,6,0,0,0,0,6
+131515,Michigan Center Arnold El,4064 Page Ave,Michigan Center,MI,49254-1320,245,24,0,0,0,0,0,0,0,0,0,24
+131511,Michigan Center Jr/Sr Hig,400 S. State,Michigan Center,MI,49254-1320,245,36,0,0,0,0,1,0,0,0,0,37
+131513,Michigan Center Keicher E,137 5th Street,Michigan Center,MI,49254-1320,245,26,0,0,0,0,0,0,0,0,0,26
+131512,Michigan Food Market,G 4508 Van Slyke Rd,Flint,MI,48507-8514,241,0,0,2,0,1,0,0,0,0,0,3
+130220,Midway Party Store,3821 S. Evergreen,White Cloud,MI,49349-8514,764,0,0,1,0,1,2,1,0,0,0,5
+131852,Mike's Country Grocery,2005 E Gordonville Rd,Midland,MI,48640-6610,481,0,0,2,0,1,2,1,0,0,0,6
+32505,Milk and Honey,240 E Front St,Traverse City,MI,49684-1818,371,0,0,3,0,0,0,0,0,0,0,3
+131396,Miller's Orchard,14711 Clinton River Rd,Sterling Heights,MI,48313-8514,1006,0,0,2,0,2,0,1,0,0,0,5
+131434,Miners Grove,10 Miller Rd,East Tawas,MI,48730-6610,484,0,0,2,0,0,1,0,0,0,0,3
+131912,Mobil-32 Mile,16500 32 Mile,Ray Township,MI,48096-8514,1005,0,0,0,0,2,2,2,0,0,0,6
+131926,Mobil-Featherstone,749 Featherstone St.,Pontiac,MI,48342-2143,1004,0,0,0,0,0,0,1,0,0,0,1
+131913,Mobil-Van Dyke,3983 Van Dyke,Almont,MI,48003-8514,1005,0,0,2,0,1,5,4,0,0,0,12
+132071,Montague ECC,9151 Dicey St,Montague,MI,49437-9613,661,14,0,0,0,0,0,0,0,0,0,14
+132079,Montague Foods,8718 Water Street,Montague,MI,49437-7911,661,0,0,53,0,25,3,8,0,0,0,89
+132073,Montague High School,4900 Stanton Blvd,Montague,MI,49437-9613,661,13,8,0,0,0,0,0,0,0,0,21
+132074,Montague Middle School,4700 Stanton Blvd,Montague,MI,49437-9613,661,5,10,0,0,0,0,0,0,0,0,15
+132075,Montague RRO Elem,4859 Knudsen,Montague,MI,49437-9613,661,24,0,0,0,0,0,0,0,0,0,24
+132068,Montrose Carter Elementar,200 Park St.,Montrose,MI,48457-6610,480,38,0,0,0,0,0,0,0,0,0,38
+132066,Montrose Hill McCloy High,301 Nanita Dr.,Montrose,MI,48457-6610,480,45,0,0,0,0,0,0,0,0,0,45
+132150,Moo To You Dairy Services,8200 Grand River,Brighton,MI,48114,50,0,0,0,0,54,139,69,0,0,0,262
+131708,Morley Citgo,301 S. Cass St,Morley,MI,49336-8514,764,0,0,2,0,1,1,0,0,0,0,4
+131710,Morley Depot I/C Shop,280 S Cass,Morley,MI,49336-8514,764,0,0,4,0,2,0,0,0,0,0,6
+131555,Mr Burger Hudsonville,5835 Balsam Dr.,Hudsonville,MI,49426,114,0,0,2,0,0,0,0,0,0,0,2
+131554,Mr. Bibs LLC,16421 Star Lake Dr,Baldwin,MI,49304-4525,103,0,0,0,0,0,1,0,0,0,0,1
+131568,Mr. Grocery,53941 CR 388,Grand Junction,MI,49056-1768,113,,0,2,0,1,2,2,0,0,0,7
+132078,Ms Fuels Inc,32050 Gratiot Ave.,Roseville,MI,48066-1768,1006,0,0,2,0,1,2,0,0,0,0,5
+134273,MSU Duffy Daugherty Bldg,771 Chestnut Rd,East Lansing,MI,48824-1818,244,0,0,0,0,0,9,0,0,0,0,9
+134274,MSU Football,771 Chestnut Rd,East Lansing,MI,48824-1818,244,0,0,0,0,0,5,0,0,0,0,5
+134253,MSU Jenison Fieldhouse,48 Breslin Center,East Lansing,MI,48824-1818,244,0,0,0,0,0,29,0,0,0,0,29
+130881,Mugg & Bopps #1,763 South Michigan Ave.,Howell,MI,48843-1818,242,0,0,6,0,5,9,9,0,0,0,29
+130890,Mugg & Bopps #10,9925 Spencer Rd.,Brighton,MI,48114-1818,242,0,0,3,0,1,1,2,0,0,0,7
+130904,Mugg & Bopps #11,5042 E Berry Rd,Pleasant Lake,MI,49272,245,0,0,2,0,1,1,1,0,0,0,5
+130892,Mugg & Bopps #12,137 North Main,Perry,MI,48872-1818,243,0,0,3,0,1,2,1,0,0,0,7
+130893,Mugg & Bopps #13,102 S. Morrice Rd.,Morrice,MI,48857-1818,243,0,0,5,0,2,1,2,0,0,0,10
+130894,Mugg & Bopps #14,921 E. Grand River Rd.,Howell,MI,48843-1320,242,0,0,1,0,1,1,0,0,0,0,3
+130895,Mugg & Bopps #15,9782 M-36,Whitmore Lake,MI,48189-1320,557,0,0,2,0,1,2,0,0,0,0,5
+130896,Mugg & Bopps #16,329 N. Main St.,Munith,MI,49285-8305,245,0,0,6,0,2,2,3,0,0,0,13
+130897,Mugg & Bopps #17,11055 Highland Rd.,Hartland,MI,48353-1818,557,0,0,4,0,2,4,5,0,0,0,15
+130898,Mugg & Bopps #18,1644 Pinkney Rd.,Howell,MI,48843-1320,242,0,0,8,0,4,5,4,0,0,0,21
+130899,Mugg & Bopps #19,7999 Mason Rd.,Fowlerville,MI,48836-8305,242,0,0,10,0,3,1,2,0,0,0,16
+130882,Mugg & Bopps #2,202 N. Michigan Ave.,Howell,MI,48843-1818,242,0,0,1,0,0,1,0,0,0,0,2
+130900,Mugg & Bopps #20 Chelsea,1630 S. Main Street,Chelsea,MI,48118-8305,245,0,0,1,0,1,1,1,0,0,0,4
+130902,Mugg & Bopps #21 Howell,6801 Oak Grove Rd.,Howell,MI,48855-8305,242,0,0,5,0,2,3,2,0,0,0,12
+130906,Mugg & Bopps #22 Chelsea,20490 M-52,Chelsea,MI,48118,245,0,0,2,0,1,1,1,0,0,0,5
+130883,Mugg & Bopps #3,211 East Main St.,Pinckney,MI,48169-1818,242,0,0,3,0,1,1,2,0,0,0,7
+130884,Mugg & Bopps #4,201 S. Clinton St.,Stockbridge,MI,49285-8305,242,0,0,4,0,2,1,2,0,0,0,9
+130885,Mugg & Bopps #5,2940 Baker Rd.,Dexter,MI,48130-1818,557,0,0,1,0,0,3,2,0,0,0,6
+130886,Mugg & Bopps #6,15241 North Holly Rd.,Holly,MI,48442-1428,241,0,0,2,0,1,2,2,0,0,0,7
+130887,Mugg & Bopps #7,106 East M 36,Gregory,MI,48137-1818,242,0,0,6,0,2,3,4,0,0,0,15
+130888,Mugg & Bopps #8,3864 Mount Hope Rd.,Grass Lake Twp,MI,49420-8305,245,,0,1,0,2,4,2,0,0,0,9
+130889,Mugg & Bopps #9,433 Highland Rd.,Howell,MI,48843-1320,242,0,0,2,0,2,4,3,0,0,0,11
+130846,Muir Mini Mart,296 E Maple St,Muir,MI,48860-1818,104,0,0,4,0,0,4,3,0,0,0,11
+130875,Mulders Merchants,2131 Kalamazoo,Grand Rapids,MI,49507-1768,107,0,0,0,0,0,16,0,0,0,0,16
+140258,Narrow Lake Country Store,8587 Narrow Lake Rd,Springport,MI,49284-1818,245,0,0,2,0,1,2,0,0,0,0,5
+140249,Na-Tah-Ka,5826 N. Bass Lake Rd,Irons,MI,49644-4525,766,0,0,0,0,1,1,0,0,0,0,2
+142027,Neimans Family Mkt D- May,E15 E Main Street,Mayville,MI,48744,480,0,0,0,0,2,5,2,0,0,0,9
+141905,New Branches,3662 Poinsettia SE,Grand Rapids,MI,49508-0009,108,25,0,0,0,0,0,0,0,0,0,25
+142032,New Lothrop High School,9285 Easton Rd,New Lothrop,MI,48460-6610,483,0,0,0,0,0,1,0,0,0,0,1
+141895,Newaygo Elementary,29 E. Post St,Newaygo,MI,49337-9613,764,50,0,0,0,0,0,0,0,0,0,50
+141897,Newaygo High School,200 East Street,Newaygo,MI,49337-9613,764,19,0,0,0,0,0,0,0,0,0,19
+141904,Newaygo Medical Care Faci,4465 W 48th St,Fremont,MI,49412-9769,764,0,0,0,0,11,0,0,0,0,0,11
+141896,Newaygo Middle School,850 E. 76th Street,Newaygo,MI,49337-9613,764,36,0,0,0,0,0,0,0,0,0,36
+142022,Nick's 22nd St Steak Hous,48900 VanDyke,Utica,MI,48317,1005,0,0,2,0,0,0,0,0,0,0,2
+200651,Niles Lucky Stop,2326 S. 11th St.,Niles,MI,49120-1768,107,0,0,2,0,2,3,3,0,0,0,10
+142043,Nixon's Grocery,15998 W Brant Rd,Brant,MI,48614-1695,483,0,0,1,0,0,0,2,0,0,0,3
+141075,North End Party Store,502 N Cochran Ave,Charlotte,MI,48813,245,0,0,0,0,1,1,1,0,0,0,3
+142623,North Muskegon High Schoo,1507 Mills Ave,North Muskegon,MI,49445-9613,662,56,0,0,0,0,0,0,0,0,0,56
+172801,North Shore Market,16177 Seymour Rd,Linden,MI,48451-4525,243,0,0,0,0,0,1,1,0,0,0,2
+141072,Northern Heights Citgo,11031 Northland Dr,Big Rapids,MI,49307-1768,764,0,0,5,0,2,2,3,0,0,0,12
+142556,Northside Market,6388 Bryant Rd.,Ludington,MI,49431-1768,661,0,0,5,0,2,3,1,0,0,0,11
+142559,Northside Party Store,2260 N. State St,Ionia,MI,48846-1818,104,0,0,0,0,0,1,1,0,0,0,2
+142591,Northville High School,45700 Six Mile Road,Northville,MI,48168-1428,557,0,0,1,0,0,0,0,0,0,0,1
+142578,Norton Mini Mart,3381 McCracken,Muskegon,MI,49441-1768,660,0,0,3,0,1,0,1,0,0,0,5
+142814,Nuvu Fuels,1578 US-31 S,Manistee,MI,49660-4525,766,0,0,1,0,1,2,1,0,0,0,5
+151719,Oakland Christian School,3075 Shimmons Rr.,Auburn Hills,MI,48326-0009,1004,0,0,0,0,0,2,0,0,0,0,2
+150495,Ole Dam Rd Party Store,6622 W M-72 Hwy,Grayling,MI,49738,371,0,0,0,0,0,0,1,0,0,0,1
+151030,Oliver Gramm LLC,9866 Cherry Valley Ave SE,Caledonia,MI,49316,104,,0,1,0,0,0,0,8,0,0,9
+151020,OM Petroleum1 Inc.,4967 Lumber Jack Rd.,Elm Hall,MI,48830-1768,765,0,0,0,0,0,2,2,0,0,0,4
+150036,Orchard Market Fruitport,6530 Airline Rd,Fruitport,MI,49415-7911,660,0,0,10,0,0,0,0,0,0,0,10
+150035,Orchard Market Spring Lak,17026 Lloyds Bayou Dr,Spring Lake,MI,49456-7911,660,0,0,5,0,2,0,2,0,0,0,9
+155145,Otsego Alamo Elementary,8184 N. 6th St,Kalamazoo,MI,49009-9613,113,26,0,0,0,0,0,0,0,0,0,26
+155144,Otsego Dix Street Element,503 Dix Street,Otsego,MI,49078-9613,113,35,0,0,0,0,0,0,0,0,0,35
+155141,Otsego High School,550 Washington St,Otsego,MI,49078-9613,113,32,0,0,0,0,0,0,0,0,0,32
+155142,Otsego Middle School,540 Washington St,Otsego,MI,49078-9613,113,34,0,0,0,0,0,0,0,0,0,34
+155143,Otsego Washington St Midd,538 Washington St,Otsego,MI,49078-9613,113,22,0,0,0,0,0,0,0,0,0,22
+157261,Ovid Elsie E.E. Knight,215 Tyler Drive,Elsie,MI,48831-9613,240,25,0,0,0,0,0,0,0,0,0,25
+157262,Ovid Elsie High School,8989 Colony Road,Elsie,MI,48831-9613,240,16,0,0,0,0,0,0,0,0,0,16
+157263,Ovid Elsie Leonard Elem,732 N Mabbit Road,Ovid,MI,48866-9613,240,26,0,0,0,0,0,0,0,0,0,26
+157264,Ovid Elsie Middle School,4041 N Hollister Rd,Elsie,MI,48831-9613,240,16,0,0,0,0,0,0,0,0,0,16
+161793,Ox's Smoked Meats,113 W. Main St,Westphalia,MI,48894-1818,243,0,0,0,0,2,1,1,0,0,0,4
+160014,Paisley's Sugar Shack,5490 Butman Rd,Gladwin,MI,48624,484,0,0,7,0,2,1,2,0,0,0,12
+141678,Pan Northside Beverage,135 N Main St,Three Rivers,MI,49093,101,0,0,4,0,1,1,1,0,0,0,7
+160341,Patriot Party Mart,517 N State St,Caro,MI,48723-1695,480,,0,3,0,2,3,3,0,0,0,11
+162592,Pentwater Convenience Cen,4374 W Monroe Rd,Pentwater,MI,49449-1768,662,0,0,5,0,2,3,1,0,0,0,11
+162016,Perks of Frankfort,429 Main St,Frankfort,MI,49635,766,0,0,3,0,0,0,0,0,0,0,3
+160505,Pete's Party and Supply L,6521 N US 23,Oscoda,MI,48750-6610,484,0,0,1,0,0,0,1,0,0,0,2
+130627,Petro P Fennville BP #402,409 East Main Street,Fennville,MI,49408-9613,119,0,0,2,0,2,2,1,0,0,0,7
+130634,Petro P Yellow Jacket,12011 Lake Michigan,West Olive,MI,49060-9738,663,0,0,7,0,3,6,1,0,0,0,17
+130633,Petro P-Bay Park Holland,372 E Lakewood Blvd,Holland,MI,49424-9613,115,0,0,3,0,0,2,0,0,0,0,5
+130632,Petro P-Caledonia BP #430,9633 Cherry Valley,Caledonia,MI,49316-9613,104,0,0,2,0,2,0,1,0,0,0,5
+130623,Petro P-Centerpoint Mar #,2560 E Beltline Ave SE,Grand Rapids,MI,49546-9613,107,0,0,2,0,1,1,0,0,0,0,4
+130607,Petro P-Cornerstone BP #3,1169 East Beltline NE,Grand Rapids,MI,49505-9613,106,0,0,5,0,3,3,3,0,0,0,14
+130636,Petro P-Dorr Marathon #47,4204 18th St,Dorr,MI,49323,113,0,0,4,0,2,2,2,0,0,0,10
+130609,Petro P-Fillmore BP #370,762 Cabill Drive,Holland,MI,49423-9613,115,0,0,2,0,2,3,3,0,0,0,10
+130615,Petro P-Gun Lake BP 415,1515 S. Patterson,Wayland,MI,49348-9613,101,0,0,3,0,1,3,2,0,0,0,9
+130625,Petro P-Hamilton Marathon,3416 Lincoln Rd,Hamilton,MI,49419-9613,103,0,0,1,0,2,3,0,0,0,0,6
+130602,Petro P-Rivertown Maratho,3980 44th St SW,Grandville,MI,49418-9613,102,0,0,0,0,0,1,1,0,0,0,2
+130629,Petro P-Stanton Junction,9170 US 31,West Olive,MI,49460-9613,663,0,0,3,0,2,5,4,0,0,0,14
+160036,Pic -n- Pac,5187 S. Henry,Muskegon,MI,49444-1768,660,0,0,7,0,2,1,3,0,0,0,13
+160030,Pickard St Citgo,910 W Pickard St,Mt Pleasant,MI,48858-1818,481,0,0,4,0,0,4,4,0,0,0,12
+160542,Pierside 23,2490 E Huron Rd,Au Gres,MI,48703-1695,484,0,0,2,0,1,2,3,0,0,0,8
+160039,Pinckney Bakery,169 E. Main St,Pinckney,MI,48169-4525,242,0,0,0,0,0,3,0,0,0,0,3
+160610,Plane Food Market LLC,121 East Elizabeth St,Stockbridge,MI,49285-2143,242,0,0,1,0,1,0,0,0,0,0,2
+161044,Prescott Party Store,107 Sage Lake Rd,Prescott,MI,48756,484,0,0,5,0,3,1,1,0,0,0,10
+180596,Quick Stop 17,6015 S M 52,Owosso,MI,48867-9725,243,0,0,4,0,1,2,2,0,0,0,9
+180597,Quick Stop 18,135 S Saginaw St,Byron,MI,48418-9725,243,0,0,5,0,1,3,1,0,0,0,10
+180594,Quick Stop 19,1740 W Main St,Owosso,MI,48867-9725,483,0,0,8,0,3,5,4,0,0,0,20
+180599,Quick Stop 21,441 West Main St,Flushing,MI,48433-9725,483,0,0,4,0,2,2,2,0,0,0,10
+180598,Quick Stop 22,8995 E M 21,Corunna,MI,48817-9725,483,0,0,2,0,1,2,2,0,0,0,7
+180592,Quick Stop 26,8982 E. Lansing Rd,Durand,MI,48429-9725,241,0,0,2,0,1,2,3,0,0,0,8
+170527,Quickwater Coffee ( KEY #,8 E Bridge St NE Ste 102,Rockford,MI,49341-3080,106,0,0,9,0,0,0,0,0,0,0,9
+182635,R & S Party Store,3543 Byron Center,Wyoming,MI,49509-1768,102,,0,0,0,0,1,0,0,0,0,1
+182634,R Store,582 10th Street,Plainwell,MI,49080,113,0,0,2,0,2,2,2,0,0,0,8
+180536,Ralph's Food Market,655 Leonard St. NW,Grand Rapids,MI,49504,108,0,0,19,0,6,1,2,0,0,0,28
+181206,Ray's Drive In,20 N. Beacon Blvd,Grand Haven,MI,49417-4525,660,0,0,0,0,0,0,0,8,0,0,8
+181871,Ray's Mini Mart-OutdoorPS,2210 Holton Rd.,Muskegon,MI,49445,662,0,0,6,0,1,2,2,0,0,0,11
+182624,Rescue Mission,400 W. Laketon,Muskegon,MI,49442-3080,660,0,0,10,0,0,0,0,0,0,0,10
+180558,Rich's Country Store,6237 Bishop Rd,Lansing,MI,48911-1768,242,0,0,4,0,2,1,1,0,0,0,8
+180030,Riverdale High Hills,10958 W. Monroe Rd,Riverdale,MI,48877-1768,765,0,0,3,0,2,3,3,0,0,0,11
+180048,Rivermart Inc.,10450 S. Warner Ave.,Fremont,MI,49412-3080,764,0,0,2,0,1,1,1,0,0,0,5
+181169,Roadtrip Oasis #751 Perry,3034 W. Lansing Rd,Perry,MI,48872-1818,243,0,0,2,0,3,5,6,0,0,0,16
+180849,Rochette Party Store,508 N James St,Grayling,MI,49738-1818,371,0,0,0,0,0,0,1,0,0,0,1
+182609,Rodriguez Supermarket #1,2829 Division SW,Wyoming,MI,49548,108,0,0,0,0,9,0,7,0,0,0,16
+182607,Rodriguez Supermarket #2,1428 Grandville Ave.,Grand Rapids,MI,49503-1768,108,0,0,0,0,7,0,3,0,0,0,10
+182623,Rogers Fam Mkt Lake City,5760 West Houghton Lake,Lake City,MI,49651-6610,766,0,0,43,0,12,2,0,0,0,0,57
+182625,Rogers Fam Mkt Lake City,5760 West Houghton Lake,Lake City,MI,49651-6610,766,0,0,45,0,10,2,3,0,0,0,60
+182619,Rogers Family Mkt Auburn,985 W. Midland Rd.,Auburn,MI,48611-9725,482,0,0,44,0,15,1,4,0,0,0,64
+182620,Rogers Family Mkt Glennie,3257 S State Rd,Glennie,MI,48737-6610,372,0,0,10,0,2,0,1,0,0,0,13
+182621,Rogers Family Mkt Hale MI,3195 N M65,Hale,MI,48739-6610,484,0,0,3,0,7,1,2,0,0,0,13
+182622,Rogers Family Mkt Oscoda,5112 US 23,Oscoda,MI,48750-6610,484,0,0,3,0,3,1,1,0,0,0,8
+180705,Roosters Food Mart,1607 Lakeshore Dr,St Joseph,MI,49085-1768,117,0,0,1,0,1,0,1,0,0,0,3
+182651,Rosati's Mkt #2 Beaverton,360 N Ross St,Beaverton,MI,48612,481,0,0,3,0,1,1,4,0,0,0,9
+182654,Rosati's Mkt #3 Beaverton,4516 M-30,Beaverton,MI,48612,481,0,0,4,0,3,1,1,0,0,0,9
+182657,Rosati's Mkt Hemlock MILK,176 Hemlock Plaza Dr,Hemlock,MI,48626,482,0,0,6,0,1,1,3,0,0,0,11
+182650,Rosati's Mkt Prescott MIL,1830 E Greenwood Rd,Prescott,MI,48756,484,0,0,3,0,2,0,5,0,0,0,10
+182630,Rotif Company (Sunoco),279 CR 665,Paw Paw,MI,49079-2206,113,0,0,2,0,0,2,3,0,0,0,7
+182376,Rudy's Drive In,4061 Page Ave,Michigan Center,MI,49254-1320,245,,0,0,0,0,0,0,9,0,0,9
+182373,Runway Party Store,4122 W Michigan Ave,Jackson,MI,49202,245,0,0,1,0,0,1,3,0,0,0,5
+195130,Saganing Sagamok Mobil,5537 Huron Rd.,Pinconning,MI,48650-6610,484,0,0,2,0,1,2,2,0,0,0,7
+192770,Sales Samples,5850 Balsam,Hudsonville,MI,,50,0,0,0,0,0,0,0,3,0,0,3
+190555,Sandy's Donuts,2040 Leonard NW,Grand Rapids,MI,49504,116,0,0,0,0,0,4,0,0,0,0,4
+100747,Sav On Family,131 E Grand River Ave,Fowlerville,MI,48836,242,0,0,3,0,1,0,1,0,0,0,5
+192853,Schoolcraft Elem (KEY #14,13300 South 14Th Street,Schoolcraft,MI,49087-9613,101,32,0,0,0,0,0,0,0,0,0,32
+192851,Schoolcraft High (KEY #14,13400 South 14Th Street,Schoolcraft,MI,49087-9613,101,19,0,0,0,0,0,0,0,0,0,19
+190085,Scooters Coffee 28th Stre,6432 28th St SE,Cascade,MI,49546,115,0,0,0,0,0,0,0,1,0,0,1
+190082,Scooters Coffee Big Rapid,1278 Perry Ave,Big Rapids,MI,49307,764,0,0,0,0,0,0,0,2,0,0,2
+190074,Scooters Coffee Burton,1242 E Bristol Rd,Burton,MI,48529-1428,241,0,0,0,0,0,0,0,2,0,0,2
+190083,Scooters Coffee Kentwood,2380 44th St SE,Kentwood,MI,49508,115,0,0,0,0,0,0,0,3,0,0,3
+190084,Scooters Coffee Plainfiel,3150 Plainfield Ave NE,Grand Rapids,MI,49525,106,0,0,0,0,0,0,0,1,0,0,1
+190077,Scooters Coffee Sterling,39890 Van Dyke Rd,Sterling Heights,MI,48659,554,0,0,0,0,0,0,0,1,0,0,1
+192220,Sebewaing Market,536 Pine St,Sebewaing,MI,48759-9725,482,0,0,0,0,1,2,1,0,0,0,4
+192240,Sewa And Sons (Clark),2080 W. Hyde Rd,St Johns,MI,48879-1818,243,0,0,2,0,1,2,0,0,0,0,5
+192253,Shaftsburg Village Market,6840 W Beard Rd,Shaftsburg,MI,48882-1818,244,0,0,2,0,1,0,0,0,0,0,3
+192008,Shelby Elementary School,1285 S Oceana Dr,Shelby,MI,49455-9613,661,39,0,0,0,0,0,0,0,0,0,39
+192006,Shelby High School,641 N State,Shelby,MI,49455-9613,661,21,0,0,0,0,0,0,0,0,0,21
+192002,Shelby Middle School,525 N State,Shelby,MI,49455-9613,661,18,0,0,0,0,0,0,0,0,0,18
+192003,Shelby Thomas Reed Elemen,155 Sixth St,Shelby,MI,49455-9613,661,6,0,0,0,0,0,0,0,0,0,6
+192333,Shell Station Lakeshore,4559 Red Arrow Hwy,Stevensville,MI,49127-9738,117,0,0,0,0,1,3,3,0,0,0,7
+192334,Shell Station Napier,1959 E. Napier,Benton Harbor,MI,49022-9738,117,0,0,0,0,0,4,4,0,0,0,8
+192385,Sibley Convenience Store,7999 11 Mile Rd.,Bitely,MI,49309-1768,103,0,0,3,0,4,4,0,0,0,0,11
+182786,Silver Gas LLC,5748 Round Lake Rd,Laingsburg,MI,48848,243,0,0,2,0,0,1,0,0,0,0,3
+192518,Sin Fronteras,2437 S Division,Wyoming,MI,49507-1768,102,,0,0,0,1,0,0,0,0,0,1
+190518,Skys Outlet,100 Woodworth Ave,Alma,MI,48801,240,0,0,1,0,1,2,0,0,0,0,4
+190516,Skys Outlet II,1310 Brady St,Chesaning,MI,48616,483,0,0,1,0,1,1,3,0,0,0,6
+190517,Skys Outlet III,1256 S Poseyville Rd,Midland,MI,48640,481,0,0,3,0,1,2,1,0,0,0,7
+190611,Smitty's,218 E. Saginaw,Breckenridge,MI,48615-9725,240,0,0,0,0,0,2,0,0,0,0,2
+190601,Snack Shack,210 E. Prosper Road,Falmouth,MI,49632-1768,766,0,0,0,0,3,2,1,0,0,0,6
+190559,Snickerdoodlz Frozen Yogu,2170 Anderson Rd Ste 110,Petoskey,MI,49770-4525,372,0,0,0,0,0,0,0,1,0,0,1
+192520,Sobie Meats LLC,3450 Remembrance Rd Nw,Walker,MI,49534-2206,114,0,0,16,0,2,1,0,0,0,0,19
+190667,Soft Spot,9622 Port Sheldon,Borculo,MI,49464-4525,663,0,0,0,0,2,1,0,0,0,0,3
+190705,South Branch General,6386 E. Country Line Rd.,South Branch,MI,48761-6610,484,0,0,2,0,1,0,0,0,0,0,3
+190704,South Branch Market,3999 E M72 Hwy,Grayling,MI,49738-6610,371,0,0,2,0,1,0,0,0,0,0,3
+190928,South Christian High Scho,7979 Kalamazoo Ave. SE,Byron Center,MI,49315-0009,104,,0,0,0,0,15,0,0,0,0,15
+191850,South Westnedge Market,819 S Westnedge,Kalamazoo,MI,49008-7911,113,0,0,0,0,0,1,2,0,0,0,3
+191846,Spagnuolo's Party Store,5746 Clark Rd.,Bath,MI,48808-1818,243,0,0,12,0,1,1,4,0,0,0,18
+192547,Spinners,12837 Lincoln St.,Grand Haven,MI,49417-2206,663,0,0,4,0,2,2,1,0,0,0,9
+192541,Spot Gas Stop LLC,9021 Howard City Edmore Rd.,Vestaburg,MI,48891-2206,765,0,0,3,0,1,3,2,0,0,0,9
+191446,Springport Elem/High Scho,300 W Main,Springport,MI,49284,245,74,0,0,0,0,0,0,0,0,0,74
+191447,Springport Middle School,300 W Main,Springport,MI,49284,245,25,0,0,0,0,0,0,0,0,0,25
+191213,Sprinkle Road BP,3530 Sprinkle Rd,Kalamazoo,MI,49001-2206,101,0,0,1,0,2,1,2,0,0,0,6
+191216,Sprinkles Donut Ada,452 Ada Dr SE Suite 130,Ada,MI,49301-3080,115,0,0,0,0,0,3,0,0,0,0,3
+191212,Sprinkles Donut Hudsonvi,6450 28th Ave,Hudsonville,MI,49426-3080,119,0,0,0,0,0,10,0,0,0,0,10
+191214,Sprinkles Donut Rockford,8467 Algoma Ave NE,Rockford,MI,49341-3080,106,0,0,0,0,0,6,0,0,0,0,6
+191215,Sprinkles Donut Allendale,11145 68th Ave. Ste A,Allendale,MI,49401-3080,119,0,0,0,0,0,9,0,0,0,0,9
+191218,Sprinkles Donut Caledonia,9365A Cherry Valley Ave,Caledonia,MI,49316-3080,104,0,0,0,0,0,3,0,0,0,0,3
+191219,Sprinkles Donut Grand Rap,1237 Leonard,Grand Rapids,MI,49505-3080,106,0,0,0,0,0,4,0,0,0,0,4
+191211,Sprinkles Donut Norton Sh,4165 Grand Haven Rd,Norton Shores,MI,49441-3080,660,0,0,0,0,0,4,0,0,0,0,4
+191449,SS Gorman's Food Mkt,2800 N Grand River Ave,Lansing,MI,48906,244,0,0,0,0,2,1,2,0,0,0,5
+190153,St. Louis Marathon,705 E Washington St,St Louis,MI,48880-1818,240,0,0,2,0,0,1,0,0,0,0,3
+191190,St. Paul Lutheran,402 S Ballenger HWY,Flint,MI,48532-1320,483,0,0,0,0,1,0,0,0,0,0,1
+191090,Story's Meats & Deli,11761 Northland Dr. NE,Rockford,MI,49341-2206,106,0,0,1,0,1,0,1,0,0,0,3
+80305,Stray's General LLC,14150 Cypress Ave,Sand Lake,MI,49343,765,0,0,6,0,2,2,1,0,0,0,11
+198246,Sun Up Foodmart,1604 E. Superior St.,Alma,MI,48801-1818,240,0,0,0,0,0,1,1,0,0,0,2
+190628,Sunoco 32 Mile Rd,16567 32 Mile Rd.,Armada Park,MI,48005-2206,1005,0,0,0,0,0,1,2,0,0,0,3
+192368,Super Flite Oil- Middle B,12723 M-115,Marion,MI,49665-2206,766,0,0,1,0,0,1,1,0,0,0,3
+190026,Super Mercado Division,3375 S. Division Ave STE A,Wyoming,MI,49548-2206,107,0,0,0,0,3,0,0,0,0,0,3
+192371,Super Stop,2390 W Sherman,Muskegon,MI,49441-2206,660,0,0,3,0,2,1,1,0,0,0,7
+198238,"Supermercado San Jose, LL",3778 Alpine Ave NW,Comstock Park,MI,49321-5394,103,0,0,0,0,3,0,2,0,0,0,5
+190583,Swamper's,14360 S. Grange,Eagle,MI,48822-1818,243,0,0,2,0,1,1,1,0,0,0,5
+190591,Swan Lake Store LLC,658 42nd St.,Allegan,MI,49010-2206,113,0,0,10,0,4,1,6,0,0,0,21
+202021,Tacon Madre,3501 S Division,Wyoming,MI,49548-4525,107,0,0,0,0,0,0,0,1,0,0,1
+202029,Tailgaters Delta,4930 S Creyts Rd,Lansing,MI,48917,242,0,0,0,0,1,4,3,0,0,0,8
+202030,Tailgaters LLC,3955 Ernest Way,Lansing,MI,48906,243,0,0,0,0,0,4,4,0,0,0,8
+200657,"Ten 31 Stop, LLC",460 W US 10,Scottville,MI,49454,661,0,0,4,0,1,5,3,0,0,0,13
+42005,The Daily Scoop Ice Cream,350 S. Jefferson St,Mason,MI,48854-4525,242,0,0,0,0,0,0,0,1,0,0,1
+41780,The Depot,362 Lake George St,Lake George,MI,48633-9725,481,0,0,1,0,0,2,0,0,0,0,3
+120398,The Little Store,6586 122nd Ave,Fennville,MI,49408-9738,119,0,0,5,0,2,1,2,1,0,0,11
+30987,The New Glenn Store,1402 Adams Rd (Blue Star,Fennville,MI,49408-2206,119,0,0,1,0,1,1,1,0,0,0,4
+122555,The Party Dock,3031 Patterson Road,Bay City,MI,48706-1818,482,0,0,1,0,1,1,0,0,0,0,3
+200673,Theis Party Store,210 S. Main St,Fowler,MI,48835-1818,243,0,0,0,0,1,1,2,0,0,0,4
+131319,Thirsty's,1507 S Lake Mitchell Dr,Cadillac,MI,49601-6610,766,0,0,2,0,1,0,1,0,0,0,4
+131326,Thornapple Lake Trading P,4005 E. M-79 HWY,Hastings,MI,49058-2206,110,0,0,3,0,0,0,0,0,0,0,3
+208936,Thrush's Pit Stop,2405 W Ludington Dr,Farwell,MI,48622,481,0,0,4,0,1,2,3,0,0,0,10
+208947,Tienda La Bendicion,1260 S. Division SE,Grand Rapids,MI,49507-2206,114,0,0,0,0,1,0,1,0,0,0,2
+200680,Tin Roof Group LLC,853 S. Clinton,Stockbridge,MI,49285-4525,242,0,0,0,0,0,0,0,5,0,0,5
+200712,Tippy Cow Ice Cream (KEY,3830 Chicago Dr SW,Grandville,MI,49418-4525,106,0,0,0,0,0,0,0,18,0,0,18
+208953,Tom's Mkrt-West*D,TOM'S WEST BAY SHOPPING,Traverse City,MI,49684-1818,371,0,0,0,0,3,4,3,0,0,0,10
+208950,Tom's Mrkt-East*D,738 Munson Ave,Traverse City,MI,49686-1818,371,0,0,5,0,4,2,2,0,0,0,13
+201213,Toski Sands Market,2294 M-119,Petoskey,MI,49770-1818,372,0,0,4,0,2,1,3,0,0,0,10
+201209,Town & Country Liq & Groc,5311 E Apple Ave,Muskegon,MI,49442,660,0,0,1,0,1,0,0,0,0,0,2
+202036,Trailside Gas & Grocery,525 S. Third St. Suite B,Big Rapids,MI,49307-2206,764,0,0,2,0,0,2,2,0,0,0,6
+202050,Tres Hermanos Bakery,1442 Burton St SW,Wyoming,MI,49509,102,0,0,0,0,1,0,0,0,0,0,1
+205911,True North Ice Cream,403 S. Kalamazoo,Marshall,MI,49068-4525,110,0,0,0,0,0,0,0,20,0,0,20
+142011,Turk Lake Market Inc,2023 S. Greenville Rd,Greenville,MI,48838-2206,765,0,0,3,0,1,1,1,0,0,0,6
+200213,Twisters - St. Johns,1050 Superior Dr.,St Johns,MI,48879-1320,243,0,0,0,0,0,0,0,6,0,0,6
+218704,Unadilla Store,13329 Unadilla Rd,Gregory,MI,48137-1428,242,0,0,4,0,1,1,0,0,0,0,6
+218710,Uncle Ray's Dairyland,1462 N Leroy St,Fenton,MI,48430,241,0,0,0,0,0,0,0,59,0,0,59
+218716,United Natural Foods - AT,100 Lakeview Court SW,Atlanta,GA,30336-2206,50,0,0,0,0,0,0,0,0,528,480,1008
+218715,United Natural Foods - Io,2340 Heinz Road,Iowa City,IA,52240-2206,50,0,0,0,0,0,0,0,0,432,312,744
+218718,United Natural Foods - Ra,3138 Country Trunk Highway,Sturtevant,WI,53177-2206,50,0,0,0,0,0,0,0,0,1296,1632,2928
+211051,Unity Christian High Scho,5900 48th Avenue,Hudsonville,MI,49426-9769,116,0,0,0,0,0,12,0,0,0,0,12
+218765,Uranus Fudge Factory - IN,1423 W 53rd St,Anderson,IN,46013,890,0,0,0,0,0,0,0,10,0,0,10
+218771,Urban Swirl,7130 Heritage Sq Suite 440,Granger,IN,46530,114,0,0,0,0,0,0,0,2,0,0,2
+218780,USA Gill Petroleum LLC Ma,601 E Saginaw St,Breckenridge,MI,48615-9725,240,,0,3,0,2,4,2,0,0,0,11
+180240,Valley Meat Market,110 W 2nd St,Pinconning,MI,48650-6610,484,0,0,2,0,0,0,0,0,0,0,2
+180410,Van Pattens General Store,8416 S. 116th Ave.,Rothbury,MI,49452-2206,661,0,0,3,0,2,3,1,0,0,0,9
+180420,Vandercook High School,1000 E Golf Ave,Jackson,MI,49203,245,0,0,1,0,0,0,0,0,0,0,1
+220950,Vestaburg Schools,7188 Avenue B,Vestaburg,MI,48891-9613,765,43,0,0,0,0,0,0,0,0,0,43
+220015,Viking Grocery,1325 S. Ensley St,Howard City,MI,49329-2206,765,0,0,3,0,1,2,3,0,0,0,9
+221252,Village Cone Shop ( KEY #,1810 Breton Rd SE,Grand Rapids,MI,49546-4525,107,0,0,0,0,0,0,0,7,0,0,7
+220630,Vogel Store,9979 S. 8 Mile Rd.,McBain,MI,49657-5394,766,0,0,4,0,0,0,0,0,0,0,4
+220996,Vriesland Country Store,6420 Byron Rd,Zeeland,MI,49464-2206,103,0,0,9,0,3,5,2,0,0,0,19
+230016,Wacousta General,13051 Wacousta Road,Grand Ledge,MI,48837-1818,243,0,0,2,0,2,0,1,0,0,0,5
+232535,Walkerville High,145 Lathrop St,Walkerville,MI,49459-9613,662,0,0,6,0,0,0,0,0,0,0,6
+230043,Walloon Village General S,"4035 Renwick Lane, Unit #17",Walloon Lake,MI,49796,372,0,0,0,0,1,0,0,0,0,0,1
+230901,Webberville Party Store,103 E. Grand River,Webberville,MI,48892-1818,244,0,0,3,0,1,1,1,0,0,0,6
+231009,Wesco #10,1410 W. Maumee,Adrian,MI,49221-9738,245,0,0,3,0,2,5,4,0,0,0,14
+231010,Wesco #11,10409 West Brooklyn Rd.,Brooklyn,MI,49230-9738,245,0,0,11,0,3,13,5,0,0,0,32
+231011,Wesco #12,4101 Lansing Ave.,Jackson,MI,49202-9738,245,0,0,4,0,1,2,2,0,0,0,9
+231012,Wesco #13,1075 W. Laketon Ave.,Laketon,MI,49441-9738,660,0,0,12,0,4,13,6,0,0,0,35
+231013,Wesco #14,4878 N. Maple Island Rd.,Fremont,MI,49412-9738,662,0,0,6,0,1,16,3,0,0,0,26
+231014,Wesco #15,203 E. Colby,Whitehall,MI,49461-9738,661,0,0,8,0,2,5,2,0,0,0,17
+231015,Wesco #16,502 W. Savidge,Spring Lake,MI,49456-9738,660,0,0,11,0,3,5,4,0,0,0,23
+231016,Wesco #17,4667 First St.,New Era,MI,49446-9738,662,0,0,7,0,1,9,0,0,0,0,17
+231017,Wesco #18,1858 Ruddiman Dr.,North Muskegon,MI,49445-9738,662,0,0,11,0,4,5,2,0,0,0,22
+231018,Wesco #19,7413 Whitehall Rd.,Whitehall,MI,49461-9738,662,0,0,8,0,1,10,5,0,0,0,24
+231001,Wesco #2,1487 Whitehall Rd.,North Muskegon,MI,49445-9738,662,0,0,12,0,6,15,7,0,0,0,40
+231019,Wesco #20,4725 N. M140,Watervliet,MI,49098-9738,117,0,0,2,0,1,2,1,0,0,0,6
+231020,Wesco #21,6440 Airline Rd.,Fruitport,MI,49415-9738,660,,0,2,0,1,3,1,0,0,0,7
+231021,Wesco #22,304 S.Charles,White Cloud,MI,49349-9738,764,0,0,12,0,2,21,8,0,0,0,43
+231022,Wesco #23,5685 E. Ludington Ave.,Ludington,MI,49431-9738,661,0,0,4,0,3,9,2,0,0,0,18
+231023,Wesco #24,2983 Benzie Hwy,Benzonia,MI,49616-9738,766,0,0,6,0,1,8,5,0,0,0,20
+231024,Wesco #25,301 W. Ludington Ave.,Ludington,MI,49431-9738,661,0,0,9,0,3,9,4,0,0,0,25
+231025,Wesco #26,2277 E. Broadway,Muskegon,MI,49444-9738,660,0,0,17,0,4,11,6,0,0,0,38
+231070,Wesco #27,16770 Ferris St,Grand Haven,MI,49417,663,0,0,8,0,1,9,3,0,0,0,21
+231026,Wesco #28,117 N. Main,Scottville,MI,49454-9738,661,0,0,4,0,2,8,4,0,0,0,18
+231057,Wesco #29,9400 West Lake City Road,Houghton Lake,MI,48629,371,0,0,1,0,0,2,2,0,0,0,5
+231002,Wesco #3,1385 W. Sherman Blvd.,Muskegon,MI,49441-9738,660,0,0,8,0,2,15,7,0,0,0,32
+231027,Wesco #30,3743 Apple Ave.,Muskegon,MI,49442-9738,660,0,0,12,0,3,17,3,0,0,0,35
+231028,Wesco #31,1819 Apple Ave.,Muskegon,MI,49442-9738,660,0,0,10,0,5,14,4,0,0,0,33
+231029,Wesco #33,75 Cypress St.,Manistee,MI,49660-9738,766,0,0,9,0,2,5,2,0,0,0,18
+231030,Wesco #34,1548 N. Mitchell St.,Cadillac,MI,49601-9738,766,0,0,6,0,3,18,8,0,0,0,35
+231031,Wesco #35,1361 S. Lakeshore Dr.,Lake City,MI,49651-9738,766,0,0,2,0,3,3,0,0,0,0,8
+231032,Wesco #36,330 Parkdale Ave.,Manistee,MI,49660-9738,766,0,0,7,0,3,8,4,0,0,0,22
+231033,Wesco #37,3239 Heights Ravenna Rd.,Muskegon,MI,49444-9738,660,0,0,11,0,3,13,6,0,0,0,33
+231034,Wesco #38,777 Michigan Ave.,Baldwin,MI,49304-9738,103,0,0,6,0,1,7,4,0,0,0,18
+231035,Wesco #39,105 W. State St.,Belding,MI,48809-9738,115,0,0,6,0,2,15,5,0,0,0,28
+231003,Wesco #4,14 W. Lakewood,Holland,MI,49424-9738,115,0,0,4,0,1,6,5,0,0,0,16
+231036,Wesco #40,335 Adams,Newaygo,MI,49337-9738,764,0,0,9,0,3,27,5,0,0,0,44
+231037,Wesco #41,211 N. Main Street,Cedar Springs,MI,49337-9738,106,0,0,8,0,4,12,6,0,0,0,30
+231038,Wesco #43,806 S. Stewart St.,Fremont,MI,49412-9738,764,0,0,11,0,3,18,5,0,0,0,37
+231039,Wesco #44,190 S. Maple Street,Grant,MI,49327-9738,103,0,0,4,0,2,8,1,0,0,0,15
+231040,Wesco #45,126 W. Washington St.,Greenville,MI,48838-9738,765,0,0,3,0,2,5,2,0,0,0,12
+231041,Wesco #46,196 Divison St.,Hesperia,MI,49421-9738,662,0,0,10,0,4,14,4,0,0,0,32
+231042,Wesco #47,9045 Howard City,Lakeview,MI,48850-9738,765,0,0,8,0,2,9,4,0,0,0,23
+231043,Wesco #48,8973 Water St.,Montague,MI,49437-9738,661,0,0,18,0,3,13,4,0,0,0,38
+231044,Wesco #49,1675 E. Apple Ave.,Muskegon,MI,49442-9738,660,0,0,21,0,8,26,8,0,0,0,63
+231004,Wesco #5,6419 Airline,Fruitport,MI,49415-9738,660,0,0,9,0,2,12,2,0,0,0,25
+231045,Wesco #50,602 S. Chestnut Ave.,Reed City,MI,49677-9738,766,0,0,8,0,3,9,4,0,0,0,24
+231046,Wesco #51,7588 S. Michigan Ave.,Rothbury,MI,49452-9738,661,0,0,10,0,3,12,3,0,0,0,28
+231047,Wesco #52,81 Northland Dr.,Sand Lake,MI,49343-9738,765,0,0,10,0,1,7,2,0,0,0,20
+231048,Wesco #53,241 State St.,Shelby,MI,49455-9738,662,0,0,9,0,3,7,3,0,0,0,22
+231049,Wesco #54,434 S. State St.,Sparta,MI,49345-9738,103,0,0,6,0,2,6,1,0,0,0,15
+231050,Wesco #57,3090 Colby Rd.,Whitehall,MI,49461-9738,661,0,0,7,0,2,9,3,0,0,0,21
+231005,Wesco #6,339 N. Paw Paw St.,Coloma,MI,49038-9738,107,,0,9,0,1,7,2,0,0,0,19
+231051,Wesco #60,21380 Perry St.,Big Rapids,MI,49307-9738,764,0,0,3,0,1,7,4,0,0,0,15
+231052,Wesco #61,4921 220th.,Reed City,MI,49677-9738,766,0,0,4,0,1,11,3,0,0,0,19
+231053,Wesco #63,660 W. 7th St.,Evart,MI,49631-9738,764,0,0,9,0,3,11,6,0,0,0,29
+231054,Wesco #66,7661 36th Ave.,Hudsonville,MI,49426-9738,119,0,0,14,0,3,10,4,0,0,0,31
+231055,Wesco #68,1025 E. Pontaluna Rd.,Norton Shores,MI,49456-9738,660,0,0,9,0,2,19,7,0,0,0,37
+231006,Wesco #7,14750 Mercury Dr.,Grand Haven,MI,49417-9738,663,0,0,14,0,1,8,4,0,0,0,27
+231007,Wesco #8,3321 S. Slocum Rd.,Ravenna,MI,49451-9738,663,0,0,6,0,3,11,3,0,0,0,23
+231056,Wesco #802 Bakery,1470 Whitehall Rd.,North Muskegon,MI,49445-9738,662,0,0,16,0,0,0,0,0,0,0,16
+231008,Wesco #9,551 Allegan,Plainwell,MI,49080-9738,113,0,0,4,0,2,14,8,0,0,0,28
+230939,West Ottawa Harbor Light,1024 136th Ave,Holland,MI,49424-9613,116,32,0,0,0,0,0,0,0,0,0,32
+230942,West Ottawa Macatawa Bay,3700 140th Ave. D Blvd,Holland,MI,49424-9613,116,46,0,0,0,0,0,0,0,0,0,46
+230947,West Ottawa North High,3685 Butternut Drive,Holland,MI,49424-9613,116,65,0,0,0,0,0,0,0,0,0,65
+230948,West Ottawa South High,3600 152nd Ave,Holland,MI,49424-9613,116,36,0,0,0,0,0,0,0,0,0,36
+230059,West Shore Market LLC,850 W US Highway 10,Scottville,MI,49454-4525,661,0,0,3,0,3,1,0,0,0,0,7
+192350,Whats The Scoop- Hvile KE,3667 Baldwin St Suite C,Hudsonville,MI,49426-4525,119,0,0,0,0,0,0,0,3,0,0,3
+231225,Whipple & Co.,4865 E Moorestown Rd,Lake City,MI,49651,766,,0,2,0,2,0,0,0,0,0,4
+230801,White Cloud High School,553 E Wilcox,White Cloud,MI,49349-9613,764,32,0,0,0,0,0,0,0,0,0,32
+230254,Wild John's LLC,6348 N Vandyke Rd,Cass City,MI,48726-9725,480,0,0,1,0,1,6,1,0,0,0,9
+230072,Wilson's Grocery Sumner,10673 W Saint Charles Rd,Sumner,MI,48889,765,0,0,2,0,1,1,1,0,0,0,5
+230231,Woodville Country Store L,6140 N. Pine,White Cloud,MI,49349-4525,764,0,0,1,0,2,1,1,0,0,0,5
+230199,Woody's Cone Stop ( KEY #,700 - 28th St SE,Grand Rapids,MI,49548-4525,107,0,0,0,0,0,0,0,14,0,0,14
+70438,Woody's Goodies,101 N. State St.,Gobles,MI,49055-2902,113,0,0,6,0,0,2,2,0,0,0,10
+251497,Yoder's Kuntry Market,7534 E Colonville Rd,Clare,MI,48617,481,0,0,2,0,1,1,0,0,0,0,4
+251493,Yoder's of Tustin,20030 200th Ave,Tustin,MI,49688-2206,766,0,0,0,0,0,2,1,0,0,0,3
+251521,Zain's Party Store,10030 14 Mile Rd NE,Rockford,MI,49341-2206,765,0,0,1,0,1,2,1,0,0,0,5
+251576,Zeeland Adams Elementary,7447 Adams,Zeeland,MI,49464-9613,105,28,0,0,0,0,0,0,0,0,0,28
+251574,Zeeland Cityside Mid (KEY,320 East Main Street,Zeeland,MI,49464-9613,105,29,0,0,0,0,0,0,0,0,0,29
+251575,Zeeland Creekside Middle,179 W. Rooseveldt,Zeeland,MI,49464-9613,105,30,0,0,0,0,0,0,0,0,0,30
+251584,Zeeland Early Childhood C,140 W. McKinley,Zeeland,MI,49464-9613,105,11,0,0,0,0,0,0,0,0,0,11
+251572,Zeeland East High School,3333 96th Avenue,Zeeland,MI,49464-9613,105,50,0,0,0,0,0,0,0,0,0,50
+251578,Zeeland Lincoln Elementar,60 E. Lincoln,Zeeland,MI,49464-9613,105,24,0,0,0,0,0,0,0,0,0,24
+251579,Zeeland New Groningen Ele,10542 Chicago Dr,Zeeland,MI,49464-9613,105,30,0,0,0,0,0,0,0,0,0,30
+251580,Zeeland Quincy Elementary,10155 Quincy St,Zeeland,MI,49464-9613,105,30,0,0,0,0,0,0,0,0,0,30
+251581,Zeeland Roosevelt Element,175 W. Roosevelt,Zeeland,MI,49464-9613,105,29,0,0,0,0,0,0,0,0,0,29
+251573,Zeeland West High School,3390 100th Ave,Zeeland,MI,49464-9613,105,34,0,0,0,0,0,0,0,0,0,34
+251583,Zeeland Woodbridge Elemen,9110 Woodbridge St,Zeeland,MI,49464-9613,105,26,0,0,0,0,0,0,0,0,0,26
+251589,Zerka's General Store,1249 N Greenville Rd,Stanton,MI,48888,765,0,0,1,0,1,1,2,0,0,0,5

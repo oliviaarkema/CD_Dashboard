@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Country Dairy — Sales Dashboard</title>
+
+<!-- Leaflet (map) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<!-- Chart.js (bar chart) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<style>
+  :root{
+    --green:#074d1a;
+    --green-dark:#0a1f0d;
+    --gold:#c49a3c;
+    --gold-light:#f3d27a;
+    --cream:#f8f3eb;
+    --cream-2:#fdfaf5;
+    --border:#e8e0d0;
+    --ink:#1c1c1c;
+    --muted:#6b6459;
+    --shadow:0 2px 10px rgba(10,31,13,.08);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--cream);line-height:1.5;
+  }
+  a{color:var(--green)}
+
+  /* Header */
+  header{
+    background:var(--green);color:#fff;
+    display:flex;align-items:center;gap:18px;
+    padding:16px 28px;box-shadow:var(--shadow);
+  }
+  header img{height:56px;width:auto;background:#fff;border-radius:10px;padding:4px}
+  header .titles h1{margin:0;font-size:1.35rem;letter-spacing:.3px}
+  header .titles p{margin:2px 0 0;font-size:.85rem;color:var(--gold-light)}
+  header .asof{margin-left:auto;text-align:right;font-size:.8rem;color:#dfe9df}
+  header .asof b{color:#fff}
+
+  main{max-width:1200px;margin:0 auto;padding:24px 20px 60px}
+
+  /* Stat cards */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+  .stat{
+    background:var(--cream-2);border:1px solid var(--border);border-radius:14px;
+    padding:16px 18px;box-shadow:var(--shadow);
+  }
+  .stat .num{font-size:1.9rem;font-weight:700;color:var(--green);line-height:1}
+  .stat .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-top:6px}
+
+  /* Panels */
+  .panel{
+    background:var(--cream-2);border:1px solid var(--border);border-radius:16px;
+    box-shadow:var(--shadow);margin-bottom:24px;overflow:hidden;
+  }
+  .panel-head{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    padding:14px 20px;border-bottom:1px solid var(--border);
+  }
+  .panel-head h2{margin:0;font-size:1.05rem;color:var(--green-dark)}
+  .panel-head .hint{font-size:.8rem;color:var(--muted)}
+  .panel-body{padding:18px 20px}
+
+  /* Map */
+  #map{height:520px;width:100%}
+  .map-controls{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .seg{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:#fff}
+  .seg button{
+    border:0;background:transparent;padding:6px 14px;font-size:.82rem;cursor:pointer;color:var(--muted);
+  }
+  .seg button.active{background:var(--green);color:#fff}
+  .pf{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted)}
+  .pf select{
+    font-size:.82rem;padding:6px 26px 6px 10px;border:1px solid var(--border);border-radius:8px;
+    background:#fff;color:var(--ink);cursor:pointer;max-width:190px;
+  }
+  .ghost{
+    border:1px solid var(--border);background:#fff;color:var(--green);border-radius:8px;
+    padding:6px 12px;font-size:.82rem;cursor:pointer;
+  }
+  .ghost:hover{background:var(--cream)}
+  .ghost:disabled{opacity:.45;cursor:default}
+  .legend{
+    background:rgba(255,255,255,.92);padding:8px 10px;border-radius:8px;font-size:.75rem;
+    line-height:1.5;box-shadow:var(--shadow);color:var(--ink);
+  }
+  .legend b{display:block;margin-bottom:4px;color:var(--green-dark)}
+  .legend .bar{height:10px;width:120px;border-radius:5px;
+    background:linear-gradient(90deg,#2b83ba,#abdda4,#fdae61,#d7191c);margin:3px 0}
+  .legend .dot{display:inline-block;border-radius:50%;background:rgba(7,77,26,.55);
+    border:1px solid var(--green);vertical-align:middle;margin-right:6px}
+
+  /* Two-up grid */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+  table.rank{width:100%;border-collapse:collapse;font-size:.9rem}
+  table.rank th,table.rank td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  table.rank th{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  table.rank td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--green)}
+  table.rank td.rk{color:var(--gold);font-weight:700;width:26px}
+  table.rank tr:hover td{background:#fff}
+
+  /* Placeholder cards */
+  .future{display:flex;flex-wrap:wrap;gap:16px}
+  .future .card{flex:1 1 260px;max-width:360px;
+    border:1px dashed var(--gold);border-radius:14px;background:repeating-linear-gradient(
+      45deg,rgba(196,154,60,.04),rgba(196,154,60,.04) 10px,transparent 10px,transparent 20px);
+    padding:18px;min-height:120px;display:flex;flex-direction:column;
+  }
+  .future .card h3{margin:0 0 6px;font-size:.98rem;color:var(--green-dark)}
+  .future .card p{margin:0;font-size:.82rem;color:var(--muted);flex:1}
+  .future .card .tag{
+    align-self:flex-start;margin-top:12px;font-size:.68rem;text-transform:uppercase;letter-spacing:.6px;
+    background:var(--gold-light);color:#5a4410;padding:3px 9px;border-radius:999px;font-weight:700;
+  }
+
+  footer{max-width:1200px;margin:0 auto;padding:0 20px 50px;color:var(--muted);font-size:.8rem}
+  code{background:#efe7d7;padding:1px 6px;border-radius:5px;font-size:.85em}
+  .err{color:#b00020;font-size:.85rem}
+
+  @media(max-width:820px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid-2,.future{grid-template-columns:1fr}
+    header .asof{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="assets/logo.png" alt="Country Dairy logo">
+  <div class="titles">
+    <h1>Sales Dashboard</h1>
+    <p>Customer distribution &amp; volume</p>
+  </div>
+  <div class="asof">Data through<br><b id="asof">—</b></div>
+</header>
+
+<main>
+  <!-- Stat cards -->
+  <section class="stats" id="stats"></section>
+
+  <!-- Map -->
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Where our customers are</h2>
+      <span class="hint">Heat &amp; dot size = cases purchased</span>
+      <div class="map-controls">
+        <label class="pf">Product
+          <select id="prodFilter"><option value="all">All products</option></select>
+        </label>
+        <button id="showAll" class="ghost">Show all</button>
+        <div class="seg" id="viewToggle">
+          <button data-view="heat" class="active">Heatmap</button>
+          <button data-view="dots">Sized dots</button>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body" style="padding:0">
+      <div id="map"></div>
+      <p id="mapErr" class="err" style="padding:14px 20px;display:none"></p>
+    </div>
+  </section>
+
+  <!-- Top customers + products -->
+  <section class="grid-2">
+    <div class="panel">
+      <div class="panel-head"><h2>Top 10 customers</h2><span class="hint">by cases</span></div>
+      <div class="panel-body"><table class="rank" id="topTable"><tbody></tbody></table></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Products by cases sold</h2></div>
+      <div class="panel-body"><canvas id="prodChart" height="260"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Placeholders for future metrics -->
+  <section class="panel">
+    <div class="panel-head"><h2>More metrics</h2><span class="hint">planned visualizations</span></div>
+    <div class="panel-body">
+      <div class="future">
+        <div class="card">
+          <h3>Quarter-over-quarter growth</h3>
+          <p>Trend of total cases and customer count across quarters once multiple exports are loaded.</p>
+          <span class="tag">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><b>Updating each quarter:</b> replace <code>country_dairy_sales.csv</code>, run
+  <code>python3 build_data.py</code>, then commit &amp; push. The map and charts read the
+  regenerated files in <code>data/</code>. <span id="genNote"></span></p>
+</footer>
+
+<script>
+const fmt = n => n.toLocaleString("en-US");
+
+async function load(){
+  let customers, summary;
+  try{
+    [customers, summary] = await Promise.all([
+      fetch("data/customers.json").then(r=>r.json()),
+      fetch("data/summary.json").then(r=>r.json()),
+    ]);
+  }catch(e){
+    document.getElementById("mapErr").style.display="block";
+    document.getElementById("mapErr").textContent =
+      "Could not load data files. Serve this folder over http (e.g. `python3 -m http.server`) rather than opening the file directly.";
+    return;
+  }
+
+  // As-of + footer note
+  document.getElementById("asof").textContent = summary.generated;
+  document.getElementById("genNote").textContent =
+    `Last generated ${summary.generated} from ${summary.source_csv}.` +
+    (summary.unmapped_customers ? ` ${summary.unmapped_customers} customer(s) lacked a mappable ZIP and are counted in totals but not plotted.` : "");
+
+  // Stat cards
+  const stats = [
+    ["Customers", fmt(summary.total_customers)],
+    ["Total cases", fmt(summary.total_cases)],
+    ["States served", fmt(summary.states.length)],
+    ["Mapped locations", fmt(summary.mapped_customers)],
+  ];
+  document.getElementById("stats").innerHTML = stats.map(([l,n])=>
+    `<div class="stat"><div class="num">${n}</div><div class="lbl">${l}</div></div>`).join("");
+
+  // Top 10 table
+  document.querySelector("#topTable tbody").innerHTML = summary.top_customers.map((c,i)=>
+    `<tr><td class="rk">${i+1}</td><td>${c.name}<br><span style="color:var(--muted);font-size:.8rem">${c.city}, ${c.state}</span></td><td class="n">${fmt(c.cases)}</td></tr>`
+  ).join("");
+
+  // Products bar chart
+  const prods = summary.products_by_cases.filter(p=>p.cases>0);
+  new Chart(document.getElementById("prodChart"),{
+    type:"bar",
+    data:{
+      labels:prods.map(p=>p.product.replace("Country Dairy","CD").replace("-"," ")),
+      datasets:[{data:prods.map(p=>p.cases),backgroundColor:"#074d1a",borderRadius:4}]
+    },
+    options:{
+      indexAxis:"y",responsive:true,plugins:{legend:{display:false},
+        tooltip:{callbacks:{label:c=>fmt(c.parsed.x)+" cases"}}},
+      scales:{x:{grid:{color:"#eee"},ticks:{callback:v=>fmt(v)}},y:{grid:{display:false},ticks:{font:{size:11}}}}
+    }
+  });
+
+  buildMap(customers, summary);
+}
+
+function buildMap(customers, summary){
+  const map = L.map("map",{scrollWheelZoom:false}).setView([43.0,-85.2],7);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{
+    attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:19
+  }).addTo(map);
+
+  // Fit to the Michigan cluster (ignore far-flung distributors so the map isn't zoomed out).
+  // Deferred + invalidateSize so the fit uses the container's final rendered size.
+  const miPts = customers.filter(c=>c.state==="MI").map(c=>[c.lat,c.lng]);
+  const fit = ()=>{ map.invalidateSize();
+    if(miPts.length) map.fitBounds(L.latLngBounds(miPts).pad(0.05)); };
+
+  let heat = null, dots = null;
+  let selIdx = "all";               // "all" or a product index into product_order
+  let viewMode = "heat";            // "heat" | "dots"
+
+  // Cases for a customer under the current product selection.
+  const valueOf = c => selIdx === "all" ? c.cases : (c.p[selIdx] || 0);
+
+  // Rebuild both layers for the current product, then show the active view.
+  // Heat/dot scale is normalized against the selected product's own max, so a
+  // small-volume product still spreads across its full color/size range. sqrt
+  // compression keeps a few huge distributors from washing out the map.
+  function refresh(){
+    const active = customers.filter(c => valueOf(c) > 0);
+    const maxV = Math.max(...active.map(valueOf), 1);
+
+    if(heat){ map.removeLayer(heat); }
+    if(dots){ map.removeLayer(dots); }
+
+    heat = L.heatLayer(
+      active.map(c => [c.lat, c.lng, Math.sqrt(valueOf(c)) / Math.sqrt(maxV)]),
+      {radius:22, blur:18, minOpacity:.25,
+       gradient:{0.2:"#2b83ba",0.4:"#abdda4",0.6:"#fdae61",0.85:"#d7191c"}}
+    );
+
+    dots = L.layerGroup();
+    active.forEach(c=>{
+      const r = 3 + 9*Math.sqrt(valueOf(c)/maxV);
+      L.circleMarker([c.lat,c.lng],{
+        radius:r,color:"#074d1a",weight:1,fillColor:"#074d1a",fillOpacity:.45
+      }).bindPopup(`<b>${c.name}</b><br>${c.city}, ${c.state} ${c.zip}<br><b>${fmt(valueOf(c))}</b> cases`)
+        .addTo(dots);
+    });
+
+    (viewMode==="heat" ? heat : dots).addTo(map);
+    const label = selIdx==="all" ? "All products" : summary.product_order[selIdx];
+    const cnt = document.getElementById("activeCount");
+    if(cnt) cnt.textContent = `${fmt(active.length)} locations · ${label}`;
+  }
+
+  setTimeout(fit, 60);
+  window.addEventListener("resize", ()=>map.invalidateSize());
+
+  // Legend
+  const legend = L.control({position:"bottomright"});
+  legend.onAdd = ()=>{
+    const d = L.DomUtil.create("div","legend");
+    d.innerHTML =
+      `<b>Cases purchased</b>`+
+      `<div id="lgHeat"><span>fewer</span><div class="bar"></div><span>more</span></div>`+
+      `<div id="lgDots" style="display:none">`+
+        `<span class="dot" style="width:8px;height:8px"></span>low &nbsp; `+
+        `<span class="dot" style="width:16px;height:16px"></span>high</div>`+
+      `<div id="activeCount" style="margin-top:5px;color:var(--muted)"></div>`;
+    return d;
+  };
+  legend.addTo(map);
+
+  // Populate the product dropdown (only products with sales), preserving
+  // product_order indexes as option values.
+  const sel = document.getElementById("prodFilter");
+  const sold = new Set(summary.products_by_cases.filter(p=>p.cases>0).map(p=>p.product));
+  summary.product_order.forEach((name, i)=>{
+    if(!sold.has(name)) return;
+    const o = document.createElement("option");
+    o.value = String(i);
+    o.textContent = name.replace("Country Dairy","CD").replace(/-/g," ");
+    sel.appendChild(o);
+  });
+
+  const showAllBtn = document.getElementById("showAll");
+  function setProduct(v){
+    selIdx = v==="all" ? "all" : Number(v);
+    sel.value = v;
+    showAllBtn.disabled = (v==="all");
+    refresh();
+  }
+  sel.addEventListener("change", e=> setProduct(e.target.value));
+  showAllBtn.addEventListener("click", ()=> setProduct("all"));
+  setProduct("all");
+
+  // Heat / dots toggle
+  document.getElementById("viewToggle").addEventListener("click",e=>{
+    const btn = e.target.closest("button"); if(!btn) return;
+    document.querySelectorAll("#viewToggle button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    viewMode = btn.dataset.view;
+    const heatOn = viewMode==="heat";
+    if(heatOn){ map.addLayer(heat); map.removeLayer(dots); }
+    else{ map.addLayer(dots); map.removeLayer(heat); }
+    document.getElementById("lgHeat").style.display = heatOn?"block":"none";
+    document.getElementById("lgDots").style.display = heatOn?"none":"block";
+  });
+}
+
+load();
+</script>
+</body>
+</html>
