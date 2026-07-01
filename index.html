@@ -95,7 +95,7 @@
   }
   .legend b{display:block;margin-bottom:4px;color:var(--green-dark)}
   .legend .bar{height:10px;width:120px;border-radius:5px;
-    background:linear-gradient(90deg,#cdeac2,#7cc85f,#3dae2b,#074d1a);margin:3px 0}
+    background:linear-gradient(90deg,#2b83ba,#abdda4,#fdae61,#d7191c);margin:3px 0}
   .legend .dot{display:inline-block;border-radius:50%;background:rgba(7,77,26,.55);
     border:1px solid var(--green);vertical-align:middle;margin-right:6px}
 
@@ -294,7 +294,7 @@ function buildMap(customers, summary){
     heat = L.heatLayer(
       active.map(c => [c.lat, c.lng, Math.sqrt(valueOf(c)) / Math.sqrt(maxV)]),
       {radius:22, blur:18, minOpacity:.25,
-       gradient:{0.2:"#cdeac2",0.45:"#7cc85f",0.7:"#3dae2b",0.9:"#074d1a"}}
+       gradient:{0.2:"#2b83ba",0.4:"#abdda4",0.6:"#fdae61",0.85:"#d7191c"}}
     );
 
     dots = L.layerGroup();
