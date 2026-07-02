@@ -130,7 +130,8 @@
   @media(max-width:820px){
     .stats{grid-template-columns:repeat(2,1fr)}
     .grid-2,.future{grid-template-columns:1fr}
-    header .asof{display:none}
+    header{flex-wrap:wrap}
+    header .asof{margin-left:0;text-align:left;width:100%;order:3}
   }
 </style>
 </head>
@@ -142,7 +143,7 @@
     <h1>Sales Dashboard</h1>
     <p>Customer distribution &amp; volume</p>
   </div>
-  <div class="asof">Data through<br><b id="asof">—</b></div>
+  <div class="asof" id="asof">Sales Data from —</div>
 </header>
 
 <main>
@@ -198,12 +199,6 @@
   </section>
 </main>
 
-<footer>
-  <p><b>Updating each quarter:</b> replace <code>country_dairy_sales.csv</code>, run
-  <code>python3 build_data.py</code>, then commit &amp; push. The map and charts read the
-  regenerated files in <code>data/</code>. <span id="genNote"></span></p>
-</footer>
-
 <script>
 const fmt = n => n.toLocaleString("en-US");
 
@@ -221,12 +216,10 @@ async function load(){
     return;
   }
 
-  // As-of + footer note (dated to the sales CSV's last upload).
-  const updated = summary.data_updated || summary.generated;
-  document.getElementById("asof").textContent = updated;
-  document.getElementById("genNote").textContent =
-    `Last updated ${updated} from ${summary.source_csv}.` +
-    (summary.unmapped_customers ? ` ${summary.unmapped_customers} customer(s) lacked a mappable ZIP and are counted in totals but not plotted.` : "");
+  // Header "Sales Data from MM-DD-YYYY" (sales-period date from the build).
+  const iso = summary.as_of || summary.data_updated || summary.generated;
+  const [y,m,d] = iso.split("-");
+  document.getElementById("asof").innerHTML = `Sales Data from <b>${m}-${d}-${y}</b>`;
 
   // Stat cards
   const stats = [

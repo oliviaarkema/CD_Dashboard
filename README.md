@@ -24,11 +24,13 @@ reproducible, so a rebuild always produces the same map.
 
 1. Export the new sales report and save it over `country_dairy_sales.csv`
    (same column headers as before — `CUST #, DESCRIPTION, … , TOTAL CASES`).
-2. Regenerate the data files:
+2. Regenerate the data files, passing the sales-period date (shown in the
+   header as "Sales Data from MM-DD-YYYY"):
    ```bash
    python3 -m pip install -r requirements.txt   # first time only
-   python3 build_data.py
+   python3 build_data.py --as-of 2026-06-30     # e.g. quarter close
    ```
+   If you omit `--as-of`, it falls back to the CSV file's last-modified date.
 3. Commit and push:
    ```bash
    git add country_dairy_sales.csv data/
@@ -39,7 +41,7 @@ reproducible, so a rebuild always produces the same map.
 
 The build prints how many customers were mapped. Customers with a missing or
 unrecognized ZIP are **still counted** in every total — they just aren't
-plotted. The dashboard footer notes the count when that happens.
+plotted.
 
 ## Previewing locally
 

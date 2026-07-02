@@ -83,6 +83,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default="country_dairy_sales.csv")
     ap.add_argument("--out", default="data")
+    ap.add_argument("--as-of", dest="as_of", default=None,
+                    help="Sales-period date shown in the header, e.g. 2026-03-31. "
+                         "Defaults to the CSV's last-modified date.")
     args = ap.parse_args()
 
     with open(args.csv, newline="", encoding="utf-8-sig") as f:
@@ -147,12 +150,15 @@ def main():
 
     customers.sort(key=lambda c: c["cases"], reverse=True)
 
-    # "Last updated" = when the sales CSV was last saved/uploaded (its file
-    # modification time), which is what changes each quarter.
+    # Header "Sales Data from ..." date. Prefer an explicit --as-of (the sales
+    # period end, e.g. quarter close); otherwise fall back to the CSV's
+    # last-modified date.
     csv_updated = datetime.fromtimestamp(os.path.getmtime(args.csv)).date().isoformat()
+    as_of = args.as_of or csv_updated
 
     summary = {
         "generated": date.today().isoformat(),
+        "as_of": as_of,
         "data_updated": csv_updated,
         "source_csv": args.csv,
         # PRODUCT_COLS order — the map's per-customer "p" arrays align to this.
