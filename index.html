@@ -347,7 +347,9 @@ function buildMap(customers, summary){
 
     dots = L.layerGroup();
     active.forEach(c=>{
-      const r = 3 + 9*Math.sqrt(valueOf(c)/maxV);
+      // Larger dots with more contrast: exponent 0.6 (vs pure sqrt) exaggerates
+      // the gap between small and large customers.
+      const r = 4 + 24*Math.pow(valueOf(c)/maxV, 0.6);
       L.circleMarker([c.lat,c.lng],{
         radius:r,color:"#074d1a",weight:1,fillColor:"#074d1a",fillOpacity:.45
       }).bindPopup(`<b>${c.name}</b><br>${c.city}, ${c.state} ${c.zip}<br><b>${fmt(valueOf(c))}</b> cases`)
@@ -378,7 +380,7 @@ function buildMap(customers, summary){
       `<div id="lgHeat"><span>fewer</span><div class="bar"></div><span>more</span></div>`+
       `<div id="lgDots" style="display:none">`+
         `<span class="dot" style="width:8px;height:8px"></span>low &nbsp; `+
-        `<span class="dot" style="width:16px;height:16px"></span>high</div>`+
+        `<span class="dot" style="width:26px;height:26px"></span>high</div>`+
       `<div id="activeCount" style="margin-top:5px;color:var(--muted)"></div>`;
     return d;
   };

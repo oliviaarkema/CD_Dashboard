@@ -45,8 +45,21 @@ PRODUCT_COLS = [
     "Milk Qts-Country Dairy", "Mix-Country Dairy", "WF Gallons", "WF Hgls",
 ]
 
-# Gallon-jug product columns, summed for the "Gallons sold" stat card.
-GALLON_COLS = ["Milk Gals-Country Dairy", "Milk Gals-Cedar Cr", "WF Gallons"]
+# Gallons of product per case, by product. Used to convert case counts into the
+# total-volume "Gallons sold" stat. Derived from the packout of each format
+# (e.g. 4 gallons/case, 9 half-gallons/case = 4.5 gal, 20 pints/case = 2.5 gal).
+GALLONS_PER_CASE = {
+    "Milk-CD Half Pints": 3.125,
+    "Milk-5Gal": 5.0,
+    "Milk Gals-Country Dairy": 4.0,
+    "Milk Gals-Cedar Cr": 4.0,
+    "Milk Hgls-Country Dairy": 4.5,
+    "Milk Pints-Country Dairy": 2.5,
+    "Milk Qts-Country Dairy": 2.25,
+    "Mix-Country Dairy": 5.0,
+    "WF Gallons": 4.0,
+    "WF Hgls": 4.5,
+}
 
 
 def clean_zip(raw):
@@ -170,7 +183,8 @@ def main():
         "mapped_customers": len(customers),
         "unmapped_customers": len(ungeocoded),
         "total_cases": sum(to_int(r.get(COL_TOTAL)) for r in rows),
-        "gallons_sold": sum(product_totals[c] for c in GALLON_COLS),
+        "gallons_sold": round(sum(product_totals[p] * GALLONS_PER_CASE.get(p, 0)
+                                  for p in PRODUCT_COLS)),
         "top_customers": [
             {"name": c["name"], "city": c["city"], "state": c["state"], "cases": c["cases"]}
             for c in customers[:10]
