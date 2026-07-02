@@ -17,9 +17,12 @@ they buy, plus top-customer and product rankings. Built to be published on
 | `assets/logo.png` | Country Dairy logo. |
 
 The map uses [Leaflet](https://leafletjs.com/) + Leaflet.heat with free
-OpenStreetMap/CARTO tiles (no API key). Customers are placed by **ZIP-code
-centroid** via [`pgeocode`](https://pypi.org/project/pgeocode/) — offline and
-reproducible, so a rebuild always produces the same map.
+OpenStreetMap/CARTO tiles (no API key). Customers are geocoded to their
+**street address** via the free [US Census batch geocoder](https://geocoding.geo.census.gov/)
+(no key, needs internet). Any address the Census can't match falls back to its
+**ZIP-code centroid** via [`pgeocode`](https://pypi.org/project/pgeocode/)
+(offline) — those points are marked "(approx.)" in the map popup. Run with
+`--zip-only` to skip street geocoding entirely (fully offline).
 
 ## Updating each quarter
 

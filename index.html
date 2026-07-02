@@ -73,6 +73,8 @@
 
   /* Map */
   #map{height:520px;width:100%}
+  .reset-ctl a{display:flex;align-items:center;justify-content:center;background:#fff}
+  .reset-ctl a:hover{background:var(--bg)}
   .map-controls{margin-left:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;align-items:center}
   .seg{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:#fff}
   .seg button{
@@ -352,7 +354,12 @@ function buildMap(customers, summary){
       const r = 4 + 24*Math.pow(valueOf(c)/maxV, 0.6);
       L.circleMarker([c.lat,c.lng],{
         radius:r,color:"#074d1a",weight:1,fillColor:"#074d1a",fillOpacity:.45
-      }).bindPopup(`<b>${c.name}</b><br>${c.city}, ${c.state} ${c.zip}<br><b>${fmt(valueOf(c))}</b> cases`)
+      }).bindPopup(
+        `<b>${c.name}</b><br>`+
+        (c.addr ? `${c.addr}<br>` : "")+
+        `${c.city}, ${c.state} ${c.zip}`+
+        (c.geo==="zip" ? ` <span style="color:var(--muted)">(approx.)</span>` : "")+
+        `<br><b>${fmt(valueOf(c))}</b> cases`)
         .addTo(dots);
     });
 
@@ -453,17 +460,47 @@ function buildMap(customers, summary){
   refresh();
 
   // Heat / dots toggle
-  document.getElementById("viewToggle").addEventListener("click",e=>{
-    const btn = e.target.closest("button"); if(!btn) return;
-    document.querySelectorAll("#viewToggle button").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    viewMode = btn.dataset.view;
-    const heatOn = viewMode==="heat";
+  function setView(mode){
+    viewMode = mode;
+    document.querySelectorAll("#viewToggle button")
+      .forEach(b=> b.classList.toggle("active", b.dataset.view===mode));
+    const heatOn = mode==="heat";
     if(heatOn){ map.addLayer(heat); map.removeLayer(dots); }
     else{ map.addLayer(dots); map.removeLayer(heat); }
     document.getElementById("lgHeat").style.display = heatOn?"block":"none";
     document.getElementById("lgDots").style.display = heatOn?"none":"block";
+  }
+  document.getElementById("viewToggle").addEventListener("click",e=>{
+    const btn = e.target.closest("button"); if(!btn) return;
+    setView(btn.dataset.view);
   });
+
+  // --- Reset control: all products, all customers, heatmap, recentered ---
+  function resetMap(){
+    menu.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=true);
+    applyChecks();                                  // select all products + refresh
+    top3Chk.checked = true; showTop3 = true;
+    document.getElementById("top3State").textContent = "Shown";
+    setView("heat");
+    refresh();
+    fit();                                          // recenter on the cluster
+  }
+  const ResetControl = L.Control.extend({
+    options:{position:"topleft"},
+    onAdd(){
+      const c = L.DomUtil.create("div","leaflet-bar reset-ctl");
+      const a = L.DomUtil.create("a","",c);
+      a.href="#"; a.title="Reset map"; a.setAttribute("role","button");
+      a.setAttribute("aria-label","Reset map");
+      a.innerHTML =
+        `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#074d1a" `+
+        `stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">`+
+        `<path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg>`;
+      L.DomEvent.on(a,"click",L.DomEvent.stop).on(a,"click",resetMap);
+      return c;
+    }
+  });
+  map.addControl(new ResetControl());
 }
 
 load();

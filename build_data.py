@@ -3,24 +3,29 @@
 Country Dairy Sales Dashboard — data builder.
 
 Reads the quarterly sales export (country_dairy_sales.csv), geocodes each
-customer by ZIP-code centroid (offline, via pgeocode), and writes
-data/customers.json + data/summary.json for the static dashboard.
+customer to its STREET ADDRESS via the free US Census batch geocoder (no API
+key), falling back to ZIP-code centroid (pgeocode) for any address the Census
+can't match, and writes data/customers.json + data/summary.json.
 
 USAGE (run once per quarter after dropping in the new CSV):
-    python3 build_data.py
-    # optionally: python3 build_data.py --csv some_other_export.csv
+    python3 build_data.py --as-of 2026-03-31
+    # options:
+    #   --csv some_other_export.csv
+    #   --zip-only   skip street geocoding (offline; ZIP centroids only)
 
-Requires: pip install pgeocode
-pgeocode downloads a US ZIP centroid table once and caches it locally, so
-reruns are offline and reproducible.
+Requires: pip install pgeocode  (used only for the ZIP fallback)
+Street geocoding needs internet; the ZIP fallback is offline and cached.
 """
 
 import argparse
 import csv
+import io
 import json
 import math
 import os
 import sys
+import urllib.request
+import uuid
 from collections import defaultdict
 from datetime import date, datetime
 
@@ -95,6 +100,53 @@ def jitter(lat, lng, key, index):
     return lat + r * math.cos(ang), lng + r * math.sin(ang) / math.cos(math.radians(lat))
 
 
+CENSUS_URL = "https://geocoding.geo.census.gov/geocoder/locations/addressbatch"
+
+
+def census_geocode(addr_rows, chunk=1000):
+    """
+    Street-level geocode via the US Census batch geocoder (free, no key).
+    `addr_rows` is a list of (rid, street, city, state, zip). Returns
+    {rid: (lat, lng)} for rows the Census matched. Batches of <=10k; we use
+    1k chunks so a single bad chunk can't lose everything.
+    """
+    matched = {}
+    for start in range(0, len(addr_rows), chunk):
+        batch = addr_rows[start:start + chunk]
+        buf = io.StringIO()
+        w = csv.writer(buf)
+        for rid, street, city, st, zc in batch:
+            w.writerow([rid, street, city, st, zc])
+        payload = buf.getvalue().encode("utf-8")
+
+        boundary = uuid.uuid4().hex
+        body = b"".join([
+            (f"--{boundary}\r\n"
+             f"Content-Disposition: form-data; name=\"benchmark\"\r\n\r\n"
+             f"Public_AR_Current\r\n").encode(),
+            (f"--{boundary}\r\n"
+             f"Content-Disposition: form-data; name=\"addressFile\"; filename=\"addr.csv\"\r\n"
+             f"Content-Type: text/csv\r\n\r\n").encode(),
+            payload, b"\r\n",
+            f"--{boundary}--\r\n".encode(),
+        ])
+        req = urllib.request.Request(
+            CENSUS_URL, data=body,
+            headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+        with urllib.request.urlopen(req, timeout=300) as resp:
+            text = resp.read().decode("utf-8", "replace")
+
+        for row in csv.reader(io.StringIO(text)):
+            # rid, input, "Match"/"No_Match"/"Tie", matchtype, matched addr,
+            # "lon,lat", tigerline id, side
+            if len(row) >= 6 and row[2] == "Match" and row[5]:
+                lon, lat = row[5].split(",")
+                matched[row[0]] = (float(lat), float(lon))
+        print(f"  Census batch {start//chunk + 1}: "
+              f"{len(batch)} sent, {sum(1 for r in batch if r[0] in matched)} matched so far")
+    return matched
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default="country_dairy_sales.csv")
@@ -102,6 +154,8 @@ def main():
     ap.add_argument("--as-of", dest="as_of", default=None,
                     help="Sales-period date shown in the header, e.g. 2026-03-31. "
                          "Defaults to the CSV's last-modified date.")
+    ap.add_argument("--zip-only", action="store_true",
+                    help="Skip street geocoding; use ZIP centroids only (offline).")
     args = ap.parse_args()
 
     with open(args.csv, newline="", encoding="utf-8-sig") as f:
@@ -110,24 +164,43 @@ def main():
 
     nomi = pgeocode.Nominatim("us")
 
-    # Geocode unique ZIPs in one pass.
+    # 1) Street-level geocode via the Census (keyed by row index).
+    street_ll = {}
+    if not args.zip_only:
+        addr_rows = [
+            (str(i),
+             (r.get(COL_ADDR) or "").strip(),
+             (r.get(COL_CITY) or "").strip(),
+             (r.get(COL_STATE) or "").strip(),
+             clean_zip(r.get(COL_ZIP)) or "")
+            for i, r in enumerate(rows)
+            if (r.get(COL_ADDR) or "").strip()
+        ]
+        print(f"Street-geocoding {len(addr_rows)} addresses via US Census…")
+        try:
+            street_ll = census_geocode(addr_rows)
+        except Exception as e:               # network/service issue — fall back
+            print(f"  Census geocoding unavailable ({e}); using ZIP centroids.")
+        print(f"Street-matched {len(street_ll)}/{len(rows)} addresses")
+
+    # 2) ZIP centroids (for the fallback), one lookup per unique ZIP.
     zips = {clean_zip(r.get(COL_ZIP)) for r in rows}
     zips.discard(None)
     zip_ll = {}
     for z in zips:
         rec = nomi.query_postal_code(z)
         lat, lng = rec.latitude, rec.longitude
-        if lat == lat and lng == lng:    # not NaN
+        if lat == lat and lng == lng:        # not NaN
             zip_ll[z] = (float(lat), float(lng))
-    print(f"Geocoded {len(zip_ll)}/{len(zips)} unique ZIPs")
 
     seen_at_zip = defaultdict(int)
     customers = []
     ungeocoded = []
+    n_street = n_zip = 0
     product_totals = defaultdict(int)
     state_totals = defaultdict(lambda: {"customers": 0, "cases": 0})
 
-    for r in rows:
+    for i, r in enumerate(rows):
         name = (r.get(COL_NAME) or "").strip()
         cases = to_int(r.get(COL_TOTAL))
         state = (r.get(COL_STATE) or "").strip()
@@ -139,14 +212,22 @@ def main():
             state_totals[state]["customers"] += 1
             state_totals[state]["cases"] += cases
 
-        if z not in zip_ll:
+        # Prefer the exact street match; otherwise fall back to the ZIP
+        # centroid (jittered so same-ZIP customers don't stack).
+        if str(i) in street_ll:
+            lat, lng = street_ll[str(i)]
+            geo = "street"
+            n_street += 1
+        elif z in zip_ll:
+            base_lat, base_lng = zip_ll[z]
+            idx = seen_at_zip[z]
+            seen_at_zip[z] += 1
+            lat, lng = jitter(base_lat, base_lng, z, idx)
+            geo = "zip"
+            n_zip += 1
+        else:
             ungeocoded.append(name)
             continue
-
-        base_lat, base_lng = zip_ll[z]
-        idx = seen_at_zip[z]
-        seen_at_zip[z] += 1
-        lat, lng = jitter(base_lat, base_lng, z, idx)
 
         # Per-product case counts, aligned to PRODUCT_COLS order, so the map can
         # filter the heat/dots to a single product.
@@ -155,6 +236,7 @@ def main():
         customers.append({
             "id": (r.get(COL_CUST) or "").strip(),
             "name": name,
+            "addr": (r.get(COL_ADDR) or "").strip(),
             "city": (r.get(COL_CITY) or "").strip(),
             "state": state,
             "zip": z,
@@ -162,8 +244,11 @@ def main():
             "lng": round(lng, 5),
             "cases": cases,
             "p": per_product,
+            "geo": geo,
         })
 
+    print(f"Placed {n_street} at street level, {n_zip} at ZIP centroid, "
+          f"{len(ungeocoded)} unmapped")
     customers.sort(key=lambda c: c["cases"], reverse=True)
 
     # Header "Sales Data from ..." date. Prefer an explicit --as-of (the sales
@@ -181,6 +266,8 @@ def main():
         "product_order": PRODUCT_COLS,
         "total_customers": len(rows),
         "mapped_customers": len(customers),
+        "street_matched": n_street,
+        "zip_fallback": n_zip,
         "unmapped_customers": len(ungeocoded),
         "total_cases": sum(to_int(r.get(COL_TOTAL)) for r in rows),
         "gallons_sold": round(sum(product_totals[p] * GALLONS_PER_CASE.get(p, 0)

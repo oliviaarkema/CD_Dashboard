@@ -16,8 +16,10 @@
     "WF Hgls"
   ],
   "total_customers": 834,
-  "mapped_customers": 831,
-  "unmapped_customers": 3,
+  "mapped_customers": 833,
+  "street_matched": 733,
+  "zip_fallback": 100,
+  "unmapped_customers": 1,
   "total_cases": 15997,
   "gallons_sold": 57318,
   "top_customers": [
