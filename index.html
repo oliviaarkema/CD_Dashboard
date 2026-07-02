@@ -34,6 +34,31 @@
   }
   a{color:var(--green)}
 
+  /* Access gate */
+  #gate{
+    position:fixed;inset:0;z-index:5000;background:var(--green);
+    display:flex;align-items:center;justify-content:center;padding:20px;
+  }
+  .gate-card{
+    background:var(--panel);border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.3);
+    padding:32px 28px;width:100%;max-width:340px;text-align:center;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .gate-card img{height:70px;width:auto;margin:0 auto 4px}
+  .gate-card h1{margin:0;font-size:1.3rem;color:var(--green-dark)}
+  .gate-card p{margin:0;font-size:.88rem;color:var(--muted)}
+  .gate-card input{
+    padding:11px 14px;font-size:1rem;border:1px solid var(--border);border-radius:10px;
+    width:100%;
+  }
+  .gate-card input:focus{outline:2px solid var(--kelly);outline-offset:1px;border-color:var(--kelly)}
+  .gate-card button{
+    padding:11px 14px;font-size:.95rem;font-weight:600;border:0;border-radius:10px;
+    background:var(--green);color:#fff;cursor:pointer;
+  }
+  .gate-card button:hover{background:var(--green-mid)}
+  .gate-err{color:#b00020;font-size:.85rem}
+
   /* Header */
   header{
     background:var(--green);color:#fff;
@@ -132,8 +157,9 @@
   .legend b{display:block;margin-bottom:4px;color:var(--green-dark)}
   .legend .bar{height:10px;width:120px;border-radius:5px;
     background:linear-gradient(90deg,#2b83ba,#abdda4,#fdae61,#d7191c);margin:3px 0}
-  .legend .dot{display:inline-block;border-radius:50%;background:rgba(7,77,26,.55);
-    border:1px solid var(--green);vertical-align:middle;margin-right:6px}
+  .legend .dot{display:inline-block;border-radius:50%;background:#22c55e;
+    border:1.4px solid #fff;box-shadow:0 0 0 1px rgba(7,77,26,.4);
+    vertical-align:middle;margin-right:6px}
 
   /* Two-up grid */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -172,6 +198,18 @@
 </style>
 </head>
 <body>
+
+<!-- Access gate (client-side; see initAuth in the script) -->
+<div id="gate">
+  <form id="gateForm" class="gate-card">
+    <img src="assets/logo.png" alt="Country Dairy">
+    <h1>Sales Dashboard</h1>
+    <p>Enter the password to continue.</p>
+    <input type="password" id="gatePw" autocomplete="current-password" placeholder="Password" aria-label="Password">
+    <button type="submit">View dashboard</button>
+    <div id="gateErr" class="gate-err" hidden>Incorrect password — try again.</div>
+  </form>
+</div>
 
 <header>
   <img src="assets/logo.png" alt="Country Dairy logo">
@@ -353,7 +391,7 @@ function buildMap(customers, summary){
       // the gap between small and large customers.
       const r = 4 + 24*Math.pow(valueOf(c)/maxV, 0.6);
       L.circleMarker([c.lat,c.lng],{
-        radius:r,color:"#074d1a",weight:1,fillColor:"#074d1a",fillOpacity:.45
+        radius:r,color:"#fff",weight:1.4,fillColor:"#22c55e",fillOpacity:.8
       }).bindPopup(
         `<b>${c.name}</b><br>`+
         (c.addr ? `${c.addr}<br>` : "")+
@@ -503,7 +541,39 @@ function buildMap(customers, summary){
   map.addControl(new ResetControl());
 }
 
-load();
+// --- Access gate ---------------------------------------------------------
+// Client-side only (static site — see the note in README). We store just the
+// SHA-256 hash of the access password, never the password itself, so it can't
+// be read straight out of the repo. Unlock persists for the browser session.
+const ACCESS_HASH = "a82fbf9d0cd1e584d5226d52195e531a98acec4de877a2c5fb9b6aca47488009";
+
+async function sha256Hex(str){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+function unlock(){
+  const gate = document.getElementById("gate");
+  if(gate) gate.remove();
+  document.body.style.overflow = "";
+  load();
+}
+(function initAuth(){
+  if(sessionStorage.getItem("cd_access")==="1"){ unlock(); return; }
+  document.body.style.overflow = "hidden";
+  const form = document.getElementById("gateForm");
+  const pw = document.getElementById("gatePw");
+  const err = document.getElementById("gateErr");
+  pw.focus();
+  form.addEventListener("submit", async e=>{
+    e.preventDefault();
+    if(await sha256Hex(pw.value) === ACCESS_HASH){
+      sessionStorage.setItem("cd_access","1");
+      unlock();
+    }else{
+      err.hidden = false; pw.value = ""; pw.focus();
+    }
+  });
+})();
 </script>
 </body>
 </html>
