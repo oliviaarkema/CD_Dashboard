@@ -63,7 +63,7 @@
     box-shadow:var(--shadow);margin-bottom:24px;overflow:hidden;
   }
   .panel-head{
-    position:relative;z-index:5;
+    position:relative;z-index:1100;   /* above Leaflet panes (≤700) & controls (1000) */
     display:flex;align-items:center;gap:12px;flex-wrap:wrap;
     padding:14px 20px;border-bottom:1px solid var(--border);
   }
