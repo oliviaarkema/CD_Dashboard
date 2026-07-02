@@ -73,7 +73,7 @@
 
   /* Map */
   #map{height:520px;width:100%}
-  .map-controls{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .map-controls{margin-left:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;align-items:center}
   .seg{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:#fff}
   .seg button{
     border:0;background:transparent;padding:6px 14px;font-size:.82rem;cursor:pointer;color:var(--muted);
@@ -100,10 +100,23 @@
     font-size:.78rem;padding:5px 8px;border-radius:6px;cursor:pointer;
   }
   .pf-menu .mini:hover{background:var(--bg)}
-  /* Top-3 radio group */
-  .radios{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:var(--ink)}
-  .radios label{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
-  .radios input{accent-color:var(--green);cursor:pointer}
+  /* Top-3 slider toggle, in a clear pill container */
+  .switch-wrap{
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:.82rem;color:var(--ink);
+    background:#fff;border:1px solid var(--border);border-radius:999px;padding:5px 12px;
+  }
+  .switch-wrap:hover{border-color:var(--green)}
+  .switch{position:relative;display:inline-block;width:38px;height:20px;flex:none}
+  .switch input{opacity:0;width:0;height:0}
+  .slider{position:absolute;inset:0;background:#c3ccc3;border-radius:999px;transition:.2s}
+  .slider::before{content:"";position:absolute;height:14px;width:14px;left:3px;top:3px;
+    background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+  .switch input:checked + .slider{background:var(--green)}
+  .switch input:checked + .slider::before{transform:translateX(18px)}
+  .switch input:focus-visible + .slider{outline:2px solid var(--kelly);outline-offset:2px}
+  .switch-state{font-size:.75rem;color:var(--muted);min-width:42px}
+  /* Sub-note on stat card labels */
+  .stat .lbl .sub{text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400}
   .ghost{
     border:1px solid var(--border);background:#fff;color:var(--green);border-radius:8px;
     padding:6px 12px;font-size:.82rem;cursor:pointer;
@@ -183,11 +196,14 @@
           <div class="pf-menu" id="prodMenu" hidden></div>
         </div>
         <button id="showAll" class="ghost">Show all</button>
-        <span class="radios" id="top3Toggle">
-          <span class="pf-lbl">Top 3 customers</span>
-          <label><input type="radio" name="top3" value="show" checked> Show</label>
-          <label><input type="radio" name="top3" value="hide"> Hide</label>
-        </span>
+        <label class="switch-wrap" id="top3Toggle" title="Toggle the 3 highest-volume customers on or off the map">
+          <span class="switch-lbl">Top 3 customers</span>
+          <span class="switch">
+            <input type="checkbox" id="top3Chk" checked>
+            <span class="slider"></span>
+          </span>
+          <span class="switch-state" id="top3State">Shown</span>
+        </label>
         <div class="seg" id="viewToggle">
           <button data-view="heat" class="active">Heatmap</button>
           <button data-view="dots">Sized dots</button>
@@ -249,15 +265,15 @@ async function load(){
   const [y,m,d] = iso.split("-");
   document.getElementById("asof").innerHTML = `Sales Data from <b>${m}-${d}-${y}</b>`;
 
-  // Stat cards
+  // Stat cards ([label, number, optional sub-note])
   const stats = [
-    ["Customers", fmt(summary.total_customers)],
+    ["Customers", fmt(summary.total_customers), `${fmt(summary.mapped_customers)} mapped`],
     ["Total cases", fmt(summary.total_cases)],
     ["States served", fmt(summary.states.length)],
-    ["Mapped locations", fmt(summary.mapped_customers)],
+    ["Gallons sold", fmt(summary.gallons_sold)],
   ];
-  document.getElementById("stats").innerHTML = stats.map(([l,n])=>
-    `<div class="stat"><div class="num">${n}</div><div class="lbl">${l}</div></div>`).join("");
+  document.getElementById("stats").innerHTML = stats.map(([l,n,sub])=>
+    `<div class="stat"><div class="num">${n}</div><div class="lbl">${l}${sub?` <span class="sub">· ${sub}</span>`:""}</div></div>`).join("");
 
   // Top 10 table
   document.querySelector("#topTable tbody").innerHTML = summary.top_customers.map((c,i)=>
@@ -423,10 +439,11 @@ function buildMap(customers, summary){
       menu.setAttribute("hidden","");
   });
 
-  // --- Top-3 show/hide radios ---
-  document.getElementById("top3Toggle").addEventListener("change", e=>{
-    if(e.target.name!=="top3") return;
-    showTop3 = e.target.value==="show";
+  // --- Top-3 show/hide slider ---
+  const top3Chk = document.getElementById("top3Chk");
+  top3Chk.addEventListener("change", ()=>{
+    showTop3 = top3Chk.checked;
+    document.getElementById("top3State").textContent = showTop3 ? "Shown" : "Hidden";
     refresh();
   });
 

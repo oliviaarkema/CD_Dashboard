@@ -45,6 +45,9 @@ PRODUCT_COLS = [
     "Milk Qts-Country Dairy", "Mix-Country Dairy", "WF Gallons", "WF Hgls",
 ]
 
+# Gallon-jug product columns, summed for the "Gallons sold" stat card.
+GALLON_COLS = ["Milk Gals-Country Dairy", "Milk Gals-Cedar Cr", "WF Gallons"]
+
 
 def clean_zip(raw):
     """Normalize a ZIP to its 5-digit form; return None if unusable."""
@@ -167,6 +170,7 @@ def main():
         "mapped_customers": len(customers),
         "unmapped_customers": len(ungeocoded),
         "total_cases": sum(to_int(r.get(COL_TOTAL)) for r in rows),
+        "gallons_sold": sum(product_totals[c] for c in GALLON_COLS),
         "top_customers": [
             {"name": c["name"], "city": c["city"], "state": c["state"], "cases": c["cases"]}
             for c in customers[:10]
