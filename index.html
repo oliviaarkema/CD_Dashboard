@@ -63,6 +63,7 @@
     box-shadow:var(--shadow);margin-bottom:24px;overflow:hidden;
   }
   .panel-head{
+    position:relative;z-index:5;
     display:flex;align-items:center;gap:12px;flex-wrap:wrap;
     padding:14px 20px;border-bottom:1px solid var(--border);
   }
@@ -78,11 +79,31 @@
     border:0;background:transparent;padding:6px 14px;font-size:.82rem;cursor:pointer;color:var(--muted);
   }
   .seg button.active{background:var(--green);color:#fff}
-  .pf{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted)}
-  .pf select{
-    font-size:.82rem;padding:6px 26px 6px 10px;border:1px solid var(--border);border-radius:8px;
-    background:#fff;color:var(--ink);cursor:pointer;max-width:190px;
+  .pf-lbl{font-size:.78rem;color:var(--muted)}
+  /* Multi-select product dropdown */
+  .pf-multi{position:relative;display:inline-flex;align-items:center;gap:6px}
+  .pf-btn{min-width:130px;text-align:left}
+  .pf-menu{
+    position:absolute;top:calc(100% + 4px);left:0;z-index:3000;
+    background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);
+    padding:6px;min-width:210px;max-height:280px;overflow:auto;
   }
+  .pf-menu .sep{border-top:1px solid var(--border);margin:5px 0}
+  .pf-menu label{
+    display:flex;align-items:center;gap:8px;font-size:.82rem;padding:5px 8px;
+    border-radius:6px;cursor:pointer;white-space:nowrap;
+  }
+  .pf-menu label:hover{background:var(--bg)}
+  .pf-menu input{accent-color:var(--green);cursor:pointer}
+  .pf-menu .mini{
+    display:block;width:100%;text-align:left;border:0;background:transparent;color:var(--green);
+    font-size:.78rem;padding:5px 8px;border-radius:6px;cursor:pointer;
+  }
+  .pf-menu .mini:hover{background:var(--bg)}
+  /* Top-3 radio group */
+  .radios{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:var(--ink)}
+  .radios label{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+  .radios input{accent-color:var(--green);cursor:pointer}
   .ghost{
     border:1px solid var(--border);background:#fff;color:var(--green);border-radius:8px;
     padding:6px 12px;font-size:.82rem;cursor:pointer;
@@ -156,10 +177,17 @@
       <h2>Where our customers are</h2>
       <span class="hint">Heat &amp; dot size = cases purchased</span>
       <div class="map-controls">
-        <label class="pf">Product
-          <select id="prodFilter"><option value="all">All products</option></select>
-        </label>
+        <div class="pf-multi" id="prodMulti">
+          <span class="pf-lbl">Products</span>
+          <button type="button" class="ghost pf-btn" id="prodBtn" aria-expanded="false">All products ▾</button>
+          <div class="pf-menu" id="prodMenu" hidden></div>
+        </div>
         <button id="showAll" class="ghost">Show all</button>
+        <span class="radios" id="top3Toggle">
+          <span class="pf-lbl">Top 3 customers</span>
+          <label><input type="radio" name="top3" value="show" checked> Show</label>
+          <label><input type="radio" name="top3" value="hide"> Hide</label>
+        </span>
         <div class="seg" id="viewToggle">
           <button data-view="heat" class="active">Heatmap</button>
           <button data-view="dots">Sized dots</button>
@@ -267,18 +295,29 @@ function buildMap(customers, summary){
     if(miPts.length) map.fitBounds(L.latLngBounds(miPts).pad(0.05)); };
 
   let heat = null, dots = null;
-  let selIdx = "all";               // "all" or a product index into product_order
   let viewMode = "heat";            // "heat" | "dots"
+  let showTop3 = true;              // include the 3 highest-volume customers?
 
-  // Cases for a customer under the current product selection.
-  const valueOf = c => selIdx === "all" ? c.cases : (c.p[selIdx] || 0);
+  // The 3 highest-volume customers overall (the out-of-state distributors that
+  // dominate the scale). Held as object refs so identity is stable across filters.
+  const top3 = new Set([...customers].sort((a,b)=>b.cases-a.cases).slice(0,3));
 
-  // Rebuild both layers for the current product, then show the active view.
-  // Heat/dot scale is normalized against the selected product's own max, so a
-  // small-volume product still spreads across its full color/size range. sqrt
-  // compression keeps a few huge distributors from washing out the map.
+  // Products with any sales, as indexes into product_order. Default: all selected.
+  const soldNames = new Set(summary.products_by_cases.filter(p=>p.cases>0).map(p=>p.product));
+  const soldIdx = summary.product_order
+    .map((name,i)=> soldNames.has(name) ? i : -1).filter(i=>i>=0);
+  const selected = new Set(soldIdx);   // currently checked product indexes
+
+  const prodName = i => summary.product_order[i].replace("Country Dairy","CD").replace(/-/g," ");
+  // Cases for a customer summed over the selected products.
+  const valueOf = c => { let s=0; for(const i of selected) s += c.p[i]||0; return s; };
+
+  // Rebuild both layers for the current selection, then show the active view.
+  // Scale is normalized against the current selection's own max (sqrt-compressed)
+  // so a small-volume product or a top-3-excluded view still uses the full range.
   function refresh(){
-    const active = customers.filter(c => valueOf(c) > 0);
+    const active = customers.filter(c =>
+      valueOf(c) > 0 && (showTop3 || !top3.has(c)));
     const maxV = Math.max(...active.map(valueOf), 1);
 
     if(heat){ map.removeLayer(heat); }
@@ -300,9 +339,15 @@ function buildMap(customers, summary){
     });
 
     (viewMode==="heat" ? heat : dots).addTo(map);
-    const label = selIdx==="all" ? "All products" : summary.product_order[selIdx];
+
+    const nSel = selected.size;
+    const label = nSel===soldIdx.length ? "All products"
+      : nSel===0 ? "No products"
+      : nSel===1 ? prodName([...selected][0])
+      : `${nSel} products`;
     const cnt = document.getElementById("activeCount");
-    if(cnt) cnt.textContent = `${fmt(active.length)} locations · ${label}`;
+    if(cnt) cnt.textContent =
+      `${fmt(active.length)} locations · ${label}${showTop3?"":" · top 3 hidden"}`;
   }
 
   setTimeout(fit, 60);
@@ -323,28 +368,70 @@ function buildMap(customers, summary){
   };
   legend.addTo(map);
 
-  // Populate the product dropdown (only products with sales), preserving
-  // product_order indexes as option values.
-  const sel = document.getElementById("prodFilter");
-  const sold = new Set(summary.products_by_cases.filter(p=>p.cases>0).map(p=>p.product));
-  summary.product_order.forEach((name, i)=>{
-    if(!sold.has(name)) return;
-    const o = document.createElement("option");
-    o.value = String(i);
-    o.textContent = name.replace("Country Dairy","CD").replace(/-/g," ");
-    sel.appendChild(o);
-  });
-
+  // --- Multi-select product dropdown ---
+  const menu = document.getElementById("prodMenu");
+  const prodBtn = document.getElementById("prodBtn");
   const showAllBtn = document.getElementById("showAll");
-  function setProduct(v){
-    selIdx = v==="all" ? "all" : Number(v);
-    sel.value = v;
-    showAllBtn.disabled = (v==="all");
+
+  soldIdx.forEach(i=>{
+    const lab = document.createElement("label");
+    lab.innerHTML = `<input type="checkbox" value="${i}" checked> ${prodName(i)}`;
+    menu.appendChild(lab);
+  });
+  const menuActions = document.createElement("div");
+  menuActions.className = "sep";
+  menu.appendChild(menuActions);
+  menu.insertAdjacentHTML("beforeend",
+    `<button type="button" class="mini" data-act="all">Select all</button>`+
+    `<button type="button" class="mini" data-act="none">Clear</button>`);
+
+  function syncButtonLabel(){
+    const nSel = selected.size;
+    prodBtn.textContent =
+      (nSel===soldIdx.length ? "All products"
+       : nSel===0 ? "No products"
+       : nSel===1 ? prodName([...selected][0])
+       : `${nSel} products`) + " ▾";
+    showAllBtn.disabled = (nSel===soldIdx.length);
+  }
+  function applyChecks(){
+    selected.clear();
+    menu.querySelectorAll('input[type=checkbox]:checked')
+      .forEach(cb=> selected.add(Number(cb.value)));
+    syncButtonLabel();
     refresh();
   }
-  sel.addEventListener("change", e=> setProduct(e.target.value));
-  showAllBtn.addEventListener("click", ()=> setProduct("all"));
-  setProduct("all");
+  function selectAll(on){
+    menu.querySelectorAll('input[type=checkbox]').forEach(cb=> cb.checked=on);
+    applyChecks();
+  }
+
+  prodBtn.addEventListener("click", ()=>{
+    const open = menu.hasAttribute("hidden");
+    if(open){ menu.removeAttribute("hidden"); } else { menu.setAttribute("hidden",""); }
+    prodBtn.setAttribute("aria-expanded", String(open));
+  });
+  menu.addEventListener("change", e=>{ if(e.target.matches("input")) applyChecks(); });
+  menu.addEventListener("click", e=>{
+    const act = e.target.dataset.act; if(!act) return;
+    selectAll(act==="all");
+  });
+  showAllBtn.addEventListener("click", ()=> selectAll(true));
+  // Close the menu when clicking outside it.
+  document.addEventListener("click", e=>{
+    if(!document.getElementById("prodMulti").contains(e.target))
+      menu.setAttribute("hidden","");
+  });
+
+  // --- Top-3 show/hide radios ---
+  document.getElementById("top3Toggle").addEventListener("change", e=>{
+    if(e.target.name!=="top3") return;
+    showTop3 = e.target.value==="show";
+    refresh();
+  });
+
+  syncButtonLabel();
+  refresh();
 
   // Heat / dots toggle
   document.getElementById("viewToggle").addEventListener("click",e=>{
