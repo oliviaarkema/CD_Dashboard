@@ -157,6 +157,7 @@
   .legend b{display:block;margin-bottom:4px;color:var(--green-dark)}
   .legend .bar{height:10px;width:120px;border-radius:5px;
     background:linear-gradient(90deg,#2b83ba,#abdda4,#fdae61,#d7191c);margin:3px 0}
+  .legend .bar-pen{background:linear-gradient(90deg,#efedf5,#bcbddc,#9e9ac8,#756bb1,#54278f)}
   .legend .dot{display:inline-block;border-radius:50%;background:#22c55e;
     border:1.4px solid #fff;box-shadow:0 0 0 1px rgba(7,77,26,.4);
     vertical-align:middle;margin-right:6px}
@@ -228,7 +229,7 @@
   <section class="panel">
     <div class="panel-head">
       <h2>Where our customers are</h2>
-      <span class="hint">Heat &amp; dot size = cases purchased</span>
+      <span class="hint" id="mapHint">Heat intensity = cases purchased</span>
       <div class="map-controls">
         <div class="pf-multi" id="prodMulti">
           <span class="pf-lbl">Products</span>
@@ -247,6 +248,7 @@
         <div class="seg" id="viewToggle">
           <button data-view="heat" class="active">Heatmap</button>
           <button data-view="dots">Sized dots</button>
+          <button data-view="norm">Per capita</button>
         </div>
       </div>
     </div>
@@ -350,9 +352,13 @@ function buildMap(customers, summary){
   const fit = ()=>{ map.invalidateSize();
     if(miPts.length) map.fitBounds(L.latLngBounds(miPts).pad(0.05)); };
 
-  let heat = null, dots = null;
-  let viewMode = "heat";            // "heat" | "dots"
+  let heat = null, dots = null, norm = null;
+  let viewMode = "heat";            // "heat" | "dots" | "norm"
   let showTop3 = true;              // include the 3 highest-volume customers?
+
+  // Population-normalized layer inputs. Sequential purple ramp = penetration.
+  const zipMeta = summary.zips || {};
+  const PENETRATION_COLORS = ["#efedf5","#bcbddc","#9e9ac8","#756bb1","#54278f"];
 
   // The 3 highest-volume customers overall (the out-of-state distributors that
   // dominate the scale). Held as object refs so identity is stable across filters.
@@ -376,8 +382,7 @@ function buildMap(customers, summary){
       valueOf(c) > 0 && (showTop3 || !top3.has(c)));
     const maxV = Math.max(...active.map(valueOf), 1);
 
-    if(heat){ map.removeLayer(heat); }
-    if(dots){ map.removeLayer(dots); }
+    [heat, dots, norm].forEach(l => l && map.removeLayer(l));
 
     heat = L.heatLayer(
       active.map(c => [c.lat, c.lng, Math.sqrt(valueOf(c)) / Math.sqrt(maxV)]),
@@ -401,16 +406,49 @@ function buildMap(customers, summary){
         .addTo(dots);
     });
 
-    (viewMode==="heat" ? heat : dots).addTo(map);
+    // --- Population-normalized: one circle per ZIP, color = cases per 1,000
+    //     residents (penetration, quantile-bucketed), size = population. ---
+    norm = L.layerGroup();
+    const byZip = {};
+    active.forEach(c=>{ if(zipMeta[c.zip]) byZip[c.zip] = (byZip[c.zip]||0) + valueOf(c); });
+    const zEntries = Object.keys(byZip).map(z=>{
+      const m = zipMeta[z];
+      return {zip:z, pop:m.pop, lat:m.lat, lng:m.lng, cases:byZip[z], per1k: byZip[z]/m.pop*1000};
+    });
+    const byPct = [...zEntries].sort((a,b)=>a.per1k-b.per1k);
+    byPct.forEach((e,i)=> e.pct = zEntries.length>1 ? i/(zEntries.length-1) : 1);
+    const maxPop = Math.max(...zEntries.map(e=>e.pop), 1);
+    zEntries.forEach(e=>{
+      const bucket = Math.min(4, Math.floor(e.pct*5));
+      const r = 5 + 15*Math.sqrt(e.pop/maxPop);
+      L.circleMarker([e.lat,e.lng],{
+        radius:r, color:"#fff", weight:1, fillColor:PENETRATION_COLORS[bucket], fillOpacity:.82
+      }).bindPopup(
+        `<b>ZIP ${e.zip}</b><br>Population ${fmt(e.pop)}<br>${fmt(Math.round(e.cases))} cases<br>`+
+        `<b>${e.per1k.toFixed(1)}</b> cases / 1,000 residents`)
+        .addTo(norm);
+    });
+
+    ({heat, dots, norm}[viewMode]).addTo(map);
 
     const nSel = selected.size;
-    const label = nSel===soldIdx.length ? "All products"
+    lastCounts.label = nSel===soldIdx.length ? "All products"
       : nSel===0 ? "No products"
       : nSel===1 ? prodName([...selected][0])
       : `${nSel} products`;
+    lastCounts.locations = active.length;
+    lastCounts.zips = zEntries.length;
+    updateActiveCount();
+  }
+
+  const lastCounts = { locations:0, zips:0, label:"All products" };
+  function updateActiveCount(){
     const cnt = document.getElementById("activeCount");
-    if(cnt) cnt.textContent =
-      `${fmt(active.length)} locations · ${label}${showTop3?"":" · top 3 hidden"}`;
+    if(!cnt) return;
+    cnt.textContent = (viewMode==="norm"
+        ? `${fmt(lastCounts.zips)} ZIPs · ${lastCounts.label}`
+        : `${fmt(lastCounts.locations)} locations · ${lastCounts.label}`)
+      + (showTop3 ? "" : " · top 3 hidden");
   }
 
   setTimeout(fit, 60);
@@ -421,11 +459,14 @@ function buildMap(customers, summary){
   legend.onAdd = ()=>{
     const d = L.DomUtil.create("div","legend");
     d.innerHTML =
-      `<b>Cases purchased</b>`+
+      `<b id="lgTitle">Cases purchased</b>`+
       `<div id="lgHeat"><span>fewer</span><div class="bar"></div><span>more</span></div>`+
       `<div id="lgDots" style="display:none">`+
         `<span class="dot" style="width:8px;height:8px"></span>low &nbsp; `+
         `<span class="dot" style="width:26px;height:26px"></span>high</div>`+
+      `<div id="lgNorm" style="display:none">`+
+        `<span>lower</span><div class="bar bar-pen"></div><span>higher</span>`+
+        `<div style="color:var(--muted);margin-top:2px">circle size = population</div></div>`+
       `<div id="activeCount" style="margin-top:5px;color:var(--muted)"></div>`;
     return d;
   };
@@ -497,16 +538,28 @@ function buildMap(customers, summary){
   syncButtonLabel();
   refresh();
 
-  // Heat / dots toggle
+  // Heatmap / sized-dots / per-capita toggle
+  const HINTS = {
+    heat: "Heat intensity = cases purchased",
+    dots: "Dot size = cases purchased",
+    norm: "Color = cases per 1,000 residents · size = population",
+  };
+  const LG_TITLES = { heat:"Cases purchased", dots:"Cases purchased",
+                      norm:"Market penetration" };
   function setView(mode){
     viewMode = mode;
     document.querySelectorAll("#viewToggle button")
       .forEach(b=> b.classList.toggle("active", b.dataset.view===mode));
-    const heatOn = mode==="heat";
-    if(heatOn){ map.addLayer(heat); map.removeLayer(dots); }
-    else{ map.addLayer(dots); map.removeLayer(heat); }
-    document.getElementById("lgHeat").style.display = heatOn?"block":"none";
-    document.getElementById("lgDots").style.display = heatOn?"none":"block";
+    [["heat", heat], ["dots", dots], ["norm", norm]].forEach(([m,l])=>{
+      if(!l) return;
+      if(m===mode) map.addLayer(l); else map.removeLayer(l);
+    });
+    document.getElementById("lgHeat").style.display = mode==="heat"?"block":"none";
+    document.getElementById("lgDots").style.display = mode==="dots"?"block":"none";
+    document.getElementById("lgNorm").style.display = mode==="norm"?"block":"none";
+    document.getElementById("lgTitle").textContent = LG_TITLES[mode];
+    document.getElementById("mapHint").textContent = HINTS[mode];
+    updateActiveCount();
   }
   document.getElementById("viewToggle").addEventListener("click",e=>{
     const btn = e.target.closest("button"); if(!btn) return;

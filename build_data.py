@@ -147,6 +147,37 @@ def census_geocode(addr_rows, chunk=1000):
     return matched
 
 
+# Population by ZIP (ZCTA), from Ro-Data's Census summary tables. We download
+# the ~26MB table once, cache a slim {zip: population} JSON, and commit that so
+# future rebuilds are offline. Used for the population-normalized map layer.
+POP_SOURCE = ("https://raw.githubusercontent.com/Ro-Data/"
+              "Ro-Census-Summaries-By-Zipcode/master/demo.txt")
+POP_CACHE = "zcta_pop.json"
+
+
+def load_zip_population(cache_path=POP_CACHE, refresh=False):
+    if os.path.exists(cache_path) and not refresh:
+        with open(cache_path) as f:
+            return {k: int(v) for k, v in json.load(f).items()}
+    print("Downloading ZIP population table (one-time, ~26MB)…")
+    with urllib.request.urlopen(POP_SOURCE, timeout=300) as resp:
+        text = resp.read().decode("utf-8", "replace")
+    pop = {}
+    rd = csv.reader(io.StringIO(text), delimiter="\t")
+    next(rd, None)                       # header: ZCTA5, total_population, …
+    for row in rd:
+        if len(row) < 2:
+            continue
+        try:
+            pop[row[0].strip()] = int(float(row[1]))
+        except ValueError:
+            continue
+    with open(cache_path, "w") as f:
+        json.dump(pop, f, separators=(",", ":"))
+    print(f"  Cached {len(pop)} ZIP populations to {cache_path}")
+    return pop
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default="country_dairy_sales.csv")
@@ -156,6 +187,8 @@ def main():
                          "Defaults to the CSV's last-modified date.")
     ap.add_argument("--zip-only", action="store_true",
                     help="Skip street geocoding; use ZIP centroids only (offline).")
+    ap.add_argument("--refresh-pop", action="store_true",
+                    help="Re-download the ZIP population table (else uses the cache).")
     args = ap.parse_args()
 
     with open(args.csv, newline="", encoding="utf-8-sig") as f:
@@ -183,7 +216,7 @@ def main():
             print(f"  Census geocoding unavailable ({e}); using ZIP centroids.")
         print(f"Street-matched {len(street_ll)}/{len(rows)} addresses")
 
-    # 2) ZIP centroids (for the fallback), one lookup per unique ZIP.
+    # 2) ZIP centroids (for the fallback + the population-normalized layer).
     zips = {clean_zip(r.get(COL_ZIP)) for r in rows}
     zips.discard(None)
     zip_ll = {}
@@ -192,6 +225,15 @@ def main():
         lat, lng = rec.latitude, rec.longitude
         if lat == lat and lng == lng:        # not NaN
             zip_ll[z] = (float(lat), float(lng))
+
+    # 3) Population per ZIP, for the normalized (per-capita) map layer.
+    zip_pop = load_zip_population(refresh=args.refresh_pop)
+    zip_geo = {}                             # zip -> {pop, lat, lng} for present ZIPs
+    for z in zips:
+        if z in zip_ll and zip_pop.get(z, 0) > 0:
+            lat, lng = zip_ll[z]
+            zip_geo[z] = {"pop": zip_pop[z], "lat": round(lat, 5), "lng": round(lng, 5)}
+    print(f"Population matched for {len(zip_geo)}/{len(zips)} ZIPs")
 
     seen_at_zip = defaultdict(int)
     customers = []
@@ -264,6 +306,9 @@ def main():
         "source_csv": args.csv,
         # PRODUCT_COLS order — the map's per-customer "p" arrays align to this.
         "product_order": PRODUCT_COLS,
+        # ZIP -> {pop, lat, lng} for the population-normalized layer. The client
+        # aggregates active customers by ZIP and divides cases by pop.
+        "zips": zip_geo,
         "total_customers": len(rows),
         "mapped_customers": len(customers),
         "street_matched": n_street,

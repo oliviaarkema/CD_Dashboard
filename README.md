@@ -9,12 +9,19 @@ they buy, plus top-customer and product rankings. Built to be published on
 | File | Purpose |
 |------|---------|
 | `index.html` | The dashboard (map, stats, charts). Pure static — no build step. |
-|  | Map controls: multi-select **Products** filter (heat/dots sum the checked products), a **Top 3 customers** Show/Hide radio to drop the outlier distributors, and a Heatmap / Sized-dots toggle. |
+|  | Map controls: multi-select **Products** filter, a **Top 3 customers** show/hide slider, and a **Heatmap / Sized dots / Per capita** view toggle. |
 | `country_dairy_sales.csv` | The quarterly sales export. **Replace this each quarter.** |
 | `build_data.py` | Geocodes the CSV and writes `data/*.json`. |
 | `data/customers.json` | Per-customer points (lat/lng + cases) for the map. Generated. |
-| `data/summary.json` | Totals, top 10 customers, product ranking. Generated. |
+| `data/summary.json` | Totals, rankings, and per-ZIP population for the per-capita layer. Generated. |
+| `zcta_pop.json` | Cached ZIP→population table (~33k ZIPs). Committed so rebuilds are offline; refresh with `--refresh-pop`. |
 | `assets/logo.png` | Country Dairy logo. |
+
+The **Per capita** view normalizes volume to population: one circle per ZIP,
+colored by cases per 1,000 residents (market penetration) and sized by
+population. Population comes from
+[Ro-Data's US Census ZIP summaries](https://github.com/Ro-Data/Ro-Census-Summaries-By-Zipcode)
+(2020 Census / ACS, public domain).
 
 The map uses [Leaflet](https://leafletjs.com/) + Leaflet.heat with free
 OpenStreetMap/CARTO tiles (no API key). Customers are geocoded to their
