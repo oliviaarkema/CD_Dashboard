@@ -384,23 +384,10 @@ def main():
         ),
     }
 
-    # Core market = Michigan (48/49) + NW Indiana (463/464). Used to keep the
-    # per-capita ranking meaningful (excludes the out-of-state distributor ZIPs,
-    # which have huge cases-per-capita and would swamp the chart).
+    # Largest markets by population in the core region (Michigan 48/49 + NW
+    # Indiana 463/464), with our case volume there — whether or not we sell.
     def in_region(zc):
         return zc[:2] in ("48", "49") or zc[:3] in ("463", "464")
-
-    # Cases per 1,000 residents, per core-market ZIP we sell to (has pop + cases).
-    # Sorted high→low so the client can slice top/bottom 10.
-    summary["zip_per_capita"] = sorted(
-        [{"zip": z, "city": meta["city"], "pop": meta["pop"],
-          "cases": zip_cases[z], "per1k": round(zip_cases[z] / meta["pop"] * 1000, 1)}
-         for z, meta in zip_geo.items()
-         if zip_cases.get(z, 0) > 0 and in_region(z)],
-        key=lambda d: d["per1k"], reverse=True)
-
-    # Largest markets by population in the core region, with our case volume
-    # there — whether or not we currently sell to them.
     biggest = sorted(((z, p) for z, p in zip_pop.items()
                       if len(z) == 5 and z.isdigit() and in_region(z)),
                      key=lambda x: x[1], reverse=True)[:5]

@@ -286,19 +286,9 @@
       <div class="panel-head"><h2>Products by cases sold</h2></div>
       <div class="panel-body chart-body"><canvas id="prodChart"></canvas></div>
     </div>
-    <div class="panel">
+    <div class="panel" style="grid-column:1/-1">
       <div class="panel-head"><h2>Customers by type</h2><span class="hint" id="typeHint"></span></div>
       <div class="panel-body chart-body"><div class="hbars" id="typeBars"></div></div>
-    </div>
-    <div class="panel">
-      <div class="panel-head">
-        <h2>ZIP cases per capita</h2>
-        <div class="seg" id="zpcToggle" style="margin-left:auto">
-          <button data-rank="top" class="active">Top 10</button>
-          <button data-rank="bottom">Bottom 10</button>
-        </div>
-      </div>
-      <div class="panel-body chart-body"><canvas id="zpcChart"></canvas></div>
     </div>
   </section>
 
@@ -387,34 +377,6 @@ async function load(){
         `${t.type==="Other"?"background:#9aa79a":""}"></div></div>`+
       `<div class="hbar-val">${fmt(t.count)}</div>`+
     `</div>`).join("");
-
-  // ZIP cases per capita — top/bottom 10 toggle
-  const zpc = summary.zip_per_capita || [];
-  let zpcChart;
-  function renderZpc(rank){
-    const rows = rank==="top" ? zpc.slice(0,10) : zpc.slice(-10).reverse();
-    const labels = rows.map(r=>`${r.zip}${r.city?" "+r.city:""}`);
-    const data = rows.map(r=>r.per1k);
-    if(zpcChart) zpcChart.destroy();
-    zpcChart = new Chart(document.getElementById("zpcChart"),{
-      type:"bar",
-      data:{labels, datasets:[{data,
-        backgroundColor: rank==="top" ? "#3dae2b" : "#c98a2b", borderRadius:4}]},
-      options:{
-        indexAxis:"y",responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{callbacks:{
-          label:c=>`${c.parsed.x} cases / 1,000 · ${fmt(rows[c.dataIndex].cases)} cases, pop ${fmt(rows[c.dataIndex].pop)}`}}},
-        scales:{x:{grid:{color:"#eee"},title:{display:true,text:"cases per 1,000 residents",font:{size:10}}},
-                y:{grid:{display:false},ticks:{font:{size:10}}}}
-      }
-    });
-  }
-  renderZpc("top");
-  document.getElementById("zpcToggle").addEventListener("click",e=>{
-    const btn=e.target.closest("button"); if(!btn) return;
-    document.querySelectorAll("#zpcToggle button").forEach(b=>b.classList.toggle("active",b===btn));
-    renderZpc(btn.dataset.rank);
-  });
 
   // Largest markets in reach (top-5 populous MI + NW-Indiana ZIPs, our cases there)
   document.getElementById("bigMarkets").innerHTML = (summary.big_markets||[]).map(b=>
