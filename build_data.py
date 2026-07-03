@@ -23,6 +23,7 @@ import io
 import json
 import math
 import os
+import re
 import sys
 import urllib.request
 import uuid
@@ -49,6 +50,43 @@ PRODUCT_COLS = [
     "Milk Gals-Cedar Cr", "Milk Hgls-Country Dairy", "Milk Pints-Country Dairy",
     "Milk Qts-Country Dairy", "Mix-Country Dairy", "WF Gallons", "WF Hgls",
 ]
+
+# Customer-type classification from the name (DESCRIPTION). Keyword rules in
+# priority order — first match wins; anything unmatched is "Other". Names in the
+# export are often truncated, so rules include common truncations/abbreviations.
+CATEGORY_RULES = [
+    ("Schools", r"school|\bsch\b|\bschs\b|element|\belem|\bele\b|\bmidd|middle|\bmid\b|"
+     r"\bhigh\b|\bhig\b|\bhgh\b|\bhs\b|jr hig|junior high|freshman|\bprimary|intermediate|"
+     r"academ|montessori|\bcolleg|univers|\becc\b|\bisd\b|charter|christian|luther|cathol|"
+     r"adventist|\bstem\b|athlet|\bathl|\bkids?\b|daycare|day care|child|preschool|"
+     r"early childhood|learning center|dev center|dev cntr|\bmsu\b|football|fieldhouse|breslin"),
+    ("Vending / Distributor", r"vending|\bservices?\b|distribut|united natural|wholesale|"
+     r"\bsupply\b|foods -|dairy -|beverage"),
+    ("Ice Cream", r"ice cream|creamery|creamer|custard|frosty|frozen yog|dairy dayz|dairy ranch|"
+     r"dairy delight|dairy hill|dairy bar|dairyland|\bscoop|gelato|yogurt|sundae|soft serve|"
+     r"affogato|\bdip\b|\bdairy\b|\btreat|\bcone\b|dipper|swirl|sugar shack|soda shop|\bfudge|"
+     r"milky way|twisters|snickerdoodl|\bi/c\b|iorio"),
+    ("Coffee / Donut", r"coffee|\bcafe\b|espresso|donut|scooters|bakery|pastry|\bbrew\b|perks|cookie"),
+    ("Restaurants", r"drive in|steak|\bburger|\bgrill|diner|\bbbq\b|taqueria|\btaco|pizza|"
+     r"\bkitchen|eatery|\bpub\b|cantina|bistro|snack shack"),
+    ("Gas Stations", r"citgo|marathon|mobil|\bshell|sunoco|speedway|exxon|valero|\bclark\b|\bbp\b|"
+     r"petro|\boil\b|\bfuel|\bgas\b|wesco|mugg ?& ?bopp|bopps|\bago\b|truck stop|\btravel|pit stop|"
+     r"admiral|blarney|amoco|\bpump\b|oasis|roadtrip"),
+    ("Convenience / Party", r"party|mart\b|express|\bquik|\bkwik|\bquick\b|mini ?mart|\bgeneral\b|"
+     r"one stop|\bexit\b|corner|fastlane|\bstop\b|store|convenience|circle k|7-?eleven|liquor|"
+     r"\bliq\b|\bpantry\b|pic ?-?n?-? ?pac|\bdeals?\b|outlet|\bdepot\b"),
+    ("Markets / Grocery", r"market|\bmkt\b|\bmkrt\b|\bmrkt\b|grocer|\bfoods?\b|\biga\b|family fare|"
+     r"save-?a-?lot|supermarket|meijer|food center|\bmeats?\b|provision|mercado|tienda|foodmart"),
+]
+CATEGORY_RULES = [(name, re.compile(pat, re.I)) for name, pat in CATEGORY_RULES]
+
+
+def classify_type(name):
+    for cat, rx in CATEGORY_RULES:
+        if rx.search(name):
+            return cat
+    return "Other"
+
 
 # Gallons of product per case, by product. Used to convert case counts into the
 # total-volume "Gallons sold" stat. Derived from the packout of each format
@@ -240,6 +278,7 @@ def main():
     ungeocoded = []
     n_street = n_zip = 0
     product_totals = defaultdict(int)
+    type_counts = defaultdict(int)
     state_totals = defaultdict(lambda: {"customers": 0, "cases": 0})
 
     for i, r in enumerate(rows):
@@ -248,6 +287,7 @@ def main():
         state = (r.get(COL_STATE) or "").strip()
         z = clean_zip(r.get(COL_ZIP))
 
+        type_counts[classify_type(name)] += 1
         for p in PRODUCT_COLS:
             product_totals[p] += to_int(r.get(p))
         if state:
@@ -317,6 +357,10 @@ def main():
         "total_cases": sum(to_int(r.get(COL_TOTAL)) for r in rows),
         "gallons_sold": round(sum(product_totals[p] * GALLONS_PER_CASE.get(p, 0)
                                   for p in PRODUCT_COLS)),
+        # Customer counts by inferred type (Other always last).
+        "customer_types": sorted(
+            [{"type": t, "count": c} for t, c in type_counts.items()],
+            key=lambda d: (d["type"] == "Other", -d["count"])),
         "top_customers": [
             {"name": c["name"], "city": c["city"], "state": c["state"], "cases": c["cases"]}
             for c in customers[:10]

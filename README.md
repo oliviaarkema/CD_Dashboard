@@ -9,7 +9,7 @@ they buy, plus top-customer and product rankings. Built to be published on
 | File | Purpose |
 |------|---------|
 | `index.html` | The dashboard (map, stats, charts). Pure static — no build step. |
-|  | Map controls: multi-select **Products** filter, a **Top 3 customers** show/hide slider, and a **Heatmap / Sized dots / Per capita** view toggle. |
+|  | Map controls: multi-select **Products** filter, a **Top 3 customers** show/hide slider, and a **Heatmap / Sized dots / Per capita** view toggle. A **Customers by type** bar chart sits under the map (types inferred from the customer name via keyword rules in `build_data.py`; unmatched → "Other"). |
 | `country_dairy_sales.csv` | The quarterly sales export. **Replace this each quarter.** |
 | `build_data.py` | Geocodes the CSV and writes `data/*.json`. |
 | `data/customers.json` | Per-customer points (lat/lng + cases) for the map. Generated. |
