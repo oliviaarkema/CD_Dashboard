@@ -9,7 +9,8 @@ they buy, plus top-customer and product rankings. Built to be published on
 | File | Purpose |
 |------|---------|
 | `index.html` | The dashboard (map, stats, charts). Pure static — no build step. |
-|  | Map controls: multi-select **Products** filter, a **Top 3 customers** show/hide slider, and a **Heatmap / Sized dots / Per capita** view toggle. A **Customers by type** bar chart sits under the map (types inferred from the customer name via keyword rules in `build_data.py`; unmatched → "Other"). |
+|  | Map controls: multi-select **Products** filter, a **Top 3 customers** show/hide slider, and a **Heatmap / Sized dots / Per capita** view toggle. |
+|  | Below the map, a 2×2 grid of cards: **Top 10 customers**, **Products by cases**, **Customers by type** (types inferred from the name via keyword rules; shows avg cases per type), and **ZIP cases per capita** (top/bottom 10, core-market ZIPs only). Plus a **Largest markets in reach** callout (most-populous MI + NW-Indiana ZIPs and our volume there). |
 | `country_dairy_sales.csv` | The quarterly sales export. **Replace this each quarter.** |
 | `build_data.py` | Geocodes the CSV and writes `data/*.json`. |
 | `data/customers.json` | Per-customer points (lat/lng + cases) for the map. Generated. |

@@ -98,9 +98,24 @@
 
   /* Map */
   #map{height:520px;width:100%}
-  .type-strip{padding:14px 20px 16px;border-top:1px solid var(--border)}
-  .type-head{font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:8px}
-  .type-head span{text-transform:none;letter-spacing:0}
+  /* Equal-size chart cards (2x2 grid below the map) */
+  .chart-body{height:330px;position:relative;overflow:auto}
+  /* HTML horizontal bars for "Customers by type" */
+  .hbars{display:flex;flex-direction:column;gap:9px}
+  .hbar-row{display:grid;grid-template-columns:118px 1fr 34px;align-items:center;gap:8px;font-size:.82rem}
+  .hbar-label{line-height:1.15}
+  .hbar-label i{display:block;color:var(--muted);font-size:.72rem}
+  .hbar-track{background:var(--bg);border-radius:5px;height:16px;overflow:hidden}
+  .hbar-fill{height:100%;border-radius:5px;background:var(--kelly)}
+  .hbar-val{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--green)}
+  /* Largest-markets callout tiles */
+  .markets{display:flex;flex-wrap:wrap;gap:12px}
+  .market{flex:1 1 150px;border:1px solid var(--border);border-radius:10px;padding:10px 12px;background:var(--bg)}
+  .market .mzip{font-weight:700;color:var(--green-dark);font-size:.92rem}
+  .market .mcity{font-size:.72rem;color:var(--muted);margin-bottom:5px}
+  .market .mrow{font-size:.8rem;display:flex;justify-content:space-between;gap:8px}
+  .market .mrow b{font-variant-numeric:tabular-nums;color:var(--ink)}
+  .market .zero{color:#b06a00}
   .reset-ctl a{display:flex;align-items:center;justify-content:center;background:#fff}
   .reset-ctl a:hover{background:var(--bg)}
   .map-controls{margin-left:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;align-items:center}
@@ -259,22 +274,39 @@
       <div id="map"></div>
       <p id="mapErr" class="err" style="padding:14px 20px;display:none"></p>
     </div>
-    <div class="type-strip">
-      <div class="type-head">Customers by type <span id="typeTotal"></span></div>
-      <div style="height:230px"><canvas id="typeChart"></canvas></div>
-    </div>
   </section>
 
-  <!-- Top customers + products -->
+  <!-- 2x2 grid of charts below the map -->
   <section class="grid-2">
     <div class="panel">
       <div class="panel-head"><h2>Top 10 customers</h2><span class="hint">by cases</span></div>
-      <div class="panel-body"><table class="rank" id="topTable"><tbody></tbody></table></div>
+      <div class="panel-body chart-body"><table class="rank" id="topTable"><tbody></tbody></table></div>
     </div>
     <div class="panel">
       <div class="panel-head"><h2>Products by cases sold</h2></div>
-      <div class="panel-body"><canvas id="prodChart" height="260"></canvas></div>
+      <div class="panel-body chart-body"><canvas id="prodChart"></canvas></div>
     </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Customers by type</h2><span class="hint" id="typeHint"></span></div>
+      <div class="panel-body chart-body"><div class="hbars" id="typeBars"></div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>ZIP cases per capita</h2>
+        <div class="seg" id="zpcToggle" style="margin-left:auto">
+          <button data-rank="top" class="active">Top 10</button>
+          <button data-rank="bottom">Bottom 10</button>
+        </div>
+      </div>
+      <div class="panel-body chart-body"><canvas id="zpcChart"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Largest-markets callout -->
+  <section class="panel">
+    <div class="panel-head"><h2>Largest markets in reach</h2>
+      <span class="hint">most-populous ZIPs in MI &amp; NW Indiana — our volume there today</span></div>
+    <div class="panel-body"><div class="markets" id="bigMarkets"></div></div>
   </section>
 
   <!-- Placeholders for future metrics -->
@@ -338,32 +370,59 @@ async function load(){
       datasets:[{data:prods.map(p=>p.cases),backgroundColor:"#074d1a",borderRadius:4}]
     },
     options:{
-      indexAxis:"y",responsive:true,plugins:{legend:{display:false},
+      indexAxis:"y",responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},
         tooltip:{callbacks:{label:c=>fmt(c.parsed.x)+" cases"}}},
       scales:{x:{grid:{color:"#eee"},ticks:{callback:v=>fmt(v)}},y:{grid:{display:false},ticks:{font:{size:11}}}}
     }
   });
 
-  // Customers-by-type bar chart (under the map)
+  // Customers by type — HTML bars with the average cases in italics under each name.
   const types = summary.customer_types || [];
-  const typeTotal = types.reduce((s,t)=>s+t.count,0);
-  document.getElementById("typeTotal").textContent =
-    typeTotal ? `· ${fmt(typeTotal)} customers` : "";
-  new Chart(document.getElementById("typeChart"),{
-    type:"bar",
-    data:{
-      labels:types.map(t=>t.type),
-      datasets:[{data:types.map(t=>t.count),
-        backgroundColor:types.map(t=>t.type==="Other"?"#9aa79a":"#3dae2b"),borderRadius:4}]
-    },
-    options:{
-      indexAxis:"y",responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},
-        tooltip:{callbacks:{label:c=>`${fmt(c.parsed.x)} customers`}}},
-      scales:{x:{grid:{color:"#eee"},ticks:{precision:0}},
-              y:{grid:{display:false},ticks:{font:{size:11}}}}
-    }
+  const maxType = Math.max(...types.map(t=>t.count), 1);
+  document.getElementById("typeHint").textContent = `${fmt(types.reduce((s,t)=>s+t.count,0))} customers`;
+  document.getElementById("typeBars").innerHTML = types.map(t=>
+    `<div class="hbar-row">`+
+      `<div class="hbar-label">${t.type}<i>avg ${fmt(t.avg_cases)} cases</i></div>`+
+      `<div class="hbar-track"><div class="hbar-fill" style="width:${(t.count/maxType*100).toFixed(1)}%;`+
+        `${t.type==="Other"?"background:#9aa79a":""}"></div></div>`+
+      `<div class="hbar-val">${fmt(t.count)}</div>`+
+    `</div>`).join("");
+
+  // ZIP cases per capita — top/bottom 10 toggle
+  const zpc = summary.zip_per_capita || [];
+  let zpcChart;
+  function renderZpc(rank){
+    const rows = rank==="top" ? zpc.slice(0,10) : zpc.slice(-10).reverse();
+    const labels = rows.map(r=>`${r.zip}${r.city?" "+r.city:""}`);
+    const data = rows.map(r=>r.per1k);
+    if(zpcChart) zpcChart.destroy();
+    zpcChart = new Chart(document.getElementById("zpcChart"),{
+      type:"bar",
+      data:{labels, datasets:[{data,
+        backgroundColor: rank==="top" ? "#3dae2b" : "#c98a2b", borderRadius:4}]},
+      options:{
+        indexAxis:"y",responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{callbacks:{
+          label:c=>`${c.parsed.x} cases / 1,000 · ${fmt(rows[c.dataIndex].cases)} cases, pop ${fmt(rows[c.dataIndex].pop)}`}}},
+        scales:{x:{grid:{color:"#eee"},title:{display:true,text:"cases per 1,000 residents",font:{size:10}}},
+                y:{grid:{display:false},ticks:{font:{size:10}}}}
+      }
+    });
+  }
+  renderZpc("top");
+  document.getElementById("zpcToggle").addEventListener("click",e=>{
+    const btn=e.target.closest("button"); if(!btn) return;
+    document.querySelectorAll("#zpcToggle button").forEach(b=>b.classList.toggle("active",b===btn));
+    renderZpc(btn.dataset.rank);
   });
+
+  // Largest markets in reach (top-5 populous MI + NW-Indiana ZIPs, our cases there)
+  document.getElementById("bigMarkets").innerHTML = (summary.big_markets||[]).map(b=>
+    `<div class="market"><div class="mzip">${b.zip}</div>`+
+    `<div class="mcity">${b.city}, ${b.state}</div>`+
+    `<div class="mrow"><span>Population</span><b>${fmt(b.pop)}</b></div>`+
+    `<div class="mrow"><span>Our cases</span><b class="${b.cases===0?"zero":""}">${fmt(b.cases)}</b></div></div>`
+  ).join("");
 
   buildMap(customers, summary);
 }

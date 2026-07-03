@@ -257,12 +257,13 @@ def main():
     # 2) ZIP centroids (for the fallback + the population-normalized layer).
     zips = {clean_zip(r.get(COL_ZIP)) for r in rows}
     zips.discard(None)
-    zip_ll = {}
+    zip_ll, zip_city = {}, {}
     for z in zips:
         rec = nomi.query_postal_code(z)
         lat, lng = rec.latitude, rec.longitude
         if lat == lat and lng == lng:        # not NaN
             zip_ll[z] = (float(lat), float(lng))
+            zip_city[z] = rec.place_name if isinstance(rec.place_name, str) else ""
 
     # 3) Population per ZIP, for the normalized (per-capita) map layer.
     zip_pop = load_zip_population(refresh=args.refresh_pop)
@@ -270,7 +271,8 @@ def main():
     for z in zips:
         if z in zip_ll and zip_pop.get(z, 0) > 0:
             lat, lng = zip_ll[z]
-            zip_geo[z] = {"pop": zip_pop[z], "lat": round(lat, 5), "lng": round(lng, 5)}
+            zip_geo[z] = {"pop": zip_pop[z], "lat": round(lat, 5), "lng": round(lng, 5),
+                          "city": zip_city.get(z, "")}
     print(f"Population matched for {len(zip_geo)}/{len(zips)} ZIPs")
 
     seen_at_zip = defaultdict(int)
@@ -279,6 +281,8 @@ def main():
     n_street = n_zip = 0
     product_totals = defaultdict(int)
     type_counts = defaultdict(int)
+    type_cases = defaultdict(int)
+    zip_cases = defaultdict(int)
     state_totals = defaultdict(lambda: {"customers": 0, "cases": 0})
 
     for i, r in enumerate(rows):
@@ -287,7 +291,11 @@ def main():
         state = (r.get(COL_STATE) or "").strip()
         z = clean_zip(r.get(COL_ZIP))
 
-        type_counts[classify_type(name)] += 1
+        ctype = classify_type(name)
+        type_counts[ctype] += 1
+        type_cases[ctype] += cases
+        if z:
+            zip_cases[z] += cases
         for p in PRODUCT_COLS:
             product_totals[p] += to_int(r.get(p))
         if state:
@@ -357,9 +365,10 @@ def main():
         "total_cases": sum(to_int(r.get(COL_TOTAL)) for r in rows),
         "gallons_sold": round(sum(product_totals[p] * GALLONS_PER_CASE.get(p, 0)
                                   for p in PRODUCT_COLS)),
-        # Customer counts by inferred type (Other always last).
+        # Customer counts (and average cases) by inferred type; Other always last.
         "customer_types": sorted(
-            [{"type": t, "count": c} for t, c in type_counts.items()],
+            [{"type": t, "count": c, "avg_cases": round(type_cases[t] / c)}
+             for t, c in type_counts.items()],
             key=lambda d: (d["type"] == "Other", -d["count"])),
         "top_customers": [
             {"name": c["name"], "city": c["city"], "state": c["state"], "cases": c["cases"]}
@@ -374,6 +383,37 @@ def main():
             key=lambda d: d["cases"], reverse=True,
         ),
     }
+
+    # Core market = Michigan (48/49) + NW Indiana (463/464). Used to keep the
+    # per-capita ranking meaningful (excludes the out-of-state distributor ZIPs,
+    # which have huge cases-per-capita and would swamp the chart).
+    def in_region(zc):
+        return zc[:2] in ("48", "49") or zc[:3] in ("463", "464")
+
+    # Cases per 1,000 residents, per core-market ZIP we sell to (has pop + cases).
+    # Sorted high→low so the client can slice top/bottom 10.
+    summary["zip_per_capita"] = sorted(
+        [{"zip": z, "city": meta["city"], "pop": meta["pop"],
+          "cases": zip_cases[z], "per1k": round(zip_cases[z] / meta["pop"] * 1000, 1)}
+         for z, meta in zip_geo.items()
+         if zip_cases.get(z, 0) > 0 and in_region(z)],
+        key=lambda d: d["per1k"], reverse=True)
+
+    # Largest markets by population in the core region, with our case volume
+    # there — whether or not we currently sell to them.
+    biggest = sorted(((z, p) for z, p in zip_pop.items()
+                      if len(z) == 5 and z.isdigit() and in_region(z)),
+                     key=lambda x: x[1], reverse=True)[:5]
+    big_markets = []
+    for z, p in biggest:
+        rec = nomi.query_postal_code(z)
+        big_markets.append({
+            "zip": z,
+            "city": rec.place_name if isinstance(rec.place_name, str) else "",
+            "state": rec.state_code if isinstance(rec.state_code, str) else "",
+            "pop": p, "cases": zip_cases.get(z, 0),
+        })
+    summary["big_markets"] = big_markets
 
     with open(f"{args.out}/customers.json", "w") as f:
         json.dump(customers, f, separators=(",", ":"))
