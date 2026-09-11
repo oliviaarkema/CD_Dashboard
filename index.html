@@ -391,7 +391,7 @@ async function load(){
 
 function buildMap(customers, summary){
   const map = L.map("map",{scrollWheelZoom:false}).setView([43.0,-85.2],7);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3hen_1_4ff3e015c4883bfbfd9ba3cd",{
     attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:19
   }).addTo(map);
 
